@@ -1,11 +1,6 @@
 # Project Plan — "Human Data Science" Course Paper
 
-## Title (working)
-**The Evolution of Naming: Cultural Diversity, Media Influence, and Individualism in Baby Names (US vs. Italy)**
-
-> **Status update (2026-08-11)**: Research phase complete. Project is confirmed **doable**, with one required pivot (RQ1 metric, see §3/§5) and one open task (RQ2 Italian case study, see §10). Everything below reflects that pivot — this is the version to hand off.
-
----
+## The Evolution of Naming: Cultural Diversity, Media Influence, and Individualism in Baby Names (US vs. Italy)
 
 ## 1. Exam / Course Requirements (must respect)
 
@@ -31,7 +26,7 @@
   - Recommendation-system bias (idea 5) — solid but generic/heavily tutorial-covered territory (MovieLens bias projects are extremely common).
   - Political ideology / cultural omnivore theory using GSS data — risks reading as a direct replication of a famous 1996 sociology paper (Peterson & Kern) using the exact dataset everyone uses for it.
 - Baby-name data is less commonly used in coursework, gives full control over an original analysis, and still has real academic grounding to cite for validation (see §7).
-- **Comparative US vs. Italy angle** is the key originality lever — most similar student projects only look at one country's data.
+- **Comparative US vs. Italy angle** is the key originality lever — most similar projects only look at one country's data.
 - Confirmed bonus: **no peer-reviewed paper on Italian name-diversity trends was found** during research — this is a genuine literature gap the paper can credibly claim to address, not just replicate.
 
 ---
@@ -52,7 +47,7 @@ RQ1 and RQ3 remain the "backbone." RQ2 remains the "flashy" part but now has a *
 
 ---
 
-## 4. Datasets (confirmed)
+## 4. Datasets
 
 ### US data — SSA (solid, no open issues)
 
