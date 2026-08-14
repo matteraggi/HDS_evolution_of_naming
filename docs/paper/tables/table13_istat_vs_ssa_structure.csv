@@ -1,0 +1,11 @@
+aspetto,SSA (US),ISTAT (Italia)
+Formato file sorgente,txt delimitato da virgole (name,sex,count),PDF (report testuale con figure/grafici a barre)
+Struttura dati,"Tabellare, machine-readable, un record per name/sex/count","Non tabellare; numeri da estrarre da testo narrativo e da assi di grafici a barre (lettura approssimata)"
+Unità di osservazione minima,Singolo nome,"Nome singolo solo per i primi 5 (talvolta 10); oltre la top-5, solo statistiche aggregate (% copertura primi 30)"
+Copertura della distribuzione,Completa (tutti i nomi con >=5 nascite/anno/stato/sesso),Parziale (solo i nomi più frequenti; ~20-26 mila nomi distinti esistono ma non sono enumerati pubblicamente)
+Controllo statistico della riservatezza,"Soglia minima di 5 nascite per cella (soppressione dei nomi rari)","Non applicabile nella stessa forma; la limitazione nasce dalla scelta editoriale del report, non da un criterio di soglia dichiarato"
+Accessibilità storica,Intera serie 1880-2025 scaricabile in un solo archivio,Ogni anno richiede il reperimento e la lettura di un report PDF separato; nessun archivio bulk
+Stabilità del formato negli anni,Stabile (stesso formato dal 1880),"Non stabile: la presenza della statistica di concentrazione (% primi 30) varia da un anno all'altro del report (es. presente nel report anno 2022, assente nel report anno 2024)"
+Livello di sforzo per l'acquisizione,Un download automatizzato,Raccolta manuale anno per anno (PDF fetch + lettura + trascrizione)
+Implicazione per l'analisi,Permette entropia di Shannon completa e rilevamento di spike su tutta la distribuzione,Costringe a un proxy (quota primi 10/30) e a un'analisi di spike limitata ai nomi individualmente reperibili (top-5/10 o via lookup singolo su ""contanomi"")
+Implicazione per il Fattore Umano,"Riflette un'infrastruttura statistica orientata alla ricerca e alla trasparenza (open bulk data, CC0)","Riflette un'infrastruttura orientata alla comunicazione divulgativa piuttosto che al riuso statistico (report narrativo, CC-BY con attribuzione, nessun bulk open data) — un dato culturale/istituzionale in sé, non solo un limite tecnico"

@@ -1,0 +1,11 @@
+dimension,US (SSA),Italy (ISTAT)
+Fonte primaria,"U.S. Social Security Administration, ""Baby Names from Social Security Card Applications""","ISTAT, Report ""Natalità e fecondità della popolazione residente"" (rilevazione annuale)"
+URL,https://www.ssa.gov/oact/babynames/names.zip,https://www.istat.it/it/archivio/natalit%C3%A0+e+fecondit%C3%A0
+Tipo di accesso,Bulk download (zip, un file per anno),"Nessun bulk download; dati estratti manualmente da PDF annuali + tool ""contanomi"" per singoli nomi"
+Copertura temporale,1880-2025 (146 anni),1999-2024/2025 (dati a livello di nome iniziano nel 1999)
+Finestra comparabile US/Italia,1999-2025,1999-2025
+Granularità,"Conteggio completo per ogni nome/anno/sesso (soglia di soppressione: nomi con <5 nascite in un anno/sesso/stato sono esclusi)","Solo primi 5-30 nomi per anno (bar chart top-5 sempre presente; % di concentrazione dei primi 30 presente solo in alcuni anni)"
+Record totali (dopo elaborazione),"~2.18 milioni (name x year x sex, 1880-2025)","Ordini di grandezza inferiore: qualche decina di righe per anno (solo nomi più frequenti)"
+Licenza,CC0 / dominio pubblico,CC-BY 3.0 IT (attribuzione a ISTAT richiesta)
+Periodicità di rilascio,Annuale (dati dell'anno precedente),Annuale (dati dell'anno precedente, ~11 mesi di ritardo)
+Implicazione metodologica,Consente calcolo diretto di entropia di Shannon sulla distribuzione completa,"Costringe all'uso di un proxy di concentrazione (quota primi 10/30 nomi) come metrica comparativa primaria, poiché la distribuzione completa non è pubblicamente disponibile"

@@ -1,0 +1,7 @@
+data/raw/ssa/*.txt
+data/raw/ssa/*.zip
+*.pyc
+__pycache__/
+data/raw/istat/*.pdf
+data/processed/us_names_long.csv
+docs/paper/figures/*.png
