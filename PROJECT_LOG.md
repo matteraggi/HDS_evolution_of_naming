@@ -276,9 +276,10 @@ formal test for "does the US/Italy gap change over time" is the Mann-Kendall on 
 
 - [ ] **Write the paper.** Italian, ≥5000 words, ≥10 figures/tables, required exam sections
       (Metodologie/Dati, Risultati, Discussione Finale). Content is now fully assembled: backbone
-      diversity comparison, spike-story roster (13 positive + 5 negative curated + 87-row exhaustive
-      table + 4 common/shared cases), convergence analysis, geographic robustness check, 7 figures.
-      This is the only remaining task, along with RQ3 (still untouched, see `HANDOFF_TO_PERSON_B.md`).
+      diversity comparison, spike-story roster (13 positive + 4 negative curated + 87-row exhaustive
+      table + 4 common/shared cases), convergence analysis, geographic robustness check, 8 figures,
+      5 result tables. This is the only remaining task, along with RQ3 (still untouched, see
+      `HANDOFF_TO_PERSON_B.md`).
 - [x] **Update README / methodology draft** to match the final data source and spike-led framing —
       done 2026-08-16.
 
