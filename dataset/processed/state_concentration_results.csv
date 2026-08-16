@@ -1,0 +1,12 @@
+name,sex,event_year,kind,n_states_with_data,states_moving_same_direction,pct_states_moving_same_direction,median_state_ratio,top_state,top_state_ratio,bottom_state,bottom_state_ratio
+Tammy,F,1958,positive,51,47,92.2,2.741,NC,59.667,DC,0.933
+Jaime,F,1976,positive,45,45,100.0,8.053,PA,44.083,DC,3.667
+Devante,M,1992,positive,11,11,100.0,12.333,FL,21.8,CA,3.864
+Mariah,F,1991,positive,46,45,97.8,6.167,NY,23.083,ND,1.167
+Nevaeh,F,2001,positive,7,7,100.0,7.333,CA,11.091,IL,4.333
+Jaslene,F,2008,positive,19,15,78.9,1.667,PA,3.667,CT,1.0
+Hillary,F,1993,negative,43,32,74.4,0.571,LA,1.031,MN,0.292
+Kobe,M,2004,negative,37,36,97.3,0.471,MO,0.815,KY,0.222
+Alexa,F,2020,negative,37,36,97.3,0.414,ID,1.0,OH,0.25
+Woodrow,M,1920,negative,22,22,100.0,0.321,GA,0.577,IL,0.12
+Jase,M,2016,negative,43,43,100.0,0.389,HI,0.714,NE,0.25

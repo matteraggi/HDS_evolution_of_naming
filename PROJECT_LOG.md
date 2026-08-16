@@ -164,6 +164,38 @@ Cut (user call, 2026-08-16): Francesco Pio (Padre Pio's canonization, June 2002)
 
 ---
 
+## Negative-spike ("anti-spike") roster (new, 2026-08-16)
+
+Mirror of the positive-spike hunt: `14_find_us_declines.py` flags names with a sudden large
+**collapse** instead of a jump (ratio ≤0.5 vs. 3-year median baseline), requiring a substantial
+pre-collapse baseline (≥300 births) so we're catching real established names cratering, not noise.
+Working hypothesis: a negative event (scandal, controversy, a public figure becoming disliked) can
+"burn" a name the same way a positive event launches one. Five verified US cases:
+
+| Name | Year | Drop | Cause |
+|---|---|---|---|
+| Hillary/Hilary | 1993 | 58% drop 1992→1993, one of the most documented name-collapses in the literature | Hillary Clinton becomes First Lady, immediately polarizing (healthcare reform fight, 69% favorable among women vs. 51% among men from day one) |
+| Kobe | 2004 | ratio 0.37-0.45 | Kobe Bryant's 2003 sexual assault charges (case dismissed Sept 2004, but reputational damage already done) |
+| Alexa | 2020-21 | ratio ~0.35-0.42, part of a longer decline starting 2015 | The well-documented "Alexa effect" — Amazon Echo (2014-15) made the name synonymous with a voice-assistant/servant, parents actively avoiding it, kids reportedly bullied |
+| Woodrow | 1920 | ratio 0.32-0.38 | President Wilson's Oct 1919 stroke and subsequent public incapacitation for the rest of his term |
+| Jase | 2016-17 | ratio 0.42-0.46 | *Duck Dynasty* cancellation, ratings collapsed from ~9M to ~1M viewers, partly snowballing from the 2013 Phil Robertson controversy |
+
+## Geographic robustness check (new, 2026-08-16)
+
+For the strongest cases in both rosters (positive and negative), checked whether the national jump/
+collapse was geographically uniform or concentrated in a few states, using SSA's state-level data
+(`dataset/namesbystate/`, bonus data from Person B's repo we hadn't used before) —
+`15_state_concentration_analysis.py` → Table 15. Logic: a genuine national media event should move
+most states together; a "spike" driven almost entirely by one or two states would be a red flag for
+a regional cause or data artifact instead. Result: **9 of 11 cases show >90% of states moving the
+same direction** as the national effect (e.g. Jaime 100%, Kobe 97%, Woodrow 100%). The one notable
+exception, Jaslene (79%), is plausibly explained by an initially Hispanic-population-skewed adoption
+pattern (she was ANTM's first Hispanic winner) rather than uniform national spread — an interesting
+detail, not a weakness in the method. Not a formal hypothesis test (no real null to reject), but a
+genuine plausibility check now written up as such in the methodology draft.
+
+---
+
 ## Exhaustive spike table (2026-08-16)
 
 Alongside the 13 hand-curated, cause-verified stories above, `10_exhaustive_spike_table.py` builds
@@ -200,14 +232,39 @@ once the existing statistical-results tables (Mann-Kendall, US/Italy comparison)
 
 ---
 
+## Repo merge with Person B (2026-08-16)
+
+Person B set up his own repo (`matteraggi/HDS_evolution_of_naming`) independently, with raw SSA data
+(national + a state-level breakdown we hadn't used) and empty scaffold files, no analysis code yet.
+Merged cleanly (`git merge --allow-unrelated-histories`, zero conflicts), then reorganized: dropped
+our redundant gitignored SSA copy in favor of his already-committed one (verified byte-identical via
+md5sum first), moved all our data under his `dataset/` convention, updated every script's paths
+accordingly, smoke-tested the full pipeline end to end. Origin now points to his repo; our old repo
+(`fri3erg/names-project`) is untouched but no longer used. His state-level bonus data
+(`dataset/namesbystate/`) turned out genuinely useful — it's what powers the new geographic
+robustness check above.
+
+## Null-hypothesis rewrite (2026-08-16)
+
+Professor specifically wants explicit H₀/p-value/significance treatment. Rewrote §4 of the
+methodology draft to separate two categories clearly: formal hypothesis tests (Mann-Kendall,
+Wilcoxon — each now states H₀/H₁/α=0.05 explicitly) vs. robustness/sensitivity checks (coverage-bias
+truncation test, geographic concentration check) that don't have a real null to reject and are now
+labeled as such rather than blurred together with the formal tests. Also flagged explicitly that the
+bootstrap slope-CI comparison is an informal heuristic, not a rigorous two-sample test — the actual
+formal test for "does the US/Italy gap change over time" is the Mann-Kendall on the difference series.
+
+---
+
 ## What we want to achieve next
 
 - [ ] **Write the paper.** Italian, ≥5000 words, ≥10 figures/tables, required exam sections
       (Metodologie/Dati, Risultati, Discussione Finale). Content is now fully assembled: backbone
-      diversity comparison, spike-story roster (13 curated + 87-row exhaustive table + 4
-      common/shared cases), convergence analysis, 7 figures. This is the only remaining task.
-- [ ] **Update README / methodology draft** to match the final data source and spike-led framing —
-      starting now (user said "whenever," doing it next since everything else is settled).
+      diversity comparison, spike-story roster (13 positive + 5 negative curated + 87-row exhaustive
+      table + 4 common/shared cases), convergence analysis, geographic robustness check, 7 figures.
+      This is the only remaining task, along with RQ3 (still untouched, see `HANDOFF_TO_PERSON_B.md`).
+- [x] **Update README / methodology draft** to match the final data source and spike-led framing —
+      done 2026-08-16.
 
 ---
 
@@ -233,3 +290,11 @@ once the existing statistical-results tables (Mann-Kendall, US/Italy comparison)
   backbone; top-30/top-100 overlap kept as a simpler complementary number.
 - Still open: reaching out to ISTAT's contact center for possibly better/official data (user doing
   this independently) — treated as a possible future upgrade, not something the paper depends on.
+- **2026-08-16** — Merged with Person B's repo, adopted his `dataset/` convention and committed SSA
+  files project-wide, origin now points to `matteraggi/HDS_evolution_of_naming`.
+- **2026-08-16** — Added a negative-spike ("anti-spike") roster (5 verified US cases) and a
+  geographic robustness check (state-level data) alongside the positive-spike roster, per user's
+  request to study the "opposite of peaks" and to add a keep-it-to-strong-cases-only state analysis.
+- **2026-08-16** — Metodologie §4 rewritten to explicitly separate formal hypothesis tests (H₀/H₁/α
+  stated per test) from robustness/sensitivity checks, per the professor's specific emphasis on
+  null-hypothesis/p-value rigor.
