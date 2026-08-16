@@ -4,10 +4,10 @@ mirroring 01_process_ssa.py's output shape so both countries can feed the same
 downstream comparison/trend scripts.
 
 Input:
-  data/raw/istat/istat_contanomi_full.csv          (year,name,gender,count,percent)
-  data/raw/istat/contanomi_raw/manifest.csv         (year,limit_used,...,percent_sum)
+  dataset/istat/istat_contanomi_full.csv          (year,name,gender,count,percent)
+  dataset/istat/contanomi_raw/manifest.csv         (year,limit_used,...,percent_sum)
 Output:
-  data/processed/it_diversity_metrics.csv
+  dataset/processed/it_diversity_metrics.csv
     (year, sex, total_births, distinct_names_captured, shannon_entropy,
      top10_share, top30_share, coverage_percent, entropy_reliable)
 
@@ -34,11 +34,11 @@ import math
 import os
 from collections import defaultdict
 
-RAW_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "istat_contanomi_full.csv")
+RAW_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "istat", "istat_contanomi_full.csv")
 MANIFEST_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "contanomi_raw", "manifest.csv"
+    os.path.dirname(__file__), "..", "..", "dataset", "istat", "contanomi_raw", "manifest.csv"
 )
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "it_diversity_metrics.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_diversity_metrics.csv")
 
 ENTROPY_RELIABLE_MIN_COVERAGE = 99.0  # percent; only ~complete-distribution years are trustworthy for entropy
 GENDER_MAP = {"m": "M", "f": "F"}

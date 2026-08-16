@@ -6,7 +6,7 @@ Short version of what changed and what's left. Full detail in `PROJECT_LOG.md` (
 ## What changed from the original plan
 
 The plan (§4) assumed ISTAT had no bulk name data and budgeted manual PDF collection as real,
-unavoidable work. That held briefly (see `data/raw/istat/COLLECTION_NOTES.md`), but a real bulk
+unavoidable work. That held briefly (see `dataset/istat/COLLECTION_NOTES.md`), but a real bulk
 data service was then found hidden behind ISTAT's own "contanomi" tool (undocumented, found by
 reading the tool's JavaScript). After resolving several real server-side quirks, it now backs the
 Italy dataset for the full 1999-2024 window (not just 2006-2024), from a primary source (not

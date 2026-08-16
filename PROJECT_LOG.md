@@ -44,7 +44,7 @@ paper's structure.
 
 ### US data — done, solid
 - Downloaded the full SSA "Baby Names from Social Security Card Applications" dataset, 1880–2025
-  (`data/raw/ssa/`, one file per year).
+  (`dataset/names/`, one file per year).
 - Processed into a long name/year/sex/count table and per-year diversity metrics (Shannon entropy,
   top-10/top-30 concentration share) — `src/scripts/01_process_ssa.py`.
 - Ran Mann-Kendall trend tests on those metrics — `src/scripts/02_mann_kendall_us.py`.
@@ -56,8 +56,8 @@ paper's structure.
   (checked directly — confirmed the "fertilità"/"mortalità" entries there are just generic
   demographic-rate indicators, no name-level content, dead end as expected).
 - Manually collected top-30 concentration data for 2004, 2006–2024 from 14 downloaded ISTAT PDFs
-  plus nomix.it (a secondary site citing ISTAT), spot-checked in 3 places — `data/raw/istat/
-  istat_annual_top_names.csv`, full detail in `data/raw/istat/COLLECTION_NOTES.md`. Kept as a
+  plus nomix.it (a secondary site citing ISTAT), spot-checked in 3 places — `dataset/istat/
+  istat_annual_top_names.csv`, full detail in `dataset/istat/COLLECTION_NOTES.md`. Kept as a
   corroboration/citation trail, not deleted, even though superseded as the main source (see below).
 
 ### Found and scraped a real bulk API behind ISTAT's "contanomi" tool (2026-08-14)
@@ -73,7 +73,7 @@ paper's structure.
   identical requests that this is a **stable, deterministic per-year ceiling**, not
   rate-limiting/caching flakiness. Final approach: binary-search each year's actual maximum working
   limit. Final coverage: 66-100% of births per year depending on year (2022-2024 got the full
-  distribution; worst year 2021 only reached rank 137) — see `data/raw/istat/contanomi_raw/
+  distribution; worst year 2021 only reached rank 137) — see `dataset/istat/contanomi_raw/
   manifest.csv`. Decided **2026-08-16 (with user)**: this is the real ceiling, not something more
   retrying fixes; settled here rather than continuing to chase ISTAT's service.
 - **Validated thoroughly before trusting it**: cross-checked scraped 2024 top counts (Leonardo 6580,
@@ -86,7 +86,7 @@ paper's structure.
   1999-2024 window. **Shannon entropy bias is severe** (-50% relative at the worst depth, still -19%
   even at the *best* non-complete year) — entropy is only trustworthy for 2022-2024.
 - Processed into Italy's own diversity-metrics table (`src/scripts/01b_process_istat_contanomi.py`
-  → `data/processed/it_diversity_metrics.csv`), with an `entropy_reliable` flag per row so this
+  → `dataset/processed/it_diversity_metrics.csv`), with an `entropy_reliable` flag per row so this
   distinction can't be silently lost downstream.
 - **Replaced** the manual top-30 comparison as the backbone source in `03_us_italy_comparison.py`
   and the comparison figure `05_plot_us_italy_comparison.py` (now spans 1999-2024, not 2006-2024).
@@ -168,7 +168,7 @@ Cut (user call, 2026-08-16): Francesco Pio (Padre Pio's canonization, June 2002)
 
 Alongside the 13 hand-curated, cause-verified stories above, `10_exhaustive_spike_table.py` builds
 a *mechanically* filtered supplementary table — every name/year crossing a fixed growth threshold,
-no hand-picking. Output: `data/processed/exhaustive_spike_table.csv`.
+no hand-picking. Output: `dataset/processed/exhaustive_spike_table.csv`.
 
 Thresholds (tuned by checking how many rows different cutoffs produce — see conversation; **easy to
 retune**, both are just constants at the top of the script): US ratio≥6.0x AND count≥2000 (48 rows);

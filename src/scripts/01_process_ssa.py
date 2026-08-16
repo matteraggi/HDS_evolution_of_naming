@@ -1,7 +1,7 @@
 """
 Process raw SSA yobYYYY.txt files into:
-  - data/processed/us_names_long.csv        (year, name, sex, count, total_births_sex, rel_freq)
-  - data/processed/us_diversity_metrics.csv (year, sex, shannon_entropy, top10_share, top30_share)
+  - dataset/processed/us_names_long.csv        (year, name, sex, count, total_births_sex, rel_freq)
+  - dataset/processed/us_diversity_metrics.csv (year, sex, shannon_entropy, top10_share, top30_share)
 
 Metrics are computed PER SEX (not combined) to match ISTAT's published breakdown,
 which reports top-N concentration separately for male/female births (see plan §4).
@@ -18,8 +18,8 @@ import os
 import re
 from collections import defaultdict
 
-RAW_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "ssa")
-OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed")
+RAW_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "names")
+OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 

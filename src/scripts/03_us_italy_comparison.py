@@ -2,14 +2,14 @@
 Statistical comparison of the US vs Italy top-30 concentration-ratio trend, 1999-2025 overlap window.
 
 Requires:
-  - data/processed/us_diversity_metrics.csv       (from 01_process_ssa.py)
-  - data/processed/it_diversity_metrics.csv       (from 01b_process_istat_contanomi.py, built from
+  - dataset/processed/us_diversity_metrics.csv       (from 01_process_ssa.py)
+  - dataset/processed/it_diversity_metrics.csv       (from 01b_process_istat_contanomi.py, built from
                                                      the ISTAT contanomi scrape)
 
 Italy's top-30 share now comes from the full 1999-2024 contanomi scrape rather than the manual
-top-30-table collection (data/raw/istat/istat_annual_top_names.csv, kept for corroboration/citation
+top-30-table collection (dataset/istat/istat_annual_top_names.csv, kept for corroboration/citation
 - see COLLECTION_NOTES.md) that could only reach 2006-2024 with gaps. Coverage varies by year
-(66-100%, see data/raw/istat/contanomi_raw/manifest.csv) but top10/top30 share is unaffected by that
+(66-100%, see dataset/istat/contanomi_raw/manifest.csv) but top10/top30 share is unaffected by that
 - see 01b's docstring for why. Years missing from either country's file are dropped from the paired
 comparison; this script reports how many usable year-pairs remain per sex.
 
@@ -34,9 +34,9 @@ import random
 import pymannkendall as mk
 from scipy.stats import wilcoxon, theilslopes
 
-US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_diversity_metrics.csv")
-IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "it_diversity_metrics.csv")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_italy_comparison.csv")
+US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_diversity_metrics.csv")
+IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_diversity_metrics.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_italy_comparison.csv")
 
 N_BOOTSTRAP = 2000
 random.seed(42)

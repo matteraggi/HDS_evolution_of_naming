@@ -11,7 +11,7 @@ baseline (median of the prior 3 years, or the prior year if a name is new).
 Flag ratio >= MIN_RATIO. Filters out tiny counts so we don't surface noise from
 names jumping from 5 to 15 births.
 
-Output: data/processed/us_spike_candidates.csv, ranked by (count_after * ratio)
+Output: dataset/processed/us_spike_candidates.csv, ranked by (count_after * ratio)
 so both "big and sudden" and "huge and dramatic" jumps surface near the top.
 """
 
@@ -19,8 +19,8 @@ import csv
 import os
 from collections import defaultdict
 
-IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_names_long.csv")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_spike_candidates.csv")
+IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_names_long.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_spike_candidates.csv")
 # note: numbered 06 (not 04) to avoid clashing with the existing 04_plot_us_entropy.py
 
 MIN_COUNT = 150          # ignore tiny-count noise

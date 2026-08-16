@@ -35,7 +35,7 @@ alcun dataset a livello di nome — le voci "fertilità" e "mortalità" presenti
 indicatore demografico aggregato, senza alcuna informazione sui nomi). Questa raccolta manuale è stata
 effettivamente svolta in una prima fase (2004 e 2006-2024, da 14 PDF ISTAT scaricati direttamente più
 nomix.it come fonte secondaria per gli anni non altrimenti reperibili — si veda
-`data/raw/istat/COLLECTION_NOTES.md` per il dettaglio completo, conservato come traccia di corroborazione
+`dataset/istat/COLLECTION_NOTES.md` per il dettaglio completo, conservato come traccia di corroborazione
 anche se non più fonte primaria).
 
 Analizzando il codice JavaScript dello strumento interattivo "contanomi"
@@ -57,7 +57,7 @@ quindi sviluppato uno script di acquisizione (`src/scripts/00_scrape_istat_conta
 tramite ricerca binaria, per ciascun anno, la profondità massima effettivamente ottenibile.
 
 La copertura risultante varia dal 66% delle nascite (2021, il caso peggiore) al 100% (2022-2024, dove si
-ottiene la distribuzione completa) — si veda `data/raw/istat/contanomi_raw/manifest.csv` e Figura 3 per
+ottiene la distribuzione completa) — si veda `dataset/istat/contanomi_raw/manifest.csv` e Figura 3 per
 il dettaglio anno per anno. **Prima di adottare questi dati come fonte primaria**, sono stati eseguiti due
 controlli di validazione (si veda anche §4): (a) i valori estratti per il 2024 (Leonardo: 6.580 nascite,
 Sofia: 4.636 nascite; quota primi-30 maschile: 42,94%) sono stati confrontati con quelli della raccolta
@@ -65,7 +65,7 @@ manuale precedente, risultando **identici**; (b) l'impatto della copertura varia
 utilizzate è stato quantificato empiricamente, non assunto (Tabella 14, Figura 4). Il risultato di questa
 verifica ha motivato la scelta di adottare la nuova fonte come dataset primario per l'Italia, sostituendo
 la raccolta manuale ma non eliminandola — resta disponibile come fonte di corroborazione in
-`data/raw/istat/istat_annual_top_names.csv`.
+`dataset/istat/istat_annual_top_names.csv`.
 
 La finestra comparabile USA/Italia risultante è **1999-2024** (26 anni), coincidente con il limite reale
 della copertura ISTAT a livello di nome (nessun dato esiste prima del 1999), e più ampia della finestra
@@ -80,7 +80,7 @@ calo della popolazione nel tempo confondesse le variazioni di diversità onomast
 variazioni di scala. Le metriche sono state calcolate **separatamente per sesso** (maschi, femmine),
 scelta necessaria per la comparabilità con l'Italia, il cui dato è sistematicamente riportato per genere.
 
-Per l'Italia, la tabella lunga (`data/raw/istat/istat_contanomi_full.csv`, ~219.000 righe) è ottenuta
+Per l'Italia, la tabella lunga (`dataset/istat/istat_contanomi_full.csv`, ~219.000 righe) è ottenuta
 direttamente dal servizio web descritto in §1, con lo stesso schema concettuale (nome, anno, genere,
 conteggio) più una colonna `percent` fornita direttamente da ISTAT — verificata essere calcolata sul
 totale reale delle nascite di quell'anno/genere, non sul solo sottoinsieme catturato dallo scraping
@@ -114,7 +114,7 @@ empiricamente, non solo teoricamente, che questa proprietà tiene.
 
 L'entropia di Shannon completa per l'Italia è comunque calcolabile e riportata come dato aggiuntivo per
 gli anni 2022-2024, gli unici con distribuzione integralmente catturata (colonna `entropy_reliable` in
-`data/processed/it_diversity_metrics.csv`).
+`dataset/processed/it_diversity_metrics.csv`).
 
 ## 4. Validazione scientifica
 
@@ -143,7 +143,7 @@ Mann-Kendall sulla serie differenza USA−Italia; (c) test di Wilcoxon a coppie 
 (d) intervalli di confidenza bootstrap (percentile, 2000 iterazioni) sulla pendenza di Sen di ciascun
 paese.
 
-I risultati (Tabella 12, `data/processed/us_italy_comparison.csv`) mostrano un quadro differenziato per
+I risultati (Tabella 12, `dataset/processed/us_italy_comparison.csv`) mostrano un quadro differenziato per
 sesso. Per i nomi **maschili**, la velocità di diversificazione USA e Italia risulta statisticamente
 indistinguibile: pendenza di Sen USA −0,004801/anno (IC 95% [−0,005143, −0,004458]) contro Italia
 −0,005169/anno (IC 95% [−0,005405, −0,004931]), intervalli sovrapposti, e la serie differenza non mostra
@@ -200,7 +200,7 @@ Terzo, il servizio web utilizzato per l'Italia non è un'API pubblicamente docum
 individuato analizzando il codice JavaScript dello strumento "contanomi" ed è, per sua natura, meno
 stabile nel tempo di un formato di dati pubblicato ufficialmente come quello SSA — un cambiamento
 lato-server non annunciato potrebbe rendere lo script di acquisizione non più funzionante in futuro. I
-dati grezzi scaricati sono comunque conservati in repository (`data/raw/istat/contanomi_raw/`) per
+dati grezzi scaricati sono comunque conservati in repository (`dataset/istat/contanomi_raw/`) per
 garantire la riproducibilità dell'analisi indipendentemente da modifiche successive del servizio.
 
 Quarto, il confronto USA/Italia è per necessità limitato alla finestra 1999-2024, poiché l'Italia non

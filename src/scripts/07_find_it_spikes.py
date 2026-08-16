@@ -12,15 +12,15 @@ but every candidate here still needs a manual cross-check against
 manifest.csv (is the baseline year's coverage deep enough that this name
 would have been captured if present at a similar rank?) before citing it.
 
-Output: data/processed/it_spike_candidates.csv
+Output: dataset/processed/it_spike_candidates.csv
 """
 
 import csv
 import os
 from collections import defaultdict
 
-IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "istat_contanomi_full.csv")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "it_spike_candidates.csv")
+IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "istat", "istat_contanomi_full.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_spike_candidates.csv")
 
 MIN_COUNT = 80
 MIN_RATIO = 2.0

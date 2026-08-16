@@ -9,7 +9,7 @@ import os
 
 import matplotlib.pyplot as plt
 
-IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_diversity_metrics.csv")
+IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_diversity_metrics.csv")
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "paper", "figures", "fig2_us_entropy_1880_2025.png")
 
 

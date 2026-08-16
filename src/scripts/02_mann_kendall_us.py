@@ -4,8 +4,8 @@ run separately per sex, over two windows:
   - full history (1880-2025)
   - the comparable window with Italy (1999-2025)
 
-Input: data/processed/us_diversity_metrics.csv (from 01_process_ssa.py)
-Output: data/processed/us_mann_kendall_results.csv
+Input: dataset/processed/us_diversity_metrics.csv (from 01_process_ssa.py)
+Output: dataset/processed/us_mann_kendall_results.csv
 
 Reference: Mann, H.B. (1945), Econometrica 13(3); Kendall, M.G. (1975), Rank Correlation Methods.
 """
@@ -15,8 +15,8 @@ import os
 
 import pymannkendall as mk
 
-IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_diversity_metrics.csv")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_mann_kendall_results.csv")
+IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_diversity_metrics.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_mann_kendall_results.csv")
 
 METRICS = ["shannon_entropy", "top10_share", "top30_share"]
 WINDOWS = {"full_1880_2025": (1880, 2025), "comparable_1999_2025": (1999, 2025)}

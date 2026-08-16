@@ -21,10 +21,10 @@ binary search) since exact-max precision doesn't matter for this use case -
 getting *a* large, working slice per year does.
 
 Output:
-  data/raw/istat/contanomi_raw/list_<year>.json    - raw JSONP response per year
-  data/raw/istat/contanomi_raw/manifest.csv        - year, limit_used, male_count,
+  dataset/istat/contanomi_raw/list_<year>.json    - raw JSONP response per year
+  dataset/istat/contanomi_raw/manifest.csv        - year, limit_used, male_count,
                                                       female_count, coverage info
-  data/raw/istat/istat_contanomi_full.csv          - combined long table:
+  dataset/istat/istat_contanomi_full.csv          - combined long table:
       year,name,gender,count,percent
 """
 import json
@@ -35,8 +35,8 @@ from pathlib import Path
 
 BASE_URL = "https://www.istat.it/wp-content/themes/EGPbs5-child/contanomi/nati/index2022.php"
 HEADERS = {"User-Agent": "Mozilla/5.0 (research script; Human Data Science course project)"}
-RAW_DIR = Path(__file__).resolve().parents[2] / "data" / "raw" / "istat" / "contanomi_raw"
-OUT_CSV = Path(__file__).resolve().parents[2] / "data" / "raw" / "istat" / "istat_contanomi_full.csv"
+RAW_DIR = Path(__file__).resolve().parents[2] / "dataset" / "istat" / "contanomi_raw"
+OUT_CSV = Path(__file__).resolve().parents[2] / "dataset" / "istat" / "istat_contanomi_full.csv"
 MANIFEST_CSV = RAW_DIR / "manifest.csv"
 REQUEST_DELAY_SECONDS = 1.2
 # Descending probe ladder - first value that returns data wins for that year.

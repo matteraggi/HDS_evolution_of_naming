@@ -16,8 +16,8 @@ from collections import defaultdict
 
 import matplotlib.pyplot as plt
 
-US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_names_long.csv")
-IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "istat_contanomi_full.csv")
+US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_names_long.csv")
+IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "istat", "istat_contanomi_full.csv")
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "paper", "figures", "fig7_spike_roster.png")
 
 WINDOW_BEFORE, WINDOW_AFTER = 5, 6

@@ -2,7 +2,7 @@
 Convergence figure: how similar the US and Italy naming pools have become over
 time, per sex, 1999-2024. Two panels on the same time axis:
   top    - cosine similarity between the two countries' full name-frequency
-           distributions (data/processed/us_italy_distribution_similarity.csv)
+           distributions (dataset/processed/us_italy_distribution_similarity.csv)
   bottom - top-100 overlap count, a simpler complementary number
 
 See 08b_us_italy_distribution_similarity.py's docstring for why cosine
@@ -17,7 +17,7 @@ import os
 import matplotlib.pyplot as plt
 
 IN_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "processed", "us_italy_distribution_similarity.csv"
+    os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_italy_distribution_similarity.csv"
 )
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "paper", "figures", "fig6_us_italy_convergence.png")
 

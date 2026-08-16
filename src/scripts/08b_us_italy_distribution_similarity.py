@@ -26,7 +26,7 @@ Also reports top-100 overlap (not just top-30) as a simpler complementary
 number - broader than the elite-tier-only version, still easy to state in
 one sentence.
 
-Output: data/processed/us_italy_distribution_similarity.csv
+Output: dataset/processed/us_italy_distribution_similarity.csv
     (year, sex, cosine_similarity, top100_overlap_count)
 """
 
@@ -38,10 +38,10 @@ from collections import defaultdict
 
 import pymannkendall as mk
 
-US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_names_long.csv")
-IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "istat_contanomi_full.csv")
+US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_names_long.csv")
+IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "istat", "istat_contanomi_full.csv")
 OUT_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "processed", "us_italy_distribution_similarity.csv"
+    os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_italy_distribution_similarity.csv"
 )
 
 SEX_MAP = {"M": "m", "F": "f"}

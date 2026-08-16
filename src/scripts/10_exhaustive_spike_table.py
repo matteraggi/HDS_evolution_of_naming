@@ -9,18 +9,18 @@ Thresholds (picked by checking how many rows they produce - see conversation,
   US:    ratio >= 6.0x AND post-jump count >= 2000  -> 48 rows
   Italy: ratio >= 2.5x AND post-jump count >= 150    -> 39 rows
 
-Input: data/processed/us_spike_candidates.csv, data/processed/it_spike_candidates.csv
+Input: dataset/processed/us_spike_candidates.csv, dataset/processed/it_spike_candidates.csv
        (from 06_find_us_spikes.py / 07_find_it_spikes.py)
-Output: data/processed/exhaustive_spike_table.csv
+Output: dataset/processed/exhaustive_spike_table.csv
     (country, name, sex, year, count, baseline, ratio)
 """
 
 import csv
 import os
 
-US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_spike_candidates.csv")
-IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "it_spike_candidates.csv")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "exhaustive_spike_table.csv")
+US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_spike_candidates.csv")
+IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_spike_candidates.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "exhaustive_spike_table.csv")
 
 US_MIN_RATIO, US_MIN_COUNT = 6.0, 2000
 IT_MIN_RATIO, IT_MIN_COUNT = 2.5, 150

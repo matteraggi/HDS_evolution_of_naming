@@ -15,7 +15,7 @@ import os
 
 import matplotlib.pyplot as plt
 
-IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "it_coverage_bias_check.csv")
+IN_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_coverage_bias_check.csv")
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "paper", "figures", "fig4_coverage_bias_check.png")
 
 

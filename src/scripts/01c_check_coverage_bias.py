@@ -1,6 +1,6 @@
 """
 Quantify the bias that ISTAT contanomi's per-year coverage limit (see 01b's docstring
-and data/raw/istat/contanomi_raw/manifest.csv) introduces into each Italy metric.
+and dataset/istat/contanomi_raw/manifest.csv) introduces into each Italy metric.
 
 Method: 2023 and 2024 are the only years with the TRUE complete distribution. This
 script artificially truncates their full name lists down to each depth that some
@@ -9,7 +9,7 @@ on the truncated slice, and compares against the true (full-distribution) value.
 gives a real, empirical bias measurement per depth - not a theoretical guess - for
 exactly the depths this project's data actually hits.
 
-Output: data/processed/it_coverage_bias_check.csv
+Output: dataset/processed/it_coverage_bias_check.csv
     (depth, mean_top10_share_bias, mean_top30_share_bias, mean_entropy_bias,
      mean_entropy_bias_percent)
 
@@ -28,12 +28,12 @@ import math
 import os
 from collections import defaultdict
 
-RAW_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "istat_contanomi_full.csv")
+RAW_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "istat", "istat_contanomi_full.csv")
 MANIFEST_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "contanomi_raw", "manifest.csv"
+    os.path.dirname(__file__), "..", "..", "dataset", "istat", "contanomi_raw", "manifest.csv"
 )
 OUT_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "processed", "it_coverage_bias_check.csv"
+    os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_coverage_bias_check.csv"
 )
 REFERENCE_YEARS = ("2023", "2024")  # the only years with the true complete distribution
 

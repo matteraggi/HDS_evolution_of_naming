@@ -6,21 +6,21 @@ plan and `PROJECT_LOG.md` for a plain-language, dated log of what's changed sinc
 ## Data sources
 
 - **US**: SSA "Baby Names from Social Security Card Applications", national data, 1880-2025.
-  `https://www.ssa.gov/oact/babynames/names.zip` (CC0). Raw files in `data/raw/ssa/` (gitignored, ~8MB
+  `https://www.ssa.gov/oact/babynames/names.zip` (CC0). Raw files in `dataset/names/` (gitignored, ~8MB
   zip + 146 `yobYYYY.txt` files).
 - **Italy**: ISTAT, via an unauthenticated JSONP web service discovered behind the "contanomi" tool
   (`https://www.istat.it/wp-content/themes/EGPbs5-child/contanomi/nati/index2022.php`), scraped for all
   years 1999-2024. **Not the original plan** — see below. Per-year coverage varies (66-100% of births,
-  see `data/raw/istat/contanomi_raw/manifest.csv`); this is proven *not* to bias the paper's primary
+  see `dataset/istat/contanomi_raw/manifest.csv`); this is proven *not* to bias the paper's primary
   concentration-ratio metric (`docs/paper/tables/table14_coverage_bias_check.csv`, `fig4`). The earlier
-  manual PDF/nomix.it collection (`data/raw/istat/istat_annual_top_names.csv`, CC-BY 3.0 IT) is kept as
+  manual PDF/nomix.it collection (`dataset/istat/istat_annual_top_names.csv`, CC-BY 3.0 IT) is kept as
   a corroboration/citation trail, not deleted, but is no longer the backbone data source.
 
 ## Repro steps
 
 ```bash
 # --- Data acquisition ---
-# 1. Download & extract SSA data into data/raw/ssa/ (names.zip -> yobYYYY.txt files)
+# 1. Download & extract SSA data into dataset/names/ (names.zip -> yobYYYY.txt files)
 python src/scripts/00_scrape_istat_contanomi.py    # scrapes ISTAT contanomi, 1999-2024
 
 # --- Processing ---
@@ -54,22 +54,22 @@ Scripts are numbered by pipeline stage, not strict run order; `01b`/`01c`/`08b` 
 
 ## Outputs
 
-- `data/processed/us_names_long.csv` — full US name/year/sex/count/rel_freq table, 1880-2025 (gitignored,
+- `dataset/processed/us_names_long.csv` — full US name/year/sex/count/rel_freq table, 1880-2025 (gitignored,
   regenerate via script 01).
-- `data/processed/us_diversity_metrics.csv` — US per year/sex: total_births, distinct_names,
+- `dataset/processed/us_diversity_metrics.csv` — US per year/sex: total_births, distinct_names,
   shannon_entropy, top10_share, top30_share.
-- `data/raw/istat/istat_contanomi_full.csv` — Italy name/year/gender/count/percent, 1999-2024
+- `dataset/istat/istat_contanomi_full.csv` — Italy name/year/gender/count/percent, 1999-2024
   (~219,000 rows).
-- `data/processed/it_diversity_metrics.csv` — Italy per year/sex, with `entropy_reliable` flag
+- `dataset/processed/it_diversity_metrics.csv` — Italy per year/sex, with `entropy_reliable` flag
   (True only for 2022-2024).
-- `data/processed/it_coverage_bias_check.csv` — the bias-sensitivity proof behind that flag.
-- `data/processed/us_mann_kendall_results.csv`, `data/processed/us_italy_comparison.csv` — trend and
+- `dataset/processed/it_coverage_bias_check.csv` — the bias-sensitivity proof behind that flag.
+- `dataset/processed/us_mann_kendall_results.csv`, `dataset/processed/us_italy_comparison.csv` — trend and
   cross-country statistical test results.
-- `data/processed/us_spike_candidates.csv`, `data/processed/it_spike_candidates.csv` — mechanical
+- `dataset/processed/us_spike_candidates.csv`, `dataset/processed/it_spike_candidates.csv` — mechanical
   year-over-year jump candidates (unverified; source for the curated roster below).
-- `data/processed/exhaustive_spike_table.csv` — 87-row mechanically-filtered spike table (US
+- `dataset/processed/exhaustive_spike_table.csv` — 87-row mechanically-filtered spike table (US
   ratio≥6x/count≥2000, Italy ratio≥2.5x/count≥150), appendix material.
-- `data/processed/us_italy_distribution_similarity.csv` — full-distribution cosine similarity + top-100
+- `dataset/processed/us_italy_distribution_similarity.csv` — full-distribution cosine similarity + top-100
   overlap, US vs Italy, by sex, 1999-2024.
 - `docs/paper/tables/` — table1 (dataset overview), table13 (ISTAT vs SSA structure), table14 (coverage
   bias check).
@@ -95,7 +95,7 @@ Scripts are numbered by pipeline stage, not strict run order; `01b`/`01c`/`08b` 
 ## What changed from the original plan (see PROJECT_LOG.md for the full dated history)
 
 The original plan (§4) stated ISTAT had no bulk name data and budgeted **manual PDF collection** as
-real, unavoidable acquisition work. That held for a while — `data/raw/istat/COLLECTION_NOTES.md`
+real, unavoidable acquisition work. That held for a while — `dataset/istat/COLLECTION_NOTES.md`
 documents the manual effort, and it got the comparable window to 2006-2024 with 15/19 years relying on
 a secondary source (nomix.it). **That constraint no longer holds**: a real bulk API was found behind
 ISTAT's own "contanomi" tool (undocumented, reverse-engineered from its JavaScript), and after

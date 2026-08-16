@@ -1,6 +1,6 @@
 """
 How complete the ISTAT contanomi scrape is, per year - visualizes
-data/raw/istat/contanomi_raw/manifest.csv (male_percent_sum / female_percent_sum:
+dataset/istat/contanomi_raw/manifest.csv (male_percent_sum / female_percent_sum:
 what share of that year's TRUE total births are captured by the scraped names).
 
 Companion to 01c_check_coverage_bias.py's numeric proof that this unevenness
@@ -15,7 +15,7 @@ import os
 import matplotlib.pyplot as plt
 
 IN_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "contanomi_raw", "manifest.csv"
+    os.path.dirname(__file__), "..", "..", "dataset", "istat", "contanomi_raw", "manifest.csv"
 )
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "paper", "figures", "fig3_istat_coverage.png")
 

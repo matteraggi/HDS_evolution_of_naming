@@ -13,8 +13,8 @@ import os
 
 import matplotlib.pyplot as plt
 
-US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_diversity_metrics.csv")
-IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "it_diversity_metrics.csv")
+US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_diversity_metrics.csv")
+IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "it_diversity_metrics.csv")
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "paper", "figures", "fig5_us_italy_top30_comparison.png")
 
 LABELS = {"M": "Maschi", "F": "Femmine"}

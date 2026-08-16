@@ -10,10 +10,10 @@ number (e.g. "Sophia/Sofia top-30 in both countries by 2024" is a much better
 sentence than just the percentage).
 
 Requires:
-  data/processed/us_names_long.csv           (from 01_process_ssa.py)
-  data/raw/istat/istat_contanomi_full.csv    (from 00_scrape_istat_contanomi.py)
+  dataset/processed/us_names_long.csv           (from 01_process_ssa.py)
+  dataset/istat/istat_contanomi_full.csv    (from 00_scrape_istat_contanomi.py)
 
-Output: data/processed/us_italy_name_overlap.csv (year, sex, overlap_count, overlap_pct, shared_names)
+Output: dataset/processed/us_italy_name_overlap.csv (year, sex, overlap_count, overlap_pct, shared_names)
 """
 
 import csv
@@ -23,9 +23,9 @@ from collections import defaultdict
 
 import pymannkendall as mk
 
-US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_names_long.csv")
-IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "istat", "istat_contanomi_full.csv")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "processed", "us_italy_name_overlap.csv")
+US_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_names_long.csv")
+IT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "istat", "istat_contanomi_full.csv")
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "dataset", "processed", "us_italy_name_overlap.csv")
 
 SEX_MAP = {"M": "m", "F": "f"}  # US sex code -> Italy gender code
 TOP_N = 30
