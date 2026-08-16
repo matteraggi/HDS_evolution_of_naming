@@ -192,19 +192,20 @@ profondità testata**; l'entropia di Shannon mostra invece una distorsione monot
 migliore) al −50% (profondità peggiore) — motivo per cui resta limitata al 2022-2024 nel confronto (§3).
 
 **Robustezza geografica dei casi-studio RQ2 (nuovo).** Per i casi-studio più solidi del roster (positivi e
-negativi, si veda §6), è stato verificato se il salto/crollo osservato a livello nazionale fosse
-geograficamente uniforme o concentrato in pochi stati, usando i dati SSA per stato
-(`dataset/namesbystate/`, 51 file, 1910-2025). Per ciascun caso, si calcola il rapporto
-conteggio-anno-evento / mediana-3-anni-precedenti separatamente per ogni stato con dati sufficienti, e si
-conta la quota di stati che si muove nella stessa direzione dell'effetto nazionale
-(`src/scripts/15_state_concentration_analysis.py`, si veda anche Tabella 15). Anche questo non è un test
+negativi, solo USA — non esistono dati regionali italiani comparabili), è stato verificato se il
+salto/crollo osservato a livello nazionale fosse geograficamente uniforme o concentrato in pochi stati,
+usando i dati SSA per stato (`dataset/namesbystate/`, 51 file, 1910-2025). Per ciascun caso, si calcola il
+rapporto conteggio-anno-evento / mediana-3-anni-precedenti separatamente per ogni stato con dati
+sufficienti, e si conta la quota di stati che si muove nella stessa direzione dell'effetto nazionale
+(`src/scripts/15_state_concentration_analysis.py`, Tabella 15, Figura 8). Anche questo non è un test
 di ipotesi in senso stretto, ma un argomento di plausibilità: un evento mediatico realmente nazionale
 dovrebbe muovere la maggioranza degli stati nella stessa direzione, mentre un effetto concentrato in uno o
-due stati suggerirebbe una causa regionale o un artefatto statistico. Risultato: **9 casi su 11 mostrano
-oltre il 90% degli stati concordanti** con la direzione nazionale (es. Jaime 100%, Hillary 74%, Kobe 97%);
-l'unica eccezione degna di nota è Jaslene (79%, ANTM 2007), compatibile con un'adozione inizialmente più
-concentrata nelle aree a maggiore presenza ispanica piuttosto che uniformemente nazionale — un dettaglio
-interessante più che una debolezza del metodo.
+due stati suggerirebbe una causa regionale o un artefatto statistico. Risultato (9 casi, 6 positivi + 3
+negativi): **7 casi su 9 mostrano oltre il 90% degli stati concordanti** con la direzione nazionale (es.
+Jaime 100%, Kobe 97%, Alexa 97%); le due eccezioni sono Jaslene (79%, ANTM 2007) e Hillary (74%, 1993) —
+compatibili rispettivamente con un'adozione inizialmente più concentrata nelle aree a maggiore presenza
+ispanica e con una polarizzazione politica che, ragionevolmente, non ha colpito tutti gli stati in modo
+identico — dettagli interessanti più che una debolezza del metodo.
 
 ### 4.3 Scelta della metrica di convergenza (non un test, una scelta di misura)
 
@@ -240,15 +241,30 @@ istituzionale dello stesso tipo di analisi.
 **Estensione ai crolli ("anti-spike").** Lo stesso metodo, invertito, individua nomi che hanno subito un
 crollo improvviso — l'ipotesi di lavoro è che un evento *negativo* (uno scandalo, una controversia, un
 personaggio pubblico che diventa impopolare) possa "bruciare" un nome così come un evento positivo può
-lanciarlo (`src/scripts/14_find_us_declines.py`). La soglia di significatività qui richiede un conteggio
-di base pre-crollo sostanziale (≥300), non solo un rapporto grande, per lo stesso motivo del filtro sugli
-spike positivi. Casi verificati: **Hillary/Hilary** (crollo del 58% tra il 1992 e il 1993, l'anno in cui
-Hillary Clinton diventa First Lady — uno dei cali più documentati nella letteratura sui nomi USA, si veda
-ad es. Ghirlanda, CUNY); **Kobe** (crollo 2003-2004, in coincidenza con l'accusa di aggressione sessuale a
-Kobe Bryant); **Alexa** (crollo dal 2015, "effetto Alexa" ampiamente documentato nella stampa dopo il
-lancio di Amazon Echo); **Woodrow** (crollo 1920, in coincidenza con l'ictus del 1919 che rese noto
-l'incapacitamento del presidente Wilson); **Jase** (crollo 2016-2017, in coincidenza con la cancellazione
-del reality *Duck Dynasty*, dopo un calo di ascolti dal 9 al 1 milione di spettatori medi).
+lanciarlo (`src/scripts/14_find_us_declines.py` per gli USA, `16_find_it_declines.py` per l'Italia,
+soglia di base scalata alla popolazione: ≥300 nascite USA, ≥100 Italia). La soglia di significatività
+richiede un conteggio di base pre-crollo sostanziale, non solo un rapporto grande, per lo stesso motivo
+del filtro sugli spike positivi. Roster finale (Tabella 16, 4 casi — un caso italiano candidato,
+"Enrica", è stato scartato perché il calo prosegue linearmente ben oltre l'anno dell'evento proposto,
+più coerente con un declino di lungo periodo già in corso che con un effetto puntuale): **Hillary/Hilary**
+(crollo del 58% tra il 1992 e il 1993, l'anno in cui Hillary Clinton diventa First Lady — uno dei cali più
+documentati nella letteratura sui nomi USA, si veda ad es. Ghirlanda, CUNY); **Kobe** (crollo 2003-2004,
+in coincidenza con l'accusa di aggressione sessuale a Kobe Bryant); **Alexa** (crollo dal 2015, "effetto
+Alexa" ampiamente documentato nella stampa dopo il lancio di Amazon Echo); **Erica** (Italia, crollo
+2001-2002, 863→416 nascite, in coincidenza con il delitto di Novi Ligure — Erika De Nardo, 16 anni,
+uccide madre e fratello nel febbraio 2001, uno dei casi di cronaca nera più discussi in Italia in
+quel periodo; la tempistica combacia esattamente, con il calo che si aggrava durante il processo di
+dicembre 2001 e l'appello di maggio 2002).
+
+**Un falso positivo intercettato, utile come nota di rigore metodologico.** La ricerca dei crolli
+italiani ha inizialmente segnalato "Nicolò" e "Desirè" come collassi enormi (rapporto fino a 0,02). Prima
+di accettarli, è stata controllata la traiettoria delle grafie alternative: il conteggio di "NICOLO"
+crolla nel 2011 esattamente nello stesso anno in cui compare "NICOLO'" con un conteggio quasi
+compensativo (3.196 nel 2010 → 99 nel 2011 per "NICOLO", ma 2.956 per "NICOLO'" nel 2011) — non un calo
+reale, ma un cambiamento nella convenzione di trascrizione dell'accento da parte di ISTAT. Entrambi i
+casi sono stati esclusi dal roster. Questo controllo — verificare le grafie alternative prima di
+accettare un candidato — è ora parte integrante del processo di validazione dei candidati-crollo, non
+solo un aneddoto.
 
 ## 6. Limiti metodologici principali
 

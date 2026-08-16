@@ -47,8 +47,6 @@ STORIES = [
     ("Hillary", "F", 1993, "negative"),
     ("Kobe", "M", 2004, "negative"),
     ("Alexa", "F", 2020, "negative"),
-    ("Woodrow", "M", 1920, "negative"),
-    ("Jase", "M", 2016, "negative"),
 ]
 
 

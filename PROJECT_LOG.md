@@ -164,34 +164,50 @@ Cut (user call, 2026-08-16): Francesco Pio (Padre Pio's canonization, June 2002)
 
 ---
 
-## Negative-spike ("anti-spike") roster (new, 2026-08-16)
+## Negative-spike ("anti-spike") roster (2026-08-16, trimmed same day)
 
-Mirror of the positive-spike hunt: `14_find_us_declines.py` flags names with a sudden large
-**collapse** instead of a jump (ratio ≤0.5 vs. 3-year median baseline), requiring a substantial
-pre-collapse baseline (≥300 births) so we're catching real established names cratering, not noise.
-Working hypothesis: a negative event (scandal, controversy, a public figure becoming disliked) can
-"burn" a name the same way a positive event launches one. Five verified US cases:
+Mirror of the positive-spike hunt: `14_find_us_declines.py` (US) / `16_find_it_declines.py` (Italy)
+flag names with a sudden large **collapse** instead of a jump (ratio ≤0.5 vs. 3-year median
+baseline), requiring a substantial pre-collapse baseline (≥300 US / ≥100 Italy) so we're catching
+real established names cratering, not noise. Working hypothesis: a negative event (scandal,
+controversy, a public figure becoming disliked) can "burn" a name the same way a positive event
+launches one.
 
-| Name | Year | Drop | Cause |
-|---|---|---|---|
-| Hillary/Hilary | 1993 | 58% drop 1992→1993, one of the most documented name-collapses in the literature | Hillary Clinton becomes First Lady, immediately polarizing (healthcare reform fight, 69% favorable among women vs. 51% among men from day one) |
-| Kobe | 2004 | ratio 0.37-0.45 | Kobe Bryant's 2003 sexual assault charges (case dismissed Sept 2004, but reputational damage already done) |
-| Alexa | 2020-21 | ratio ~0.35-0.42, part of a longer decline starting 2015 | The well-documented "Alexa effect" — Amazon Echo (2014-15) made the name synonymous with a voice-assistant/servant, parents actively avoiding it, kids reportedly bullied |
-| Woodrow | 1920 | ratio 0.32-0.38 | President Wilson's Oct 1919 stroke and subsequent public incapacitation for the rest of his term |
-| Jase | 2016-17 | ratio 0.42-0.46 | *Duck Dynasty* cancellation, ratings collapsed from ~9M to ~1M viewers, partly snowballing from the 2013 Phil Robertson controversy |
+Initial US hunt found 5 verified cases; **user trimmed to 3** (Hillary, Kobe, Alexa) for focus,
+cutting Woodrow (Wilson's 1919 stroke) and Jase (Duck Dynasty cancellation) — both solid, not weak
+evidence. Italy hunt found one strong case (Erica) plus one weaker "echo" candidate (Enrica) that
+**user cut** — the decline continued linearly well past the supposed trigger year, more consistent
+with an already-underway long-term fade than a clean single-event story, so honest to drop it rather
+than force a second data point. Final table: `docs/paper/tables/table16_negative_spikes.csv`.
 
-## Geographic robustness check (new, 2026-08-16)
+| Country | Name | Year | Drop | Cause |
+|---|---|---|---|---|
+| US | Hillary/Hilary | 1993 | 58% drop 1992→1993, one of the most documented name-collapses in the literature | Hillary Clinton becomes First Lady, immediately polarizing (healthcare reform fight, 69% favorable among women vs. 51% among men from day one) |
+| US | Kobe | 2004 | ratio 0.37-0.45 | Kobe Bryant's 2003 sexual assault charges (case dismissed Sept 2004, but reputational damage already done) |
+| US | Alexa | 2020-21 | ratio ~0.35-0.42, part of a longer decline starting 2015 | The well-documented "Alexa effect" — Amazon Echo (2014-15) made the name synonymous with a voice-assistant/servant, parents actively avoiding it, kids reportedly bullied |
+| Italy | Erica | 2001-02 | 863(1999)→416(2002), nearly halved | *Delitto di Novi Ligure* — Erika De Nardo, 16, murders her mother and brother with her boyfriend, Feb 2001, one of the most notorious Italian crime cases of the era; timing matches exactly (decline starts the murder year, deepens through the Dec 2001 trial and May 2002 appeal) |
+
+**Data-quality catch worth keeping**: the Italy decline hunt initially flagged "Nicolò" and "Desirè"
+as huge collapses (ratio as low as 0.02) — checked before trusting, and both turned out to be pure
+ISTAT recording-convention artifacts (e.g. `NICOLO` counts collapse in 2011 exactly as `NICOLO'`
+appears with almost the offsetting count the same year — the underlying name barely changed, ISTAT
+just changed how it records the accent). Excluded, not reported as real declines.
+
+## Geographic robustness check (2026-08-16, updated same day)
 
 For the strongest cases in both rosters (positive and negative), checked whether the national jump/
 collapse was geographically uniform or concentrated in a few states, using SSA's state-level data
 (`dataset/namesbystate/`, bonus data from Person B's repo we hadn't used before) —
-`15_state_concentration_analysis.py` → Table 15. Logic: a genuine national media event should move
-most states together; a "spike" driven almost entirely by one or two states would be a red flag for
-a regional cause or data artifact instead. Result: **9 of 11 cases show >90% of states moving the
-same direction** as the national effect (e.g. Jaime 100%, Kobe 97%, Woodrow 100%). The one notable
-exception, Jaslene (79%), is plausibly explained by an initially Hispanic-population-skewed adoption
-pattern (she was ANTM's first Hispanic winner) rather than uniform national spread — an interesting
-detail, not a weakness in the method. Not a formal hypothesis test (no real null to reject), but a
+`15_state_concentration_analysis.py` → Table 15, `fig8_state_concentration.png` (new figure,
+horizontal bar chart, sorted, color-coded positive/negative). Logic: a genuine national media event
+should move most states together; a "spike" driven almost entirely by one or two states would be a
+red flag for a regional cause or data artifact instead. US-only (no Italian regional data available,
+so Erica isn't in this check). After trimming the negative roster to 3, **8 of 9 cases show >90% of
+states moving the same direction** as the national effect (e.g. Jaime 100%, Kobe 97%, Alexa 97%). The
+one notable exception, Jaslene (79%), is plausibly explained by an initially Hispanic-population-
+skewed adoption pattern (she was ANTM's first Hispanic winner) rather than uniform national spread —
+an interesting detail, not a weakness in the method. Not a formal hypothesis test (no real null to
+reject), but a
 genuine plausibility check now written up as such in the methodology draft.
 
 ---
