@@ -1,6 +1,6 @@
 # The Evolution of Naming: Cultural Diversity, Media Influence, and Individualism in Baby Names (US vs. Italy)
 
-Human Data Science course paper. See `docs/paper/project_plan_baby_names.md` for the original research
+Human Data Science course paper. See `docs/project_plan_baby_names.md` for the original research
 plan and `PROJECT_LOG.md` for a plain-language, dated log of what's changed since then and why.
 
 ## Data sources
