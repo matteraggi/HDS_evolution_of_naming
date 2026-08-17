@@ -1,0 +1,411 @@
+> **Nota**: questa è una bozza molto iniziale, scritta per avere una struttura completa su cui
+> lavorare e per non perdere nulla di quello che abbiamo fatto finora. Non è il testo finale — mancano
+> ancora RQ3 (nomi neutri rispetto al genere, non ancora iniziata), una revisione linguistica seria, il
+> conteggio parole definitivo e probabilmente un giro di tagli. La sezione Metodologie/Dati è già
+> abbastanza matura (vedi `metodologie_dati_DRAFT.md`, di cui questa è una versione integrata); il
+> resto è più abbozzato. I punti dove serve ancora lavoro sono segnati con **[DA FARE]**.
+
+# L'Evoluzione dei Nomi: Diversità Culturale, Influenza dei Media e Individualismo nei Nomi dei Neonati (USA vs. Italia)
+
+## Abstract
+
+Questo lavoro studia come la diversità dei nomi dati ai neonati sia cambiata nel tempo negli Stati
+Uniti (1880-2025) e in Italia (1999-2024), e cosa succede quando si confrontano i due paesi sulla
+finestra che hanno in comune. La domanda di fondo è semplice da porre e meno semplice da rispondere:
+scegliere il nome di un figlio è una delle decisioni più personali che esistano, eppure sembra
+seguire pattern collettivi — mode che nascono, crescono, muoiono, e a volte crollano di colpo per una
+ragione precisa. Usando la quota di concentrazione dei nomi più popolari come metrica principale
+(validata empiricamente, non solo teoricamente), troviamo che entrambi i paesi si stanno
+diversificando in modo statisticamente robusto (Mann-Kendall, p < 0,001 in ogni combinazione
+testata), che l'Italia resta sistematicamente più concentrata degli USA in ogni singolo anno
+osservato, ma che le due popolazioni di nomi si stanno anche avvicinando tra loro (similarità coseno
+sull'intera distribuzione, p < 3 × 10⁻¹¹ per entrambi i sessi). Accanto a questo, raccogliamo e
+verifichiamo 13 casi di "salto" onomastico legato a un evento culturale positivo (da *Frozen* a
+Sanremo) e 4 casi di crollo legato a un evento negativo (da Hillary Clinton a un caso di cronaca
+nera italiano), ognuno controllato singolarmente per plausibilità causale e coerenza temporale, e
+per i casi più solidi anche per uniformità geografica.
+
+## Introduzione
+
+Scegliere il nome di un figlio è, probabilmente, una delle decisioni più intime che un genitore
+possa prendere. Eppure basta guardare i dati per accorgersi che non è affatto una decisione isolata:
+milioni di genitori, senza parlarsi, finiscono per convergere sugli stessi pochi nomi in certi anni,
+e per abbandonarli in blocco pochi anni dopo. Questo paper nasce dalla curiosità di capire quanto di
+"individuale" resti davvero in una scelta che sembra così personale, e quanto invece sia guidato da
+forze esterne — la cultura di massa, un film, uno scandalo, un'epoca.
+
+**[DA FARE — nota per la stesura finale]**: qui va la contestualizzazione con la letteratura esistente
+(Lieberson 2000, Twenge et al. 2010, Ogihara 2025 — già confermati e citati in Bibliografia) e la
+motivazione della scelta del tema rispetto ad alternative scartate (bias nei sistemi di
+raccomandazione, teoria dell'onnivoro culturale con dati GSS) già discusse nel piano di ricerca
+originale. Di seguito una versione provvisoria.
+
+I dati sui nomi alla nascita sono un terreno relativamente poco battuto nella didattica di questo
+tipo di corsi, il che ci ha dato margine per un'analisi originale piuttosto che una replica. Il primo
+studio sistematico sull'argomento (Lieberson, 2000) inquadra la scelta del nome come un caso "puro" di
+moda: a differenza dei vestiti o della musica, non c'è un'industria che spinge attivamente un nome
+piuttosto che un altro, il che rende il fenomeno un osservatorio quasi di laboratorio su come le mode
+nascono e muoiono per conto proprio. Twenge et al. (2010) hanno poi collegato il calo di uso dei nomi
+comuni negli USA a un aumento più ampio dell'individualismo nella cultura americana, usando
+esattamente gli stessi dati SSA che usiamo qui. Ogihara (2025) ha validato, sui dati del Regno Unito,
+l'uso della quota di concentrazione dei nomi più popolari come proxy affidabile di diversità
+onomastica anche quando la distribuzione completa non è disponibile — un punto che si è rivelato
+centrale per questo lavoro, come si vedrà in Metodologie/Dati.
+
+L'aspetto comparativo USA/Italia è il principale elemento di originalità di questo paper: la
+letteratura esistente si concentra quasi sempre su un solo paese, e non abbiamo trovato alcuno studio
+peer-reviewed sulla diversità dei nomi italiani nel tempo — un vuoto che questo lavoro prova a
+colmare, pur con i limiti di un progetto universitario piuttosto che di una ricerca professionale.
+
+Il lavoro è organizzato attorno a tre domande, di cui la seconda ha finito per diventare il filo
+conduttore del paper:
+
+1. **Diversità nel tempo**: la diversità dei nomi sta aumentando in entrambi i paesi? I due paesi si
+   stanno anche avvicinando tra loro nelle scelte effettivamente fatte, o restano due mondi separati?
+2. **Eventi culturali**: un film, una canzone, uno scandalo possono davvero far impennare o crollare
+   l'uso di un nome specifico, in modo misurabile? Succede allo stesso modo nei due paesi?
+3. **Nomi neutri rispetto al genere**: l'uso di nomi non marcati per genere sta aumentando? **[DA FARE
+   — Person B, non ancora iniziata]**
+
+## Metodologie e Dati
+
+*(Sezione integrata da `metodologie_dati_DRAFT.md`, a cura di Person A — qui riportata per intero
+così il documento resta un unico file navigabile; si veda quel file per la versione più aggiornata in
+caso di disallineamento.)*
+
+### Fonti dei dati
+
+Per rispondere alle domande di ricerca è stato necessario ricostruire due serie storiche di nomi alla
+nascita, una per gli Stati Uniti e una per l'Italia, che si sono rivelate profondamente asimmetriche
+per struttura e accessibilità — un'asimmetria che, come discusso più avanti nella sezione sul Fattore
+Umano, non è un semplice ostacolo tecnico ma un dato interessante di per sé.
+
+**Stati Uniti.** La fonte primaria è la *Social Security Administration* (SSA), che dal 1997 pubblica
+annualmente l'archivio "Baby Names from Social Security Card Applications"
+(`https://www.ssa.gov/oact/babynames/names.zip`), rilasciato con licenza CC0/dominio pubblico.
+L'archivio contiene un file per ogni anno dal 1880 al 2025 (146 file), con record
+`nome,sesso,conteggio` per ogni combinazione osservata. L'unico limite dichiarato è una soglia di
+soppressione statistica: i nomi attribuiti a meno di 5 nascite in un dato anno/stato/sesso non
+vengono riportati. Dopo la pulizia, la tabella lunga risultante conta oltre 2,18 milioni di
+combinazioni nome/anno/sesso.
+
+**Italia.** Il piano di ricerca iniziale prevedeva l'acquisizione manuale dei dati italiani, poiché
+ISTAT non pubblica una tabella cumulativa bulk nome × anno × sesso × conteggio attraverso i suoi
+canali ufficiali — verificato direttamente sul portale Open Data / High Value Datasets, che non
+contiene alcun dataset a livello di nome. Questa raccolta manuale è stata effettivamente svolta in
+una prima fase (2004 e 2006-2024, da 14 PDF ISTAT più nomix.it come fonte secondaria per gli anni non
+altrimenti reperibili), ed è tuttora conservata come traccia di corroborazione.
+
+Analizzando però il codice JavaScript dello strumento interattivo "contanomi"
+(`istat.it/dati/calcolatori/contanomi/`) è stato individuato il servizio web reale che lo alimenta: un
+endpoint JSONP non documentato pubblicamente, privo di restrizioni in `robots.txt`. L'interfaccia
+pubblica limita la visualizzazione ai primi 10-50 nomi per anno, ma il parametro `limit` della
+richiesta non è vincolato a quell'intervallo: per il 2022-2024 restituisce l'intera distribuzione
+(~25.000 nomi distinti per sesso, percentuali che sommano a ~100%, nessuna soglia di soppressione
+osservabile). Per gli anni precedenti il servizio presenta un limite massimo per richiesta non
+costante e non documentato, individuato per ciascun anno tramite ricerca binaria. La copertura
+risultante varia dal 66% delle nascite (2021, il caso peggiore) al 100% (2022-2024) — si veda Figura
+3 per il dettaglio anno per anno.
+
+Prima di adottare questi dati come fonte primaria, sono stati eseguiti due controlli: (a) i valori
+estratti per il 2024 (Leonardo: 6.580 nascite, Sofia: 4.636; quota primi-30 maschile: 42,94%) sono
+stati confrontati con quelli della raccolta manuale, risultando identici; (b) l'impatto della
+copertura variabile sulle metriche utilizzate è stato quantificato empiricamente, non assunto (si
+veda sotto). La finestra comparabile USA/Italia risultante è **1999-2024** (26 anni), il limite reale
+della copertura ISTAT a livello di nome.
+
+### Pulizia e normalizzazione
+
+Per gli Stati Uniti, ogni file annuale è stato aggregato in una tabella lunga (`anno, nome, sesso,
+conteggio, nascite_totali_sesso, frequenza_relativa`), con la frequenza relativa calcolata sul totale
+delle nascite dello stesso sesso in quell'anno. Le metriche sono calcolate separatamente per sesso,
+scelta necessaria per la comparabilità con l'Italia. Per l'Italia, la tabella lunga (~219.000 righe) è
+ottenuta direttamente dal servizio web, con una colonna `percent` verificata essere calcolata sul
+totale reale delle nascite di quell'anno/genere — non sul solo sottoinsieme catturato dallo scraping.
+Questa proprietà è ciò che rende possibile usare la quota di concentrazione come metrica robusta anche
+negli anni a copertura parziale.
+
+### La metrica di diversità primaria e il ruolo dell'entropia di Shannon
+
+Il piano di ricerca originario prevedeva l'uso dell'entropia di Shannon come metrica primaria in
+entrambi i paesi. Per gli Stati Uniti questo calcolo resta diretto (Figura 2, 1880-2025): un minimo
+relativo attorno agli anni '40-'50 (baby boom) seguito da una crescita pressoché ininterrotta dagli
+anni '60 a oggi. Per l'Italia, la copertura variabile rende l'entropia calcolata sui dati catturati
+sistematicamente distorta verso il basso, e in misura diversa da un anno all'altro. Si è quindi
+mantenuta come metrica comparativa primaria la **quota di concentrazione dei primi N nomi**
+(top-10 e top-30), un proxy di diversità validato in letteratura (Ogihara 2025, r ≈ −0,96 a −0,99 con
+un indice di varietà indipendente), che dipende solo dai nomi più popolari — catturati ogni anno
+indipendentemente dalla profondità massima raggiunta.
+
+### Validazione scientifica
+
+Questa sezione distingue esplicitamente due categorie di verifica: **test di ipotesi formali**
+(H₀/H₁/α = 0,05 dichiarati) e **controlli di robustezza/sensibilità**, che non testano un'ipotesi
+statistica ma quantificano quanto una conclusione dipenderebbe da una scelta metodologica diversa.
+
+**Mann-Kendall** (Mann 1945; Kendall 1975). H₀: nessun trend monotono; H₁: trend monotono
+(crescente/decrescente). Su tutte le combinazioni testate sui dati USA, H₀ è respinta con p < 0,001.
+
+**Wilcoxon a coppie appaiate** (livello USA vs Italia, 26 anni appaiati). H₀: mediana delle differenze
+appaiate uguale a zero. Respinta per entrambi i sessi con p < 0,0001 — l'Italia è sistematicamente più
+concentrata in ogni singolo anno.
+
+**Mann-Kendall sulla serie differenza (USA−Italia)**: maschi, H₀ non respinta (p = 0,172, divario
+stabile); femmine, H₀ respinta (p = 3,4 × 10⁻⁵, divario in riduzione).
+
+**Mann-Kendall sulla similarità coseno USA-Italia**: H₀ respinta per entrambi i sessi (maschi
+p = 2,4 × 10⁻¹², τ = 0,98; femmine p = 2,8 × 10⁻¹¹) — convergenza statisticamente robusta.
+
+Gli **intervalli di confidenza bootstrap** sulla pendenza di Sen (percentile, 2000 iterazioni) non
+costituiscono un test di ipotesi formale in senso stretto — la non sovrapposizione è un'euristica
+informale, riportata come conferma supplementare del test Mann-Kendall sulla serie differenza, non
+come prova indipendente.
+
+Il **controllo di robustezza alla profondità di copertura** (troncamento artificiale dei due anni
+italiani completi alle profondità reali degli altri anni) mostra che la distorsione sulla quota
+primi-10/primi-30 è **esattamente zero a ogni profondità testata**, mentre l'entropia di Shannon
+mostra una distorsione monotona dal −19% al −50% (Tabella 14, Figura 4) — da qui la scelta di
+riportare l'entropia italiana solo per il 2022-2024.
+
+Il **controllo di robustezza geografica** (nuovo, si veda Risultati) usa i dati SSA per stato per
+verificare se i casi-studio RQ2 più solidi si muovono in modo uniforme su tutti gli stati o in modo
+concentrato in pochi — un argomento di plausibilità, non un test formale.
+
+### Rilevamento di spike ed eventi culturali (RQ2)
+
+Per ogni nome/sesso/anno si calcola il rapporto tra il conteggio dell'anno e la mediana dei 3 anni
+precedenti, con una soglia minima di conteggio per escludere rumore statistico su numeri piccoli. Il
+metodo produce solo **candidati**: nessuno è stato accettato senza (a) verifica della plausibilità
+della causa proposta tramite ricerca web indipendente, e (b) verifica di coerenza temporale
+(l'evento deve precedere il picco/crollo di un intervallo compatibile con concepimento e nascita,
+9-18 mesi). Il metodo è stato validato recuperando correttamente tre casi noti in letteratura prima
+ancora di essere confermati via ricerca: Elsa (*Frozen*, 2013), Khaleesi (*Game of Thrones*), Isabella
+(*Twilight*).
+
+Lo stesso metodo, invertito, individua i crolli — l'ipotesi è che un evento *negativo* possa "bruciare"
+un nome così come un evento positivo può lanciarlo, con una soglia di base pre-crollo scalata alla
+popolazione (≥300 nascite USA, ≥100 Italia). Durante questa ricerca sono stati intercettati e scartati
+due falsi positivi italiani ("Nicolò" e "Desirè"), che si sono rivelati puri artefatti di trascrizione
+ISTAT (cambio nella codifica dell'accento a metà serie, con la grafia alternativa che assorbe quasi
+esattamente il conteggio "mancante" lo stesso anno) — un controllo che è ora parte del processo di
+validazione, non solo un aneddoto.
+
+### Limiti metodologici principali
+
+In sintesi (si veda `metodologie_dati_DRAFT.md` §6 per il dettaglio completo): (1) la soglia di
+soppressione SSA sottostima leggermente la diversità storica USA; (2) la copertura ISTAT variabile
+per anno non distorce la quota di concentrazione ma limita l'entropia italiana al 2022-2024; (3) il
+servizio ISTAT usato non è un'API pubblicamente documentata, meno stabile nel tempo di un formato
+ufficiale — i dati grezzi sono comunque conservati in repository per garantire riproducibilità; (4) il
+confronto USA/Italia è limitato alla finestra 1999-2024; (5) il legame tra un picco/crollo e un
+evento culturale resta correlazionale, non causale in senso stretto; (6) il controllo di robustezza
+geografica ha copertura disomogenea tra i casi (da 7 a 51 stati con dati sufficienti a seconda del
+nome).
+
+## Risultati
+
+### La diversità cresce in entrambi i paesi, ma l'Italia resta indietro
+
+Partiamo dal dato più semplice da enunciare. Negli Stati Uniti, la quota di nascite maschili coperta
+dai primi 10 nomi è passata da circa il 44% nel 1880 a circa l'8% nel 2025 — un crollo di oltre cinque
+volte in 145 anni, monotono e statisticamente solidissimo (Mann-Kendall, p < 0,001 su tutte le 18
+combinazioni testate tra metriche, sessi e finestre temporali). La Figura 2 mostra la stessa storia
+raccontata dall'entropia: un minimo relativo negli anni del baby boom, poi una salita quasi
+ininterrotta.
+
+Sulla finestra comparabile 1999-2024 (Figura 5), l'Italia parte più concentrata degli Stati Uniti e
+resta più concentrata per tutti i 26 anni osservati — il test di Wilcoxon a coppie appaiate è
+fortemente significativo (p < 0,0001, statistica pari a 0 su 26 confronti in entrambi i sessi). Detto
+in altri termini: non c'è stato un solo anno, in un quarto di secolo, in cui l'Italia sia stata meno
+concentrata degli USA. Quello che cambia per sesso è la *velocità* con cui il divario si muove. Per i
+nomi maschili la pendenza di Sen è praticamente identica nei due paesi (USA −0,0048/anno, Italia
+−0,0052/anno, intervalli di confidenza sovrapposti) e la serie differenza non mostra un trend
+significativo (p = 0,17): il divario è stabile. Per i nomi femminili, invece, l'Italia diversifica
+significativamente più in fretta (pendenza −0,0038/anno contro −0,0026/anno degli USA, intervalli
+**non** sovrapposti, serie differenza con trend crescente significativo, p = 3,4 × 10⁻⁵): il divario si
+sta chiudendo, ma solo per le bambine.
+
+### I due paesi si stanno anche avvicinando tra loro
+
+Questa è, probabilmente, la scoperta più interessante di tutta la parte "backbone" del lavoro, e in un
+certo senso risponde a una domanda diversa dalla precedente: non "quanto è concentrato ciascun paese"
+ma "quanto USA e Italia scelgono *gli stessi* nomi." Misurando la similarità coseno tra le distribuzioni
+complete di nomi dei due paesi, anno per anno e per sesso (Figura 6), il trend è netto e
+statisticamente fortissimo per entrambi i sessi: per i maschi la similarità triplica quasi (da 0,066 a
+0,176 tra il 1999 e il 2024, p = 2,4 × 10⁻¹², τ di Kendall pari a 0,98 — quasi perfettamente
+monotono), per le femmine più che raddoppia (da 0,119 a 0,302, p = 2,8 × 10⁻¹¹). Un esempio concreto
+vale più di una statistica: Liam e Noah, entrambi assenti dalla top-30 italiana nel 1999, ci sono
+entrati stabilmente entro il 2024 — nomi di chiara origine anglo-americana che attraversano il
+confine culturale.
+
+### Tredici storie di nomi che sono "esplosi"
+
+Con il metodo descritto in Metodologie, abbiamo cercato — e verificato singolarmente — casi in cui un
+evento culturale specifico sembra aver causato un salto misurabile nell'uso di un nome. La Tabella
+[DA FARE — numerare] riassume gli otto casi statunitensi: da Shirley Temple (1935) a Tammy (il film
+*Tammy and the Bachelor* del 1957, che portò il nome da 255 a quasi 10.000 nascite nel giro di un
+anno), da Mariah (l'album di debutto di Mariah Carey, 1990) a Jaslene (la prima vincitrice ispanica di
+*America's Next Top Model*, 2007-2008). Il caso forse più citato nella letteratura di settore, Nevaeh
+("heaven" letto al contrario), nasce da un singolo momento televisivo — il cantante Sonny Sandoval dei
+P.O.D. che nomina così sua figlia in diretta su MTV nel 2000 — e da lì continua a crescere per
+decenni, molto oltre la finestra qui analizzata.
+
+Sul lato italiano, cinque casi: **Karol**, esploso di 78 volte nel 2005, l'anno della morte di Papa
+Giovanni Paolo II (al secolo Karol Wojtyła); **Francesco Pio** [nota: candidato scartato dal roster
+finale per lunghezza, non per debolezza dell'evidenza — canonizzazione di Padre Pio, giugno 2002];
+**Adele**, con un andamento particolarmente istruttivo perché mostra il ritardo culturale tra i due
+paesi — l'album *21* dominò subito le classifiche USA nel 2011, ma in Italia raggiunse il primo posto
+solo a ottobre dello stesso anno, e il picco nei nomi arriva di conseguenza un anno dopo quello
+americano; **Elodie**, esplosa dopo il Sanremo 2017; **Soleil**, legata alla popolarità della
+personaggio televisivo Soleil Sorge dopo il Grande Fratello Vip 2021.
+
+Il caso più interessante da raccontare, però, è probabilmente **Chanel**. Il nostro metodo statistico
+lo segnala inizialmente come picco nel 2008, e la prima ipotesi — una miniserie TV su Coco Chanel
+andata in onda quell'anno — sembrava ragionevole. Guardando però l'intera traiettoria anno per anno
+(non solo l'anno segnalato), il quadro cambia: il conteggio salta già nel 2007, un anno *prima* della
+miniserie, e da lì si stabilizza su un plateau elevato per oltre un decennio — la firma tipica di un
+nome "legittimato" da un evento specifico, non di un picco temporaneo legato a una trasmissione
+televisiva. Il 2007 è anche l'anno di nascita di Chanel Totti, figlia del capitano della Roma Francesco
+Totti e della conduttrice Ilary Blasi. Riteniamo comunque onesto presentare la causa come duplice, non
+esclusiva: probabilmente sia la bambina famosa sia il fascino preesistente del marchio di moda hanno
+giocato un ruolo.
+
+### E quando un nome "brucia": i crolli
+
+Meno raccontata in letteratura, ma altrettanto interessante, è la domanda opposta: un evento
+*negativo* può far crollare l'uso di un nome? La risposta, sui quattro casi che abbiamo verificato, è
+sì, e in modo piuttosto drammatico. Il caso più eclatante è **Hillary/Hilary**: negli Stati Uniti,
+1992 è l'ultimo anno "normale" per il nome; nel 1993, l'anno in cui Hillary Clinton diventa First
+Lady e si trova immediatamente al centro di una battaglia politica polarizzante sulla riforma
+sanitaria, l'uso del nome crolla del 58% in dodici mesi, per poi perdere il 90% complessivo entro il
+1999 — uno dei cali più ripidi mai registrati nei dati SSA, e uno dei pochi casi in cui un nome
+*scende* più velocemente di quanto sia salito, invertendo il pattern tipico delle mode onomastiche.
+**Kobe** crolla nel 2003-2004, in coincidenza con l'accusa di aggressione sessuale contro Kobe Bryant.
+**Alexa** inizia un declino marcato dal 2015, il cosiddetto "effetto Alexa": da quando Amazon ha
+lanciato l'assistente vocale Echo, sempre più genitori evitano il nome per non associare la propria
+figlia a un dispositivo che "obbedisce a comando" — un fenomeno ampiamente documentato dalla stampa
+internazionale, con casi di bambine prese in giro a scuola.
+
+Sul lato italiano, il caso verificato è **Erica**, che dimezza il proprio uso tra il 1999 e il 2002
+(863 nascite nel 1999, 416 nel 2002). La tempistica coincide in modo preciso con il delitto di Novi
+Ligure: nel febbraio 2001 Erika De Nardo, sedici anni, uccide la madre e il fratellino insieme al
+fidanzato — uno dei casi di cronaca nera più seguiti degli anni 2000 in Italia, con il processo che
+tiene banco sui media fino alla sentenza d'appello di maggio 2002, esattamente il periodo in cui il
+calo del nome si aggrava ulteriormente.
+
+Un secondo candidato italiano, **Enrica** (nome foneticamente vicino a Erica), è stato considerato ma
+scartato dal roster finale: il suo declino, per quanto reale, prosegue in modo lineare ben oltre il
+2002, il che lo rende più coerente con un lento tramonto di moda già in corso che con un effetto
+puntuale legato al caso di cronaca.
+
+### Un controllo di realtà: gli stati sono tutti d'accordo?
+
+Per i casi-studio più solidi (sei positivi, tre negativi — tutti americani, poiché non esistono dati
+regionali italiani comparabili), abbiamo verificato se il salto o il crollo osservato a livello
+nazionale fosse effettivamente diffuso su tutto il paese, o concentrato in poche zone (Figura 8,
+Tabella 15). La logica è semplice: un vero evento mediatico nazionale — un film, un programma TV
+visto ovunque — dovrebbe muovere la maggior parte degli stati nella stessa direzione; un effetto
+concentrato in uno o due stati soli sarebbe un campanello d'allarme per una causa regionale o, peggio,
+per una coincidenza statistica. Sette casi su nove superano il 90% di stati concordanti (Jaime al
+100%, Kobe e Alexa al 97%), il che ci dà una certa fiducia che questi non siano artefatti isolati. Le
+due eccezioni sono interessanti di per sé: Jaslene (79%) è compatibile con un'adozione inizialmente
+più forte nelle aree a maggiore presenza ispanica, coerente con il fatto che fu la prima vincitrice
+ispanica del programma; Hillary (74%) è compatibile con una polarizzazione politica che, ragionevolmente,
+non ha colpito ogni stato allo stesso modo.
+
+### Le storie in comune tra i due paesi
+
+Infine, quattro casi che permettono un confronto diretto tra USA e Italia sullo stesso evento. **Celine
+Dion** è forse il più istruttivo: la sua diagnosi di sindrome della persona rigida (annunciata a
+dicembre 2022) e il documentario che ne è seguito (giugno 2024) hanno prodotto una crescita graduale
+del nome negli USA (da 614 a 1.466 nascite tra il 2018 e il 2025) ma un'impennata molto più marcata in
+Italia (fino a 6 volte il livello di base) — stessa causa, magnitudine molto diversa, probabilmente
+perché il nome partiva da una base molto più piccola in Italia. **Elsa**, dopo *Frozen*, è reale in
+entrambi i paesi ma arriva in Italia con circa un anno di ritardo (il film uscì lì a dicembre 2013) e
+con un'ampiezza molto più contenuta. **Khaleesi** resta invece un fenomeno puramente americano: non
+compare mai nei dati italiani catturati, nemmeno negli anni a copertura completa. **Isabella**, dopo
+*Twilight*, è il caso più ambiguo: cresce in entrambi i paesi, ma in Italia la crescita comincia
+*prima* dell'uscita della saga e prosegue senza scosse anche dopo — probabilmente perché Isabella è già
+un nome classico italiano, e quindi le due curve, per quanto visivamente simili, raccontano storie
+causali diverse.
+
+### Una tabella esaustiva, non solo i casi scelti a mano
+
+Per non dare l'impressione di aver scelto solo gli esempi più belli da raccontare, abbiamo anche
+generato una tabella puramente meccanica di ogni nome/anno che supera una soglia di crescita fissata
+a priori (USA: rapporto ≥6x e conteggio finale ≥2.000; Italia: rapporto ≥2,5x e conteggio ≥150) — 87
+righe in tutto (48 USA, 39 Italia), senza alcuna selezione manuale. Le tredici storie curate qui sopra
+sono un sottoinsieme di questa base più ampia, non un'eccezione ad essa.
+
+## Discussione Finale
+
+**[DA FARE — Person A e Person B insieme]**
+
+Il quadro che emerge da questo lavoro racconta, crediamo, una storia coerente nonostante la sua
+struttura a tre livelli (diversità di lungo periodo, convergenza tra paesi, singoli eventi culturali).
+In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto
+intima, resta sistematicamente esposta a forze che vanno ben oltre il singolo nucleo familiare —
+grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la
+tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la
+convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), e
+momenti culturali specifici e datati (le tredici storie di salto, i quattro crolli).
+
+Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie,
+sull'asimmetria tra le due infrastrutture statistiche nazionali. Gli Stati Uniti pubblicano
+l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, riccio dal 1880.
+L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché
+raggiungibili tramite un servizio web non documentato, pensato per un tool di consultazione singola,
+non per la ricerca. Non è un dettaglio tecnico neutro — è, a suo modo, un dato culturale: riflette due
+approcci molto diversi alla trasparenza dei dati pubblici, che meriterebbe una riflessione a sé.
+
+**[DA FARE]**: qui va anche discusso più esplicitamente il tema dei nomi neutri rispetto al genere
+(RQ3) una volta completata quella parte, e va inquadrato meglio il caso "Chanel" come esempio di
+cause concorrenti non mutuamente esclusive, già menzionato nei Limiti.
+
+## Conclusioni
+
+**[DA FARE — abbozzo]**
+
+Questo lavoro ha provato a rispondere a una domanda semplice — i nomi dei bambini si stanno
+diversificando, e come? — usando due dataset molto diversi per qualità e accessibilità, e ne è uscita
+una risposta più ricca di quanto ci aspettassimo all'inizio. La diversità cresce in entrambi i paesi.
+L'Italia resta più concentrata, ma il divario femminile si sta chiudendo. Le scelte dei due paesi si
+stanno avvicinando, non solo nei numeri aggregati ma in modo tracciabile, nome per nome. E dietro
+molte di queste curve statistiche ci sono storie vere e verificabili — un film, una canzone, uno
+scandalo — che rendono concreto quello che altrimenti resterebbe solo un trend su un grafico.
+
+Restano aperti dei limiti reali, discussi per esteso in Metodologie: la finestra comparabile è
+vincolata al 1999-2024, l'entropia italiana è affidabile solo per tre anni, e il legame tra un evento e
+un nome resta per natura correlazionale. Restano anche margini di lavoro concreti: completare RQ3, e
+probabilmente affinare ulteriormente il roster di eventi con l'aiuto diretto del professore, dato il
+suo interesse specifico per il rigore statistico di questo tipo di verifiche.
+
+## Bibliografia
+
+**[DA FARE — formattazione secondo lo stile richiesto dal corso; qui solo l'elenco delle fonti già
+confermate]**
+
+- Mann, H.B. (1945). "Nonparametric Tests Against Trend." *Econometrica*, 13(3), 163-171.
+- Kendall, M.G. (1975). *Rank Correlation Methods*. Charles Griffin.
+- Wilcoxon, F. (1945). "Individual Comparisons by Ranking Methods." *Biometrics Bulletin*, 1(6), 80-83.
+- Lieberson, S. (2000). *A Matter of Taste: How Names, Fashions, and Culture Change*. Yale University
+  Press.
+- Lieberson, S. & Bell, E.O. (1992). "Children's First Names: An Empirical Study of Social Taste."
+  *American Journal of Sociology*, 98(3), 511-554.
+- Twenge, J.M., Abebe, E.M., & Campbell, W.K. (2010). "Fitting In or Standing Out: Trends in American
+  Parents' Choices for Children's Names, 1880-2007." *Social Psychological and Personality Science*,
+  1(1), 19-25.
+- Twenge, J.M. et al. (2016). "Still Standing Out: Children's Names in the United States During the
+  Great Recession and Correlations with Economic Indicators." *Journal of Applied Social Psychology*.
+- Ogihara, Y. (2025). "Popularity and Diversity: The Negative Relationship in Baby Names in the United
+  Kingdom." *F1000Research*, 14, 424.
+- Ogihara, Y. (2025). "Name Uniqueness and the Rise of Individualism in the Western Hemisphere
+  (1500-2000)." *Current Research in Ecological and Social Psychology*.
+- UK Office for National Statistics (2015). "10 Pop Culture Influences on Baby Names."
+
+## Repository e riproducibilità
+
+Codice, dati grezzi ed elaborati, figure e tabelle sono disponibili nel repository del progetto:
+`https://github.com/matteraggi/HDS_evolution_of_naming`. Si veda `README.md` per gli step di
+riproduzione completi e `PROJECT_LOG.md` per il log cronologico di tutte le decisioni prese durante il
+lavoro.
