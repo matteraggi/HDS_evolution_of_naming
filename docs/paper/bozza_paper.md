@@ -382,26 +382,42 @@ suo interesse specifico per il rigore statistico di questo tipo di verifiche.
 
 ## Bibliografia
 
-**[DA FARE — formattazione secondo lo stile richiesto dal corso; qui solo l'elenco delle fonti già
-confermate]**
+**[DA FARE — formattazione secondo lo stile richiesto dal corso; verificate via ricerca web il
+2026-08-17, non solo a memoria — vedi nota di correzione sotto]**
 
-- Mann, H.B. (1945). "Nonparametric Tests Against Trend." *Econometrica*, 13(3), 163-171.
-- Kendall, M.G. (1975). *Rank Correlation Methods*. Charles Griffin.
+> **Correzione**: la voce Mann (1945) nella versione precedente di questa bozza riportava le pagine
+> 163-171 a memoria — sbagliato. Il numero corretto, confermato da più fonti indipendenti (Cambridge
+> Core, Econometric Society, Semantic Scholar), è **245-259**. Corretto qui sotto.
+
+- Mann, H.B. (1945). "Nonparametric Tests Against Trend." *Econometrica*, 13(3), 245–259.
+  DOI: [10.2307/1907187](https://doi.org/10.2307/1907187).
+- Kendall, M.G. (1975). *Rank Correlation Methods*, 4ª ed. Londra: Charles Griffin. (Nessun ISBN
+  univoco reperito per la 4ª edizione del 1975 nello specifico — le fonti trovate citano ISBN legati a
+  edizioni precedenti; da verificare in biblioteca se serve un riferimento preciso.)
 - Wilcoxon, F. (1945). "Individual Comparisons by Ranking Methods." *Biometrics Bulletin*, 1(6), 80-83.
-- Lieberson, S. (2000). *A Matter of Taste: How Names, Fashions, and Culture Change*. Yale University
-  Press.
+  DOI: [10.2307/3001968](https://doi.org/10.2307/3001968).
+- Lieberson, S. (2000). *A Matter of Taste: How Names, Fashions, and Culture Change*. New Haven: Yale
+  University Press. ISBN 0-300-08385-8.
 - Lieberson, S. & Bell, E.O. (1992). "Children's First Names: An Empirical Study of Social Taste."
-  *American Journal of Sociology*, 98(3), 511-554.
+  *American Journal of Sociology*, 98(3), 511-554. DOI:
+  [10.1086/230048](https://doi.org/10.1086/230048).
 - Twenge, J.M., Abebe, E.M., & Campbell, W.K. (2010). "Fitting In or Standing Out: Trends in American
   Parents' Choices for Children's Names, 1880-2007." *Social Psychological and Personality Science*,
-  1(1), 19-25.
-- Twenge, J.M. et al. (2016). "Still Standing Out: Children's Names in the United States During the
-  Great Recession and Correlations with Economic Indicators." *Journal of Applied Social Psychology*.
+  1(1), 19-25. DOI: [10.1177/1948550609349515](https://doi.org/10.1177/1948550609349515).
+- Twenge, J.M., Dawson, L., & Campbell, W.K. (2016). "Still Standing Out: Children's Names in the
+  United States During the Great Recession and Correlations with Economic Indicators." *Journal of
+  Applied Social Psychology*, 46, 663-670. DOI:
+  [10.1111/jasp.12409](https://doi.org/10.1111/jasp.12409). (Nomi degli autori completati — la
+  versione precedente diceva genericamente "et al.".)
 - Ogihara, Y. (2025). "Popularity and Diversity: The Negative Relationship in Baby Names in the United
-  Kingdom." *F1000Research*, 14, 424.
+  Kingdom." *F1000Research*, 14, 424. DOI:
+  [10.12688/f1000research.162476.1](https://doi.org/10.12688/f1000research.162476.1).
 - Ogihara, Y. (2025). "Name Uniqueness and the Rise of Individualism in the Western Hemisphere
-  (1500-2000)." *Current Research in Ecological and Social Psychology*.
-- UK Office for National Statistics (2015). "10 Pop Culture Influences on Baby Names."
+  (1500-2000)." *Current Research in Ecological and Social Psychology*, vol. 9.
+  [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S266662272500022X).
+- UK Office for National Statistics (2015). "10 Pop Culture Influences on Baby Names: Game of Thrones,
+  Marvel, Frozen and more." A cura di Tom Davy e Rachel Lewis, pubblicato il 17 agosto 2015.
+  [ons.gov.uk](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/articles/10popcultureinfluencesonbabynamesgameofthronesmarvelfrozenandmore/2015-08-17).
 
 ## Repository e riproducibilità
 
