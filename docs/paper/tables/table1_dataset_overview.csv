@@ -1,7 +1,7 @@
 dimension,US (SSA),Italy (ISTAT)
 Fonte primaria,"U.S. Social Security Administration, ""Baby Names from Social Security Card Applications""","ISTAT, servizio web JSONP dietro lo strumento interattivo ""contanomi"" (non documentato pubblicamente, individuato analizzando il codice JavaScript del tool)"
 URL,https://www.ssa.gov/oact/babynames/names.zip,https://www.istat.it/wp-content/themes/EGPbs5-child/contanomi/nati/index2022.php
-Tipo di accesso,Bulk download (zip, un file per anno),"Bulk via richieste HTTP ripetute (un nome/anno alla volta come inteso dal tool, ma parametrizzabile per ottenere fino a diverse migliaia di nomi per anno in un'unica richiesta)"
+Tipo di accesso,"Bulk download (zip, un file per anno)","Bulk via richieste HTTP ripetute (un nome/anno alla volta come inteso dal tool, ma parametrizzabile per ottenere fino a diverse migliaia di nomi per anno in un'unica richiesta)"
 Copertura temporale,1880-2025 (146 anni),1999-2024 (26 anni; nessun dato a livello di nome prima del 1999)
 Finestra comparabile US/Italia,1999-2024,1999-2024
 Granularità,"Conteggio completo per ogni nome/anno/sesso (soglia di soppressione: nomi con <5 nascite in un anno/sesso/stato sono esclusi)","Variabile per anno: dalla distribuzione completa (2022-2024, ~25.000 nomi distinti) a un sottoinsieme dei nomi più frequenti (minimo storico: primi 137 per il 2021) — copertura 66-100% delle nascite a seconda dell'anno, si veda Tabella 14"

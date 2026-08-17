@@ -1,5 +1,5 @@
 aspetto,SSA (US),ISTAT (Italia)
-Formato file sorgente,txt delimitato da virgole (name,sex,count),JSON (risposta JSONP di un servizio web non documentato)
+Formato file sorgente,"txt delimitato da virgole (name,sex,count)",JSON (risposta JSONP di un servizio web non documentato)
 Struttura dati,"Tabellare, machine-readable, un record per name/sex/count","Tabellare, machine-readable, stesso formato concettuale (nome/anno/sesso/conteggio/percentuale) una volta interrogato il servizio"
 Unità di osservazione minima,Singolo nome,"Singolo nome, fino alla profondità di copertura raggiunta quell'anno (minimo storico: primi 137 nomi per il 2021; 2022-2024: distribuzione completa)"
 Copertura della distribuzione,Completa (tutti i nomi con >=5 nascite/anno/stato/sesso),"Variabile 66-100% delle nascite a seconda dell'anno (Tabella 14 dimostra che questo non introduce distorsione nella metrica di concentrazione primi-10/30, mentre l'entropia resta attendibile solo per il 2022-2024)"
