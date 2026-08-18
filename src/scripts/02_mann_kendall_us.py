@@ -52,7 +52,7 @@ def main():
                 })
 
     with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["sex", "window", "metric", "n_years", "trend", "p_value", "tau", "sens_slope"])
+        writer = csv.DictWriter(f, fieldnames=["sex", "window", "metric", "n_years", "trend", "p_value", "tau", "sens_slope"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(results)
 

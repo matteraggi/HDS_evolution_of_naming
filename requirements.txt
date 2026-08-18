@@ -1,0 +1,5 @@
+# Python dependencies for the analysis and figure-generation pipeline.
+# Verified with Python 3.13.14 on Fedora 44.
+matplotlib==3.11.1
+scipy==1.18.0
+pymannkendall==1.4.3

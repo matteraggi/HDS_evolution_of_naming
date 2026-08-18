@@ -1,5 +1,7 @@
 *.pyc
 __pycache__/
+.venv/
+.cache/
 dataset/istat/*.pdf
 dataset/processed/us_names_long.csv
 docs/paper/figures/*.png

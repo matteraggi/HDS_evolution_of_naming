@@ -1,4 +1,4 @@
-"""
+r"""
 Generate LaTeX table snippets from the paper's CSV tables, so numbers in the
 .tex document are pulled directly from the data rather than hand-transcribed
 (same reasoning as everywhere else in this project: avoid manual transcription

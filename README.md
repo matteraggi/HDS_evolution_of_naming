@@ -2,6 +2,8 @@
 
 Human Data Science course paper. See `docs/project_plan_baby_names.md` for the original research
 plan and `PROJECT_LOG.md` for a plain-language, dated log of what's changed since then and why.
+For a complete, verified local setup and one-command regeneration of the analysis, see
+[`docs/SETUP.md`](docs/SETUP.md).
 
 ## Data sources
 
@@ -17,6 +19,18 @@ plan and `PROJECT_LOG.md` for a plain-language, dated log of what's changed sinc
   a corroboration/citation trail, not deleted, but is no longer the backbone data source.
 
 ## Repro steps
+
+The recommended local command is:
+
+```bash
+make all
+```
+
+It creates the Python environment and regenerates every derived dataset, table and figure without
+re-scraping ISTAT. Full prerequisites, commands and the deliberate separation of the online ISTAT
+scraper are documented in [`docs/SETUP.md`](docs/SETUP.md).
+
+The individual commands below remain useful when working on one pipeline stage:
 
 ```bash
 # --- Data acquisition ---
