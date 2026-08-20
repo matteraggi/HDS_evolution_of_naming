@@ -20,6 +20,7 @@ PIPELINE = [
     "01_process_ssa.py",
     "01b_process_istat_contanomi.py",
     "01c_check_coverage_bias.py",
+    "01d_check_cosine_bias.py",
     "02_mann_kendall_us.py",
     "03_us_italy_comparison.py",
     "06_find_us_spikes.py",

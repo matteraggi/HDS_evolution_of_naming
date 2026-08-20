@@ -1,0 +1,27 @@
+ID,Nome,Paese,Anno,Categoria,Ipotesi,Freq Pre (100k),Freq Post (100k),Variazione %,Ratio Trattato,Ratio Controlli,Impatto Netto DiD
+US_01,Elsa,US,2013,Cinema_TV,Expected_Up,28.85,63.82,+121.2%,2.212,1.014,+1.199
+IT_01,Elsa,IT,2013,Cinema_TV,Expected_Up,21.07,55.75,+164.6%,2.646,1.066,+1.580
+US_02,Khaleesi,US,2011,Cinema_TV,Expected_Up,0.0,0.0,+0.0%,0.0,0.575,-0.575
+IT_02,Khaleesi,IT,2011,Cinema_TV,Expected_Up,0.0,0.0,+0.0%,0.0,1.0,-1.000
+US_03,Isabella,US,2008,Cinema_TV,Expected_Up,925.67,1290.28,+39.4%,1.394,0.997,+0.397
+IT_03,Isabella,IT,2008,Cinema_TV,Expected_Up,182.63,236.86,+29.7%,1.297,0.779,+0.518
+US_04,Shirley,US,1935,Cinema_TV,Expected_Up,1654.87,3379.6,+104.2%,2.042,1.042,+1.000
+US_05,Tammy,US,1957,Musica,Expected_Up,10.79,677.4,+6180.6%,62.806,0.927,+61.879
+US_06,Nakia,US,1974,Cinema_TV,Expected_Up,0.48,66.67,+13789.1%,138.891,1.329,+137.562
+IT_04,Gennaro,IT,2006,Sport,Expected_Up,180.28,163.68,-9.2%,0.908,0.945,-0.037
+IT_05,Ilary,IT,2002,Celebrity,Expected_Up,1.17,16.7,+1333.1%,14.331,0.332,+14.000
+IT_06,Chanel,IT,2007,Celebrity,Expected_Up,3.04,58.85,+1837.8%,19.378,0.56,+18.818
+IT_07,Elodie,IT,2017,Musica,Expected_Up,19.94,62.61,+213.9%,3.139,0.668,+2.471
+IT_08,Soleil,IT,2021,Celebrity,Expected_Up,50.61,256.78,+407.4%,5.074,0.949,+4.125
+IT_09,Celine,IT,2023,Musica,Expected_Up,43.75,370.04,+745.9%,8.459,1.044,+7.415
+US_07,Karen,US,2020,Scandal_Negative,Expected_Down,28.64,13.96,-51.3%,0.487,1.315,-0.828
+US_08,Alexa,US,2015,Scandal_Negative,Expected_Down,238.62,269.47,+12.9%,1.129,0.986,+0.143
+IT_10,Alexa,IT,2018,Scandal_Negative,Expected_Down,4.72,0.0,-100.0%,0.0,0.0,+0.000
+US_09,Hillary,US,1993,Scandal_Negative,Expected_Down,104.17,22.9,-78.0%,0.22,0.896,-0.677
+IT_11,Kevin,IT,2002,Scandal_Negative,Expected_Down,350.5,345.75,-1.4%,0.986,1.099,-0.112
+US_10,Margot,US,2023,Control_Null,Expected_Null,88.28,160.21,+81.5%,1.815,0.843,+0.972
+IT_12,Margot,IT,2023,Control_Null,Expected_Null,42.89,52.46,+22.3%,1.223,0.783,+0.441
+US_11,Robert,US,2023,Control_Null,Expected_Null,247.46,220.91,-10.7%,0.893,0.899,-0.006
+IT_13,Frodo,IT,2001,Control_Null,Expected_Null,0.0,0.0,+0.0%,0.0,0.0,+0.000
+US_12,Jalen,US,1993,Sport,Expected_Up,10.56,87.89,+732.4%,8.324,1.192,+7.132
+IT_14,Cristiano,IT,2018,Sport,Expected_Up,118.09,144.82,+22.6%,1.226,0.901,+0.325

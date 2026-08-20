@@ -5,3 +5,17 @@ __pycache__/
 dataset/istat/*.pdf
 dataset/processed/us_names_long.csv
 docs/paper/figures/*.png
+
+# LaTeX build artifacts: keep .tex sources and generated tables, ignore local builds.
+docs/paper/*.aux
+docs/paper/*.bbl
+docs/paper/*.bcf
+docs/paper/*.blg
+docs/paper/*.fdb_latexmk
+docs/paper/*.fls
+docs/paper/*.log
+docs/paper/*.out
+docs/paper/*.pdf
+docs/paper/*.run.xml
+docs/paper/*.synctex.gz
+docs/paper/*.toc

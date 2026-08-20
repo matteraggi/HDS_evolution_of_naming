@@ -88,6 +88,13 @@ def main():
         "tab:negative_spikes", wide=True, fontsize="\\footnotesize",
         colspec="l p{2cm} c p{3cm} p{6cm} c",
     )
+    write_table(
+        "table17_formal_hypotheses.csv", "table17.tex",
+        "Sintesi delle ipotesi statistiche formali, test utilizzati e decisioni per RQ1",
+        "tab:formal_hypotheses", wide=True, fontsize="\\footnotesize",
+        colspec="p{4.5cm} p{4.2cm} p{4.2cm} p{4.5cm} c",
+    )
+
 
 
 if __name__ == "__main__":
