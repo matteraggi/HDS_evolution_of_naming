@@ -143,7 +143,7 @@ def main():
         "table17_formal_hypotheses.csv", "table17.tex",
         "Sintesi delle ipotesi statistiche formali, test utilizzati e decisioni per RQ1",
         "tab:formal_hypotheses", wide=True, fontsize="\\footnotesize",
-        colspec="p{4.5cm} p{4.2cm} p{4.2cm} p{4.5cm} c",
+        colspec=f"{P('4.5cm')} {P('4.2cm')} {P('4.2cm')} {P('4.5cm')} c",
     )
 
 
