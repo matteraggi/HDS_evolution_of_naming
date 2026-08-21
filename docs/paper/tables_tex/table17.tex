@@ -1,16 +1,16 @@
 \begin{table*}[t]
 \centering
 \footnotesize
-\caption{Sintesi delle ipotesi statistiche formali, test utilizzati e decisioni per RQ1}
+\caption{Sintesi delle ipotesi statistiche formali per RQ1 (dettagli di H0/H1 nel testo)}
 \label{tab:formal_hypotheses}
-\begin{tabular}{>{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}p{4.5cm} c}
+\begin{tabular}{>{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{3.5cm} c}
 \toprule
-\textbf{Ambito / Domanda} & \textbf{Ipotesi Nulla (H0)} & \textbf{Ipotesi Alternativa (H1)} & \textbf{Test Statistico \& Valore} & \textbf{Decisione (alpha=0.05)} \\
+\textbf{Ambito} & \textbf{Test \& statistica} & \textbf{p} & \textbf{Decisione} \\
 \midrule
-Trend Concentrazione US (1880-2025) & Nessun trend nella quota Top-10 (tau = 0) & Trend decrescente nella quota Top-10 (tau < 0) & Mann-Kendall (Z = -14.65, p < 0.001) & Rifiuto H0 \\
-Trend Concentrazione IT (1999-2024) & Nessun trend nella quota Top-10 (tau = 0) & Trend decrescente nella quota Top-10 (tau < 0) & Mann-Kendall (Z = -6.12, p < 1e-9) & Rifiuto H0 \\
-Gap Concentrazione US vs IT (1999-2024) & Concentrazione media Top-30 US = IT & Concentrazione media IT > US & Wilcoxon Signed-Rank (W = 325, p < 0.0001) & Rifiuto H0 \\
-Convergenza US-IT (Coseno 1999-2024) & Similarita coseno stazionaria (tau = 0) & Similarita coseno in aumento (tau > 0) & Mann-Kendall su Coseno (p = 2.4e-12 M, 2.8e-11 F) & Rifiuto H0 \\
+Trend concentrazione US (1880-2025) & Mann-Kendall, Z = -14.65 & < 0.001 & Rifiuto H0 \\
+Trend concentrazione IT (1999-2024) & Mann-Kendall, Z = -6.12 & < 1e-9 & Rifiuto H0 \\
+Gap concentrazione US vs IT (1999-2024) & Wilcoxon Signed-Rank, W = 325 & < 0.0001 & Rifiuto H0 \\
+Convergenza US-IT (coseno, 1999-2024) & Mann-Kendall su coseno & 2.4e-12 (M), 2.8e-11 (F) & Rifiuto H0 \\
 \bottomrule
 \end{tabular}
 \end{table*}

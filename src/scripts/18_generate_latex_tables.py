@@ -141,9 +141,9 @@ def main():
     )
     write_table(
         "table17_formal_hypotheses.csv", "table17.tex",
-        "Sintesi delle ipotesi statistiche formali, test utilizzati e decisioni per RQ1",
+        "Sintesi delle ipotesi statistiche formali per RQ1 (dettagli di H0/H1 nel testo)",
         "tab:formal_hypotheses", wide=True, fontsize="\\footnotesize",
-        colspec=f"{P('4.5cm')} {P('4.2cm')} {P('4.2cm')} {P('4.5cm')} c",
+        colspec=f"{P('5cm')} {P('4.5cm')} {P('3.5cm')} c",
     )
 
 
