@@ -27,7 +27,7 @@
 \IEEEauthorblockN{Elia Friberg}
 \IEEEauthorblockA{Alma Mater Studiorum -- Università di Bologna}
 \and
-\IEEEauthorblockN{Matteo [DA COMPLETARE -- cognome]}
+\IEEEauthorblockN{Matteo Raggi}
 \IEEEauthorblockA{Alma Mater Studiorum -- Università di Bologna}
 }
 
@@ -188,10 +188,14 @@ profondità massima raggiunta.
 \subsection{Validazione scientifica}
 \label{sec:validazione}
 
+Si sottolinea una distinzione concettuale fondamentale: le metriche di concentrazione e diversizzazione dei nomi fungono da proxy quantitativo per l'\textbf{individualizzazione} (la frammentazione sociale e la ricerca di unicità nelle scelte di consumo culturale), \textbf{non} come misura psicologica diretta o valutazione morale dell'\emph{individualismo}.
+
 Questa sezione distingue esplicitamente due categorie di verifica: \textbf{test di ipotesi formali}
-($H_0$/$H_1$/$\alpha = 0{,}05$ dichiarati) e \textbf{controlli di robustezza/sensibilità}, che non
+($H_0$/$H_1$/$\alpha = 0{,}05$ dichiarati, sintetizzati nella Tabella~\ref{tab:formal_hypotheses}) e \textbf{controlli di robustezza/sensibilità}, che non
 testano un'ipotesi statistica ma quantificano quanto una conclusione dipenderebbe da una scelta
 metodologica diversa.
+
+\input{tables_tex/table17.tex}
 
 \textbf{Mann-Kendall} \cite{mann1945, kendall1975}. $H_0$: nessun trend monotono; $H_1$: trend
 monotono (crescente/decrescente). Su tutte le combinazioni testate sui dati USA, $H_0$ è respinta con
@@ -213,12 +217,15 @@ costituiscono un test di ipotesi formale in senso stretto -- la non sovrapposizi
 informale, riportata come conferma supplementare del test Mann-Kendall sulla serie differenza, non
 come prova indipendente.
 
-Il \textbf{controllo di robustezza alla profondità di copertura} (troncamento artificiale dei due anni
+Il \textbf{controllo di robustezza alla profondità di copertura per la concentrazione e l'entropia} (troncamento artificiale dei due anni
 italiani completi alle profondità reali degli altri anni) mostra che la distorsione sulla quota
 primi-10/primi-30 è \textbf{esattamente zero a ogni profondità testata}, mentre l'entropia di Shannon
 mostra una distorsione monotona dal $-19\%$ al $-50\%$ (Tabella~\ref{tab:coverage_bias},
 Figura~\ref{fig:coverage_bias}) -- da qui la scelta di riportare l'entropia italiana solo per il
 2022-2024.
+
+Il \textbf{controllo di robustezza della similarità coseno rispetto alla copertura}
+dimostra che il troncamento della distribuzione italiana produce un'alterazione trascurabile della similarità coseno rispetto agli USA: la distorsione è inferiore all'1,9\% persino al livello di troncamento peggiore degli anni storici (profondità 377 nel 1999) e scende sotto lo 0,46\% per tutte le profondità superiori a 1.000 nomi. Questo conferma che la misura di convergenza distributiva (coseno) è empiricamente esente da bias di copertura significativo su tutto il periodo 1999-2024.
 
 \input{tables_tex/table14.tex}
 

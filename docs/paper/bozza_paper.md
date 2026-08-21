@@ -137,10 +137,12 @@ mantenuta come metrica comparativa primaria la **quota di concentrazione dei pri
 un indice di varietà indipendente), che dipende solo dai nomi più popolari — catturati ogni anno
 indipendentemente dalla profondità massima raggiunta.
 
+Si sottolinea una distinzione concettuale fondamentale: le metriche di concentrazione e diversità dei nomi fungono da proxy quantitativo per l'**individualizzazione** (la frammentazione sociale e la ricerca di unicità nelle scelte di consumo culturale), **non** come misura psicologica diretta o valutazione morale dell'*individualismo*.
+
 ### Validazione scientifica
 
 Questa sezione distingue esplicitamente due categorie di verifica: **test di ipotesi formali**
-(H₀/H₁/α = 0,05 dichiarati) e **controlli di robustezza/sensibilità**, che non testano un'ipotesi
+(H₀/H₁/α = 0,05 dichiarati, sintetizzati nella Tabella 17) e **controlli di robustezza/sensibilità**, che non testano un'ipotesi
 statistica ma quantificano quanto una conclusione dipenderebbe da una scelta metodologica diversa.
 
 **Mann-Kendall** (Mann 1945; Kendall 1975). H₀: nessun trend monotono; H₁: trend monotono
@@ -161,11 +163,14 @@ costituiscono un test di ipotesi formale in senso stretto — la non sovrapposiz
 informale, riportata come conferma supplementare del test Mann-Kendall sulla serie differenza, non
 come prova indipendente.
 
-Il **controllo di robustezza alla profondità di copertura** (troncamento artificiale dei due anni
+Il **controllo di robustezza alla profondità di copertura per la concentrazione e l'entropia** (troncamento artificiale dei due anni
 italiani completi alle profondità reali degli altri anni) mostra che la distorsione sulla quota
 primi-10/primi-30 è **esattamente zero a ogni profondità testata**, mentre l'entropia di Shannon
 mostra una distorsione monotona dal −19% al −50% (Tabella 14, Figura 4) — da qui la scelta di
 riportare l'entropia italiana solo per il 2022-2024.
+
+Il **controllo di robustezza della similarità coseno rispetto alla copertura** (`src/scripts/01d_check_cosine_bias.py`)
+dimostra che il troncamento della distribuzione italiana produce un'alterazione trascurabile della similarità coseno rispetto agli USA: la distorsione è inferiore all'1,9% persino al livello di troncamento peggiore degli anni storici (profondità 377 nel 1999) e scende sotto lo 0,46% per tutte le profondità superiori a 1.000 nomi. Questo conferma che la misura di convergenza distributiva (coseno) è empiricamente esente da bias di copertura significativo su tutto il periodo 1999-2024.
 
 Il **controllo di robustezza geografica** (nuovo, si veda Risultati) usa i dati SSA per stato per
 verificare se i casi-studio RQ2 più solidi si muovono in modo uniforme su tutti gli stati o in modo

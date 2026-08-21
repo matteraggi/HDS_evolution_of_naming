@@ -56,7 +56,7 @@ def main():
     fieldnames = ["name", "gender", "year", "count", "baseline", "ratio", "births_lost", "score"]
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(candidates)
 

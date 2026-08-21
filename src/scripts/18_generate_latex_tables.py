@@ -1,4 +1,4 @@
-"""
+r"""
 Generate LaTeX table snippets from the paper's CSV tables, so numbers in the
 .tex document are pulled directly from the data rather than hand-transcribed
 (same reasoning as everywhere else in this project: avoid manual transcription
@@ -139,6 +139,13 @@ def main():
         "tab:negative_spikes", wide=True, fontsize="\\footnotesize",
         colspec=f"l {P('2cm')} c {P('3cm')} {P('6cm')} c",
     )
+    write_table(
+        "table17_formal_hypotheses.csv", "table17.tex",
+        "Sintesi delle ipotesi statistiche formali, test utilizzati e decisioni per RQ1",
+        "tab:formal_hypotheses", wide=True, fontsize="\\footnotesize",
+        colspec="p{4.5cm} p{4.2cm} p{4.2cm} p{4.5cm} c",
+    )
+
 
 
 if __name__ == "__main__":
