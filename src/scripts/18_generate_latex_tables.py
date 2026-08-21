@@ -6,6 +6,22 @@ errors on numbers that already exist in a clean source file).
 
 Output: docs/paper/tables_tex/tableN.tex, one \begin{table*}...\end{table*}
 (or \begin{table} for narrower ones) per input CSV, ready for \input{}.
+
+2026-08-17: reworked after real Overleaf compile warnings came back
+(table14/table15 overflowing the page width, table13/table16 producing
+underfull-hbox warnings inside p{} columns). Fixes:
+  - table14: was single-column (wide=False), too narrow for 5 numeric
+    columns at any reasonable font -> now table* (full width).
+  - table15: was dumping raw snake_case CSV headers verbatim as column
+    headers (e.g. "percento\_stati\_concordanti") across 12 columns - the
+    headers alone blew the width budget. Now uses a `columns` allowlist to
+    pick a short display header per column and drops two columns that were
+    redundant with others already shown (raw concordant-state count,
+    duplicate of the percentage already shown; median ratio, secondary
+    to the top/bottom range already shown).
+  - p{} columns now default to ragged-right instead of fully justified -
+    justification inside a narrow column is what was producing the
+    underfull-hbox warnings on long unbroken Italian sentences.
 """
 
 import csv
@@ -24,15 +40,31 @@ def esc(s: str) -> str:
     return s
 
 
-def write_table(csv_name, tex_name, caption, label, wide=True, fontsize="\\footnotesize", colspec=None):
+def P(width: str) -> str:
+    """Ragged-right paragraph column of the given width (e.g. '3cm') - avoids the
+    underfull-hbox warnings that plain p{} (fully justified) produces on narrow columns."""
+    return f">{{\\raggedright\\arraybackslash}}p{{{width}}}"
+
+
+def write_table(csv_name, tex_name, caption, label, colspec, wide=True, fontsize="\\footnotesize",
+                 columns=None):
+    """
+    columns: optional list of (csv_field_name, display_header) to select, rename, and
+    reorder columns from the source CSV. If omitted, uses every CSV column verbatim
+    (fine for CSVs whose headers are already short/human-readable).
+    """
     path = os.path.join(TABLES_DIR, csv_name)
     with open(path, encoding="utf-8") as f:
-        rows = list(csv.reader(f))
-    header, body = rows[0], rows[1:]
-    ncols = len(header)
-    if colspec is None:
-        colspec = "l" * ncols
+        rows = list(csv.DictReader(f))
 
+    if columns:
+        field_order = [c for c, _ in columns]
+        display_headers = [h for _, h in columns]
+    else:
+        field_order = list(rows[0].keys()) if rows else []
+        display_headers = field_order
+
+    ncols = len(field_order)
     env = "table*" if wide else "table"
     lines = []
     lines.append(f"\\begin{{{env}}}[t]")
@@ -42,11 +74,11 @@ def write_table(csv_name, tex_name, caption, label, wide=True, fontsize="\\footn
     lines.append(f"\\label{{{label}}}")
     lines.append(f"\\begin{{tabular}}{{{colspec}}}")
     lines.append("\\toprule")
-    lines.append(" & ".join(f"\\textbf{{{esc(h)}}}" for h in header) + " \\\\")
+    lines.append(" & ".join(f"\\textbf{{{esc(h)}}}" for h in display_headers) + " \\\\")
     lines.append("\\midrule")
-    for r in body:
-        r = r + [""] * (ncols - len(r))  # pad short rows
-        lines.append(" & ".join(esc(c) for c in r[:ncols]) + " \\\\")
+    for r in rows:
+        cells = [r.get(f, "") for f in field_order]
+        lines.append(" & ".join(esc(c) for c in cells) + " \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
     lines.append(f"\\end{{{env}}}")
@@ -54,7 +86,7 @@ def write_table(csv_name, tex_name, caption, label, wide=True, fontsize="\\footn
     out_path = os.path.join(OUT_DIR, tex_name)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
-    print(f"Wrote {out_path} ({len(body)} rows x {ncols} cols)")
+    print(f"Wrote {out_path} ({len(rows)} rows x {ncols} cols)")
 
 
 def main():
@@ -62,31 +94,50 @@ def main():
         "table1_dataset_overview.csv", "table1.tex",
         "Confronto delle fonti dati USA (SSA) e Italia (ISTAT contanomi)",
         "tab:dataset_overview", wide=True, fontsize="\\scriptsize",
-        colspec="p{3.2cm} p{6.3cm} p{6.3cm}",
+        colspec=f"{P('3.2cm')} {P('6.3cm')} {P('6.3cm')}",
     )
     write_table(
         "table13_istat_vs_ssa_structure.csv", "table13.tex",
         "Confronto strutturale tra il formato dati SSA e quello ISTAT",
         "tab:istat_vs_ssa", wide=True, fontsize="\\scriptsize",
-        colspec="p{3.2cm} p{6.3cm} p{6.3cm}",
+        colspec=f"{P('3.2cm')} {P('6.3cm')} {P('6.3cm')}",
     )
     write_table(
         "table14_coverage_bias_check.csv", "table14.tex",
         "Distorsione delle metriche in funzione della profondità di copertura (troncamento artificiale dei dati 2023/2024)",
-        "tab:coverage_bias", wide=False, fontsize="\\footnotesize",
+        "tab:coverage_bias", wide=True, fontsize="\\footnotesize",
         colspec="r r r r r",
+        columns=[
+            ("profondita_copertura", "Profondità (nomi)"),
+            ("bias_quota_primi10", "Bias top-10 (p.p.)"),
+            ("bias_quota_primi30", "Bias top-30 (p.p.)"),
+            ("bias_entropia_bit", "Bias entropia (bit)"),
+            ("bias_entropia_percento", "Bias entropia (%)"),
+        ],
     )
     write_table(
         "table15_state_concentration.csv", "table15.tex",
-        "Uniformità geografica dei casi-studio RQ2 (dati per stato, solo USA)",
+        "Uniformità geografica dei casi-studio RQ2 (dati per stato, solo USA; \"stato top\"/\"stato min\" = quello con il rapporto più alto/più basso vs. baseline)",
         "tab:state_concentration", wide=True, fontsize="\\scriptsize",
-        colspec="l c c c c r c r c r c r",
+        colspec="l c c c r r c r c r",
+        columns=[
+            ("nome", "Nome"),
+            ("sesso", "Sesso"),
+            ("anno_evento", "Anno"),
+            ("tipo", "Tipo"),
+            ("stati_con_dati", "N stati"),
+            ("percento_stati_concordanti", "% concordi"),
+            ("stato_top", "Top"),
+            ("rapporto_stato_top", "Rapp. top"),
+            ("stato_minimo", "Min"),
+            ("rapporto_stato_minimo", "Rapp. min"),
+        ],
     )
     write_table(
         "table16_negative_spikes.csv", "table16.tex",
         "Roster finale dei crolli onomastici verificati (\"anti-spike\")",
         "tab:negative_spikes", wide=True, fontsize="\\footnotesize",
-        colspec="l p{2cm} c p{3cm} p{6cm} c",
+        colspec=f"l {P('2cm')} c {P('3cm')} {P('6cm')} c",
     )
 
 
