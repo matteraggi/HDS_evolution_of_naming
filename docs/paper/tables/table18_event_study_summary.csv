@@ -1,0 +1,5 @@
+Categoria Evento,N. Eventi,Impatto Netto Medio DiD (%),Impatto Mediano DiD (%),Wilcoxon W,p-value,Esito Statistico
+Cinema & Serie TV,71,+232.2%,+9.0%,574.5,5.5552e-05,p < 0.001 (Significativo)
+Musica & Pop Culture,46,+244.9%,+31.1%,233.0,5.4351e-04,p < 0.001 (Significativo)
+Sport,35,+76.2%,+2.0%,234.0,1.8978e-01,p = 0.190 (Non Sig.)
+TOTALE COMPLESSIVO,152,+200.1%,+9.4%,2954.5,1.4412e-07,p < 0.0001 (Significativo)

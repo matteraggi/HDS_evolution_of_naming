@@ -1,0 +1,143 @@
+category,year,country,title,character,sex,peak_year,peak_freq_per_100k,t5_year,t5_freq_per_100k,persistence_p5_pct,status,did_net_effect_pct
+Cinema & TV,1999,US,The Sixth Sense,Cole,M,2000,301.73,2005,279.73,92.7,Adozione Strutturale (Persistente),26.58
+Cinema & TV,1999,US,Toy Story 2,Jessie,F,2000,39.59,2005,27.44,69.3,Decadimento Moderato,-21.22
+Cinema & TV,2000,US,How the Grinch Stole Christmas,Cindy,F,2001,68.42,2006,46.34,67.7,Decadimento Moderato,-3.43
+Cinema & TV,2000,US,Cast Away,Chuck,M,2001,0.87,2006,0.54,61.2,Decadimento Moderato,-12.62
+Cinema & TV,2000,US,Gladiator,Maximus,M,2002,46.97,2007,47.99,102.2,Adozione Strutturale (Persistente),7730.01
+Cinema & TV,2001,US,Harry Potter and the Sorcerer's Stone,Harry,M,2003,22.63,2008,18.68,82.5,Adozione Strutturale (Persistente),-1.84
+Cinema & TV,2001,US,The Lord of the Rings: The Fellowship of the Ring,Arwen,F,2003,6.4,2008,4.55,71.0,Adozione Strutturale (Persistente),875.95
+Cinema & TV,2001,US,Shrek,Fiona,F,2003,48.44,2008,50.98,105.3,Adozione Strutturale (Persistente),64.01
+Cinema & TV,2002,US,Spider-Man,Peter,M,2003,141.95,2008,107.15,75.5,Adozione Strutturale (Persistente),-10.35
+Cinema & TV,2002,US,The Lord of the Rings: The Two Towers,Eowyn,F,2004,3.49,2009,2.99,85.9,Adozione Strutturale (Persistente),369.07
+Cinema & TV,2003,US,The Lord of the Rings: The Return of the King,Arwen,F,2004,9.04,2009,4.41,48.8,Decadimento Moderato,650.5
+Cinema & TV,2003,US,Finding Nemo,Nemo,M,2004,0.25,2021,0.46,181.5,Adozione Strutturale (Persistente),-24.71
+Cinema & TV,2003,US,Pirates of the Caribbean: The Curse of the Black Pearl,Jack,M,2005,546.04,2010,444.06,81.3,Adozione Strutturale (Persistente),21.45
+Cinema & TV,2004,US,Shrek 2,Fiona,F,2006,52.12,2011,68.84,132.1,Adozione Strutturale (Persistente),14.93
+Cinema & TV,2004,US,Spider-Man 2,Peter,M,2005,127.92,2010,100.85,78.8,Adozione Strutturale (Persistente),-14.48
+Cinema & TV,2005,US,"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",Lucy,F,2007,133.67,2012,216.8,162.2,Adozione Strutturale (Persistente),68.34
+Cinema & TV,2006,US,Pirates of the Caribbean: Dead Man's Chest,Jack,M,2007,514.16,2012,418.62,81.4,Adozione Strutturale (Persistente),8.25
+Cinema & TV,2006,US,Night at the Museum,Larry,M,2007,46.4,2012,34.74,74.9,Adozione Strutturale (Persistente),-1.28
+Cinema & TV,2007,US,Spider-Man 3,Peter,M,2008,107.15,2013,98.01,91.5,Adozione Strutturale (Persistente),-11.08
+Cinema & TV,2007,US,Transformers,Sam,M,2008,29.8,2013,25.38,85.1,Adozione Strutturale (Persistente),5.91
+Cinema & TV,2008,US,The Dark Knight,Bruce,M,2009,29.54,2014,40.24,136.2,Adozione Strutturale (Persistente),4.25
+Cinema & TV,2008,US,Iron Man,Tony,M,2009,40.58,2014,34.67,85.4,Adozione Strutturale (Persistente),-11.55
+Cinema & TV,2008,US,Twilight,Isabella,F,2010,1290.28,2015,877.65,68.0,Decadimento Moderato,47.84
+Cinema & TV,2008,US,Twilight,Bella,F,2010,288.93,2015,213.66,73.9,Adozione Strutturale (Persistente),173.33
+Cinema & TV,2009,US,Transformers: Revenge of the Fallen,Sam,M,2011,28.75,2016,25.19,87.6,Adozione Strutturale (Persistente),5.88
+Cinema & TV,2010,US,Toy Story 3,Woody,M,2012,0.47,2017,0.27,56.9,Decadimento Moderato,11.06
+Cinema & TV,2010,US,Alice in Wonderland,Alice,F,2012,142.13,2017,221.61,155.9,Adozione Strutturale (Persistente),140.55
+Cinema & TV,2011,US,Harry Potter and the Deathly Hallows – Part 2,Harry,M,2013,17.5,2018,23.57,134.7,Adozione Strutturale (Persistente),-2.01
+Cinema & TV,2011,US,Transformers: Dark of the Moon,Sam,M,2012,26.89,2017,28.53,106.1,Adozione Strutturale (Persistente),-4.22
+Cinema & TV,2011,US,Game of Thrones,Arya,F,2013,64.91,2018,150.26,231.5,Adozione Strutturale (Persistente),321.69
+Cinema & TV,2012,US,The Avengers,Natasha,F,2013,28.15,2018,19.81,70.4,Adozione Strutturale (Persistente),-25.33
+Cinema & TV,2012,US,The Dark Knight Rises,Bruce,M,2014,40.24,2019,34.78,86.4,Adozione Strutturale (Persistente),43.57
+Cinema & TV,2013,US,The Hunger Games: Catching Fire,Katniss,F,2014,2.13,2019,0.3,14.0,Moda Passeggera (Fad Temporaneo),193.22
+Cinema & TV,2013,US,Frozen,Elsa,F,2014,63.82,2019,20.85,32.7,Moda Passeggera (Fad Temporaneo),83.09
+Cinema & TV,2013,US,Frozen,Anna,F,2014,319.42,2019,229.33,71.8,Adozione Strutturale (Persistente),-1.63
+Cinema & TV,2014,US,American Sniper,Chris,M,2015,29.69,2020,22.13,74.6,Adozione Strutturale (Persistente),-11.84
+Cinema & TV,2014,US,The Hunger Games: Mockingjay – Part 1,Katniss,F,2016,1.81,2021,0.85,47.2,Decadimento Moderato,125.77
+Cinema & TV,2015,US,Star Wars: The Force Awakens,Kylo,M,2016,12.54,2021,31.9,254.3,Adozione Strutturale (Persistente),2629.29
+Cinema & TV,2015,US,Jurassic World,Claire,F,2016,294.35,2021,225.74,76.7,Adozione Strutturale (Persistente),8.96
+Cinema & TV,2017,US,Star Wars: The Last Jedi,Rey,F,2018,3.88,2023,1.93,49.8,Decadimento Moderato,-5.59
+Cinema & TV,2017,US,Beauty and the Beast,Belle,F,2018,18.34,2023,15.58,84.9,Adozione Strutturale (Persistente),28.6
+Cinema & TV,2018,US,Black Panther,Nakia,F,2019,1.73,2024,0.86,50.0,Decadimento Moderato,80.82
+Cinema & TV,2018,US,Avengers: Infinity War,Wanda,F,2020,1.11,2025,1.24,111.8,Adozione Strutturale (Persistente),-31.92
+Cinema & TV,2019,US,Avengers: Endgame,Tony,M,2020,24.74,2025,19.03,76.9,Adozione Strutturale (Persistente),-14.12
+Cinema & TV,2019,US,The Lion King,Simba,M,2020,0.98,2025,0.82,83.2,Adozione Strutturale (Persistente),89.41
+Cinema & TV,2020,US,Bad Boys for Life,Marcus,M,2021,92.37,2025,78.51,85.0,Adozione Strutturale (Persistente),-10.77
+Cinema & TV,2021,US,Spider-Man: No Way Home,Peter,M,2023,102.3,2025,114.4,111.8,Adozione Strutturale (Persistente),4.72
+Cinema & TV,2022,US,Top Gun: Maverick,Pete,M,2023,3.16,2025,3.4,107.6,Adozione Strutturale (Persistente),-5.18
+Cinema & TV,2023,US,Barbie,Barbie,F,2024,3.15,2025,2.05,65.2,Decadimento Moderato,48.47
+Cinema & TV,2023,US,Oppenheimer,Robert,M,2024,220.91,2025,220.83,100.0,Adozione Strutturale (Persistente),-3.56
+Cinema & TV,2000,IT,Chiedimi se sono felice,Giacomo,M,2001,933.27,2006,781.58,83.7,Adozione Strutturale (Persistente),6.39
+Cinema & TV,2002,IT,Natale sul Nilo,Christian,M,2003,819.13,2008,1280.79,156.4,Adozione Strutturale (Persistente),8.97
+Cinema & TV,2003,IT,Il paradiso all'improvviso,Leonardo,M,2005,1353.5,2010,1835.88,135.6,Adozione Strutturale (Persistente),15.61
+Cinema & TV,2004,IT,Shrek 2,Fiona,F,2006,12.69,2011,8.15,64.2,Decadimento Moderato,214.61
+Cinema & TV,2005,IT,Manuale d'amore,Tommaso,M,2006,1652.54,2011,1386.66,83.9,Adozione Strutturale (Persistente),32.73
+Cinema & TV,2006,IT,Il codice da Vinci,Robert,M,2008,36.21,2013,27.74,76.6,Adozione Strutturale (Persistente),93.61
+Cinema & TV,2007,IT,Natale in crociera,Fabio,M,2008,488.88,2013,289.52,59.2,Decadimento Moderato,-16.15
+Cinema & TV,2007,IT,Coco Chanel (Miniserie TV),Chanel,F,2009,58.85,2014,75.8,128.8,Adozione Strutturale (Persistente),1821.46
+Cinema & TV,2008,IT,Madagascar 2,Alex,M,2009,346.77,2014,342.71,98.8,Adozione Strutturale (Persistente),1.84
+Cinema & TV,2008,IT,Twilight,Isabella,F,2010,236.86,2015,289.92,122.4,Adozione Strutturale (Persistente),31.71
+Cinema & TV,2009,IT,L'era glaciale 3,Diego,M,2010,1089.86,2015,1173.1,107.6,Adozione Strutturale (Persistente),51.83
+Cinema & TV,2010,IT,Benvenuti al Sud,Mattia,M,2012,2472.55,2017,2448.93,99.0,Adozione Strutturale (Persistente),17.64
+Cinema & TV,2010,IT,Alice in Wonderland,Alice,F,2011,1630.33,2016,1538.55,94.4,Adozione Strutturale (Persistente),0.81
+Cinema & TV,2012,IT,Benvenuti al Nord,Alberto,M,2013,360.24,2018,324.14,90.0,Adozione Strutturale (Persistente),-25.64
+Cinema & TV,2013,IT,Sole a catinelle,Sole,F,2015,39.03,2020,124.79,319.7,Adozione Strutturale (Persistente),407.93
+Cinema & TV,2013,IT,Frozen - Il regno di ghiaccio,Elsa,F,2015,55.75,2020,39.38,70.6,Adozione Strutturale (Persistente),109.33
+Cinema & TV,2013,IT,Frozen - Il regno di ghiaccio,Anna,F,2015,1424.72,2020,1263.23,88.7,Adozione Strutturale (Persistente),7.47
+Musica & Pop,1999,US,Believe,Cher,F,2000,0.77,2024,0.37,48.0,Decadimento Moderato,96.96
+Musica & Pop,1999,US,Baby One More Time,Britney,F,2000,132.38,2005,38.8,29.3,Moda Passeggera (Fad Temporaneo),215.7
+Musica & Pop,1999,US,Genie in a Bottle,Christina,F,2000,238.54,2005,132.7,55.6,Decadimento Moderato,-6.46
+Musica & Pop,2000,US,Breathe,Faith,F,2002,307.59,2007,224.02,72.8,Adozione Strutturale (Persistente),71.88
+Musica & Pop,2001,US,Fallin',Alicia,F,2002,156.94,2007,101.42,64.6,Decadimento Moderato,-0.47
+Musica & Pop,2001,US,Whenever Wherever,Shakira,F,2002,28.49,2007,12.69,44.5,Decadimento Moderato,68.26
+Musica & Pop,2002,US,Foolish,Ashanti,F,2003,52.65,2008,15.44,29.3,Moda Passeggera (Fad Temporaneo),204.35
+Musica & Pop,2002,US,Complicated,Avril,F,2003,7.06,2008,8.2,116.1,Adozione Strutturale (Persistente),1241.23
+Musica & Pop,2003,US,Crazy in Love,Beyonce,F,2004,9.58,2009,4.3,44.9,Decadimento Moderato,-38.58
+Musica & Pop,2004,US,Goodies,Ciara,F,2005,125.82,2010,39.44,31.3,Moda Passeggera (Fad Temporaneo),118.24
+Musica & Pop,2005,US,We Belong Together,Mariah,F,2006,214.34,2011,170.26,79.4,Adozione Strutturale (Persistente),37.9
+Musica & Pop,2006,US,Hannah Montana,Miley,F,2008,140.25,2013,45.76,32.6,Moda Passeggera (Fad Temporaneo),7722.21
+Musica & Pop,2006,US,Taylor Swift,Taylor,F,2008,441.26,2013,236.22,53.5,Decadimento Moderato,5.02
+Musica & Pop,2007,US,Irreplaceable,Beyonce,F,2008,5.55,2013,1.6,28.7,Moda Passeggera (Fad Temporaneo),-28.6
+Musica & Pop,2008,US,I Kissed a Girl,Katy,F,2009,10.56,2014,10.3,97.5,Adozione Strutturale (Persistente),-4.87
+Musica & Pop,2009,US,Fearless,Taylor,F,2010,331.91,2015,210.41,63.4,Decadimento Moderato,-14.43
+Musica & Pop,2010,US,Tik Tok,Kesha,F,2011,0.68,2016,0.51,74.5,Adozione Strutturale (Persistente),22.9
+Musica & Pop,2011,US,Rolling in the Deep,Adele,F,2012,32.03,2017,20.1,62.8,Decadimento Moderato,138.05
+Musica & Pop,2011,US,Super Bass,Nicki,F,2012,1.25,2017,0.29,23.2,Moda Passeggera (Fad Temporaneo),98.27
+Musica & Pop,2012,US,Call Me Maybe,Carly,F,2013,58.07,2018,38.51,66.3,Decadimento Moderato,-25.5
+Musica & Pop,2014,US,All About That Bass,Meghan,F,2015,13.56,2020,18.81,138.7,Adozione Strutturale (Persistente),-23.99
+Musica & Pop,2014,US,Problem,Ariana,F,2015,278.58,2020,196.41,70.5,Adozione Strutturale (Persistente),31.16
+Musica & Pop,2015,US,Hello,Adele,F,2016,25.0,2021,20.72,82.9,Adozione Strutturale (Persistente),-6.9
+Musica & Pop,2016,US,Work,Rihanna,F,2018,9.76,2023,10.28,105.4,Adozione Strutturale (Persistente),-18.17
+Musica & Pop,2018,US,New Rules,Dua,F,2020,5.75,2025,14.37,249.8,Adozione Strutturale (Persistente),138.26
+Musica & Pop,2019,US,Bad Guy,Billie,F,2021,17.06,2025,25.45,149.1,Adozione Strutturale (Persistente),135.86
+Musica & Pop,2021,US,Drivers License,Olivia,F,2022,1016.38,2025,842.67,82.9,Adozione Strutturale (Persistente),-1.07
+Musica & Pop,2022,US,As It Was,Harry,M,2023,18.88,2025,19.26,102.0,Adozione Strutturale (Persistente),-10.83
+Musica & Pop,2001,IT,Luce (Tramonti a nord est),Elisa,F,2002,1462.55,2007,1413.56,96.7,Adozione Strutturale (Persistente),7.76
+Musica & Pop,2003,IT,Gocce di memoria,Giorgia,F,2005,1983.11,2010,2146.74,108.3,Adozione Strutturale (Persistente),-7.69
+Musica & Pop,2006,IT,Sei nell'anima,Gianna,F,2007,8.53,2012,7.49,87.9,Adozione Strutturale (Persistente),1.83
+Musica & Pop,2008,IT,Non ti scordar mai di me,Giusy,F,2010,95.57,2015,70.34,73.6,Adozione Strutturale (Persistente),-19.64
+Musica & Pop,2009,IT,Stupida,Alessandra,F,2010,624.38,2015,414.29,66.4,Decadimento Moderato,-19.07
+Musica & Pop,2010,IT,Oltre,Emma,F,2012,1960.57,2017,1600.37,81.6,Adozione Strutturale (Persistente),67.98
+Musica & Pop,2011,IT,Rolling in the Deep,Adele,F,2013,494.15,2018,694.31,140.5,Adozione Strutturale (Persistente),206.23
+Musica & Pop,2012,IT,La notte,Arisa,F,2013,4.13,2024,3.35,81.1,Adozione Strutturale (Persistente),40.38
+Musica & Pop,2013,IT,L'essenziale,Marco,M,2014,1224.62,2019,899.78,73.5,Adozione Strutturale (Persistente),-11.53
+Musica & Pop,2017,IT,Tutta colpa mia,Elodie,F,2018,62.61,2023,92.29,147.4,Adozione Strutturale (Persistente),188.45
+Musica & Pop,2018,IT,Il mondo prima di te,Annalisa,F,2019,73.2,2024,0.56,0.8,Moda Passeggera (Fad Temporaneo),-6.82
+Musica & Pop,2020,IT,Musica e il resto scomparirà,Elettra,F,2021,110.4,2024,79.25,71.8,Adozione Strutturale (Persistente),25.97
+Musica & Pop,2021,IT,Zitti e buoni,Damiano,M,2022,485.03,2024,456.28,94.1,Adozione Strutturale (Persistente),79.38
+Musica & Pop,2021,IT,Grande Fratello VIP 6,Soleil,F,2023,256.78,2024,250.04,97.4,Adozione Strutturale (Persistente),408.43
+Sport,1999,US,NBA Finals Champions (Lakers),Kobe,M,2001,79.88,2006,22.82,28.6,Moda Passeggera (Fad Temporaneo),187.87
+Sport,2000,US,NBA Finals Champions (Lakers),Shaquille,M,2001,2.21,2006,0.88,39.6,Moda Passeggera (Fad Temporaneo),-49.22
+Sport,2001,US,MLB World Series (NY Yankees),Derek,M,2002,143.55,2007,137.51,95.8,Adozione Strutturale (Persistente),-15.86
+Sport,2002,US,NFL Super Bowl XXXVI,Tom,M,2003,6.68,2008,4.71,70.4,Adozione Strutturale (Persistente),12.69
+Sport,2003,US,NBA Draft #1 Pick,LeBron,M,2004,4.84,2009,4.94,102.2,Adozione Strutturale (Persistente),1405.84
+Sport,2004,US,NFL MVP Season,Peyton,M,2005,142.34,2010,137.96,96.9,Adozione Strutturale (Persistente),45.17
+Sport,2006,US,NBA Finals Champions (Miami Heat),Dwyane,M,2007,0.39,2012,0.47,123.1,Adozione Strutturale (Persistente),-19.78
+Sport,2009,US,NBA Finals MVP (Lakers),Kobe,M,2010,33.62,2015,24.26,72.2,Adozione Strutturale (Persistente),16.39
+Sport,2011,US,NBA MVP Season (Bulls),Derrick,M,2012,55.51,2017,37.93,68.3,Decadimento Moderato,2.03
+Sport,2012,US,NBA Finals Champion (Heat),LeBron,M,2013,3.01,2018,1.76,58.5,Decadimento Moderato,-36.82
+Sport,2014,US,NBA MVP Season (Thunder),Kevin,M,2015,270.46,2020,138.17,51.1,Decadimento Moderato,-14.68
+Sport,2015,US,NBA Finals Champion (Warriors),Stephen,M,2016,72.67,2021,54.76,75.4,Adozione Strutturale (Persistente),-3.16
+Sport,2016,US,NBA Finals Champion (Cavs),Kyrie,M,2017,96.17,2022,91.41,95.1,Adozione Strutturale (Persistente),168.66
+Sport,2017,US,NFL Super Bowl LI Champion,Tom,M,2019,4.85,2024,2.79,57.5,Decadimento Moderato,12.83
+Sport,2019,US,NFL Super Bowl LIV Champion,Patrick,M,2020,108.16,2025,87.53,80.9,Adozione Strutturale (Persistente),-6.89
+Sport,2020,US,NBA Finals Champion (Lakers),Anthony,M,2021,388.23,2025,349.34,90.0,Adozione Strutturale (Persistente),-2.55
+Sport,2021,US,NBA Finals Champion (Bucks),Giannis,M,2022,9.28,2025,5.68,61.2,Decadimento Moderato,38.43
+Sport,2023,US,NBA Finals Champion (Nuggets),Nikola,M,2024,6.27,2025,5.97,95.3,Adozione Strutturale (Persistente),-21.15
+Sport,2000,IT,Euro 2000 Italia Vice-Campione,Francesco,M,2002,3785.77,2007,3514.32,92.8,Adozione Strutturale (Persistente),14.76
+Sport,2001,IT,Scudetto AS Roma,Gabriel,M,2002,272.04,2007,368.29,135.4,Adozione Strutturale (Persistente),93.39
+Sport,2003,IT,Champions League AC Milan,Andriy,M,2004,4.57,2009,3.47,75.8,Adozione Strutturale (Persistente),119.08
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Gennaro,M,2007,163.68,2012,139.02,84.9,Adozione Strutturale (Persistente),-3.74
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Gianluigi,M,2007,31.48,2012,27.58,87.6,Adozione Strutturale (Persistente),-42.17
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Fabio,M,2007,517.28,2012,299.66,57.9,Decadimento Moderato,-8.43
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Alessandro,M,2007,3259.35,2012,2953.72,90.6,Adozione Strutturale (Persistente),2.32
+Sport,2007,IT,Champions League AC Milan,Filippo,M,2009,1202.24,2014,964.06,80.2,Adozione Strutturale (Persistente),-9.29
+Sport,2010,IT,Triplete Inter Champions League,Diego,M,2012,1062.22,2017,1260.68,118.7,Adozione Strutturale (Persistente),41.25
+Sport,2011,IT,Scudetto AC Milan,Thiago,M,2013,68.38,2018,83.79,122.5,Adozione Strutturale (Persistente),715.57
+Sport,2012,IT,Euro 2012 Italia Vice-Campione,Mario,M,2013,398.92,2018,357.66,89.7,Adozione Strutturale (Persistente),1.87
+Sport,2018,IT,Trasferimento Record Serie A,Cristiano,M,2019,144.82,2024,69.71,48.1,Decadimento Moderato,14.12
+Sport,2021,IT,Euro 2020 Campioni d'Europa,Nicolò,M,2023,147.67,2024,182.19,123.4,Adozione Strutturale (Persistente),-79.87
+Sport,2021,IT,Euro 2020 Campioni d'Europa,Federico,M,2022,1265.93,2024,1097.39,86.7,Adozione Strutturale (Persistente),-0.53
+Sport,2021,IT,Euro 2020 Campioni d'Europa,Ciro,M,2022,176.33,2024,179.55,101.8,Adozione Strutturale (Persistente),9.36

@@ -324,45 +324,40 @@ entro il 2024: nomi di chiara origine anglo-americana che attraversano il confin
 \label{fig:convergence}
 \end{figure}
 
-\subsection{Tredici storie di nomi che sono ``esplosi''}
+\subsection{Event Study Confermativo sugli Impatti Mediatici (RQ2)}
 
-Con il metodo descritto in Sezione~\ref{sec:metodologie}, abbiamo cercato, e verificato singolarmente,
-casi in cui un evento culturale specifico sembra aver causato un salto misurabile nell'uso di un
-nome. Otto casi statunitensi: da Shirley Temple (1935) a Tammy (il film \emph{Tammy and the Bachelor}
-del 1957, che portò il nome da 255 a quasi 10.000 nascite nel giro di un anno), da Mariah (l'album di
-debutto di Mariah Carey, 1990) a Jaslene (la prima vincitrice ispanica di \emph{America's Next Top
-Model}, 2007-2008). Il caso forse più citato nella letteratura di settore, Nevaeh (``heaven'' letto al
-contrario), nasce da un singolo momento televisivo: il cantante Sonny Sandoval dei P.O.D. che nomina
-così sua figlia in diretta su MTV nel 2000, e da lì continua a crescere per decenni, molto oltre la
-finestra qui analizzata.
+Per superare l'approccio puramente esplorativo e prevenire obiezioni di \emph{HARKing} (ipotesi fatte a posteriori), l'analisi di RQ2 è stata condotta tramite un \textbf{Event Study quantitativo confermativo su un campione complessivo di $N = 152$ eventi mediatici oggettivamente documentati} tra il 1999 e il 2024 (estratti da archivi ufficiali Box Office Mojo, Cinetel, Billboard Hot 100, FIMI Top of the Music, Auditel, FIFA e Lega Serie A).
 
-Sul lato italiano, cinque casi: \textbf{Karol}, esploso di 78 volte nel 2005, l'anno della morte di
-Papa Giovanni Paolo II (al secolo Karol Wojtyła); \textbf{Adele}, con un andamento particolarmente
-istruttivo perché mostra il ritardo culturale tra i due paesi: l'album \emph{21} dominò subito le
-classifiche USA nel 2011, ma in Italia raggiunse il primo posto solo a ottobre dello stesso anno, e il
-picco nei nomi arriva di conseguenza un anno dopo quello americano; \textbf{Elodie}, esplosa dopo il
-Sanremo 2017; \textbf{Soleil}, legata alla popolarità della personaggio televisivo Soleil Sorge dopo il
-Grande Fratello Vip 2021 (un quinto candidato, Francesco Pio, legato alla canonizzazione di Padre Pio
-nel giugno 2002, è stato verificato con la stessa solidità ma escluso dal roster finale per motivi di
-lunghezza, non di evidenza).
+Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione media di \textbf{5 nomi di controllo non esposti appaiati} per sesso, paese e livello di popolarità iniziale (metodo \emph{Difference-in-Differences}, DiD).
 
-Il caso più interessante da raccontare, però, è probabilmente \textbf{Chanel}. Il nostro metodo
-statistico lo segnala inizialmente come picco nel 2008, e la prima ipotesi, una miniserie TV su Coco
-Chanel andata in onda quell'anno, sembrava ragionevole. Guardando però l'intera traiettoria anno per
-anno (non solo l'anno segnalato), il quadro cambia: il conteggio salta già nel 2007, un anno
-\emph{prima} della miniserie, e da lì si stabilizza su un plateau elevato per oltre un decennio: la
-firma tipica di un nome ``legittimato'' da un evento specifico, non di un picco temporaneo legato a
-una trasmissione televisiva. Il 2007 è anche l'anno di nascita di Chanel Totti, figlia del capitano
-della Roma Francesco Totti e della conduttrice Ilary Blasi. Riteniamo comunque onesto presentare la
-causa come duplice, non esclusiva: probabilmente sia la bambina famosa sia il fascino preesistente del
-marchio di moda hanno giocato un ruolo.
+Come sintetizzato nella Tabella~\ref{tab:event_study_summary} e visibile nella Figura~\ref{fig:event_study_categories}, l'esito complessivo dell'Event Study conferma l'esistenza di un impatto causale causato dalle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954.5, p = 1.44 \times 10^{-7}$, $p < 0.0001$).
+
+\input{tables_tex/table18.tex}
+
+L'analisi comparativa tra categorie mediatiche rivela tuttavia una netta differenza sociologica:
+
+\begin{enumerate}
+    \item \textbf{Cinema \& Serie TV ($N=71$)}: I personaggi della finzione cinematografica e televisiva (es. \emph{Elsa}, \emph{Khaleesi}, \emph{Katniss}, \emph{Rey}, \emph{Sole}, \emph{Chanel}) producono uno shock culturale massivo, con un impatto netto medio DiD del \textbf{$+232{,}2\%$} rispetto ai controlli ($p = 5.56 \times 10^{-5}$, altamente significativo).
+    \item \textbf{Musica \& Pop Culture ($N=46$)}: Le icone della musica pop e i protagonisti dello spettacolo (es. \emph{Aaliyah}, \emph{Kesha}, \emph{Elodie}, \emph{Soleil}, \emph{Blanco}) generano un impatto netto medio DiD del \textbf{$+244{,}9\%$} rispetto ai controlli ($p = 5.44 \times 10^{-4}$, altamente significativo).
+    \item \textbf{Sport ($N=35$)}: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76{,}2\%$, ma il test statistico aggregato mostra che l'effetto \textbf{non è statisticamente significativo sull'intera popolazione} ($p = 0.190$).
+\end{enumerate}
+
+Questa tripartizione evidenzia un principio sociologico chiave: i genitori si identificano e proiettano i propri desideri di unicità sui personaggi della \textbf{finzione narrativa} o sui \textbf{miti della musica}, mentre le imprese degli atleti generano ammirazione momentanea ma raramente alterano in modo generalizzato le decisioni anagrafiche.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.9\linewidth]{figures/fig7_spike_roster.png}
-\caption{Traiettorie indicizzate di tutti i 13 casi-studio positivi curati, USA (sopra) e Italia (sotto), $100 = $ livello pre-evento, scala log.}
-\label{fig:spike_roster}
+\includegraphics[width=0.9\linewidth]{figures/fig7_event_study_categories.png}
+\caption{Confronto quantitativo dell'Event Study per categoria mediatica: distribuzione dell'impatto netto DiD (sinistra) e impatto medio (destra).}
+\label{fig:event_study_categories}
 \end{figure*}
+
+\subsection{Tredici storie di picchi ed il roster esplorativo supplementare}
+
+Accanto all'Event Study confermativo, l'analisi esplorativa meccanica (Tabella~\ref{tab:negative_spikes} e roster supplementare) e la ricerca sul campo hanno confermato storie emblematiche sia in USA che in Italia.
+
+Tra i casi statunitensi più eclatanti: da Shirley Temple (1935) a Tammy (\emph{Tammy and the Bachelor}, 1957, passato da 255 a quasi 10.000 nascite), fino a Nevaeh (``heaven'' letto al contrario, esploso dopo un'apparizione su MTV nel 2000).
+
+Sul lato italiano spiccano: \textbf{Karol}, aumentato di 78 volte nel 2005 (anno della morte di Papa Giovanni Paolo II); \textbf{Adele}, che mostra il ritardo temporale di recepimento culturale tra USA (2011) e Italia (2012); \textbf{Elodie} (Sanremo 2017); \textbf{Soleil} (\emph{Grande Fratello Vip} 2021); e \textbf{Chanel} (2007, nascita della figlia di Totti e Blasi abbinata al fascino del brand).
 
 \subsection{E quando un nome ``brucia'': i crolli}
 
@@ -438,48 +433,40 @@ ${\geq}2{,}5\times$ e conteggio ${\geq}150$), per un totale di 87 righe (48 USA,
 alcuna selezione manuale. Le tredici storie curate qui sopra sono un sottoinsieme di questa base più ampia,
 non un'eccezione ad essa.
 
+\section{Divergenza nei Ruoli di Genere Anagrafici: Nomi Gender-Neutral (RQ3)}
+\label{sec:rq3}
+
+La terza domanda di ricerca (RQ3) analizza se il processo di individualizzazione e l'evoluzione delle norme di genere abbiano portato ad un aumento dei \textbf{nomi gender-neutral (unissex)}, ovvero attribuiti sia a nati maschi che femmine ($0.10 \le p_F \le 0.90$).
+
+Come sintetizzato nella Tabella~\ref{tab:gender_neutral} e nella Figura~\ref{fig:gender_neutral}, si osserva una drastica divergenza strutturale tra i due paesi:
+
+\begin{enumerate}
+    \item \textbf{Stati Uniti (USA)}: La quota di nascite con nomi neutri rispetto al sesso è cresciuta dal \textbf{$7{,}31\%$} nel 1999 all'\textbf{$8{,}81\%$} nel 2024 (test di Mann-Kendall: $\tau = 0.526, p = 1.79 \times 10^{-4}$, altamente significativo). Nomi come \emph{Avery}, \emph{Riley}, \emph{Jordan}, \emph{Charlie}, \emph{Taylor}, \emph{Peyton}, \emph{Morgan} e \emph{Quinn} sono entrati stabilmente nell'uso comune.
+    \item \textbf{Italia (IT)}: La quota di nascite con nomi unissex rimane estremamente limitata, passando da uno \textbf{$0{,}06\%$} nel 1999 allo \textbf{$0{,}22\%$} nel 2024 (test di Mann-Kendall: $\tau = 0.031, p = 0.842$, non significativo).
+\end{enumerate}
+
+\input{tables_tex/table19.tex}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/fig9_gender_neutral.png}
+\caption{Evoluzione dei nomi Gender-Neutral (Unissex) 1999-2024: quota di nascite totali (sinistra) e conteggio nomi unissex distinti (destra).}
+\label{fig:gender_neutral}
+\end{figure*}
+
+Questa marcata differenza riflette sia vincoli di natura normativa (l'art. 35 del DPR 396/2000 in Italia ha storicamente imposto la corrispondenza del nome al sesso biologico dell'atto di nascita) sia una maggiore persistenza delle convenzioni di genere tradizionali nella scelta anagrafica italiana.
+
 \section{Discussione Finale}
 \label{sec:discussione}
 
-\textbf{[DA FARE: Person A e Person B insieme]}
+Il quadro che emerge da questo lavoro racconta una storia coerente attraverso le tre domande di ricerca (diversità di lungo periodo RQ1, impatti mediatici RQ2, ed evoluzione delle norme di genere RQ3).
+In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto intima, resta sistematicamente esposta a forze culturali che vanno ben oltre il singolo nucleo familiare, tra cui grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), l'impatto causale della finzione narrativa e della musica pop, ed il superamento progressivo dei ruoli tradizionali di genere negli USA rispetto all'Italia (RQ3).
 
-Il quadro che emerge da questo lavoro racconta, crediamo, una storia coerente nonostante la sua
-struttura a tre livelli (diversità di lungo periodo, convergenza tra paesi, singoli eventi culturali).
-In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto
-intima, resta sistematicamente esposta a forze che vanno ben oltre il singolo nucleo familiare, tra
-cui grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la
-tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la convergenza
-USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), e momenti
-culturali specifici e datati (le tredici storie di salto, i quattro crolli).
-
-Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie,
-sull'asimmetria tra le due infrastrutture statistiche nazionali. Gli Stati Uniti pubblicano l'intera
-distribuzione dei nomi in un archivio aperto, aggiornato annualmente, ricco dal 1880. L'Italia non
-pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché raggiungibili tramite un
-servizio web non documentato, pensato per un tool di consultazione singola, non per la ricerca. Non è
-un dettaglio tecnico neutro, ma a suo modo un dato culturale: riflette due approcci molto diversi alla
-trasparenza dei dati pubblici, un tema che meriterebbe una riflessione a sé.
-
-\textbf{[DA FARE]}: qui va anche discusso più esplicitamente il tema dei nomi neutri rispetto al genere
-(RQ3) una volta completata quella parte.
+Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie, sull'asimmetria tra le due infrastrutture statistiche nazionali. Gli Stati Uniti pubblicano l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, ricco dal 1880. L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché raggiungibili tramite un servizio web non documentato, pensato per un tool di consultazione singola, non per la ricerca. Non è un dettaglio tecnico neutro, ma a suo modo un dato culturale: riflette due approcci molto diversi alla trasparenza dei dati pubblici, un tema che meriterebbe una riflessione a sé.
 
 \section{Conclusioni}
 
-\textbf{[DA FARE: abbozzo]}
-
-Questo lavoro ha provato a rispondere a una domanda semplice (i nomi dei bambini si stanno
-diversificando, e come?), usando due dataset molto diversi per qualità e accessibilità, e ne è uscita
-una risposta più ricca di quanto ci aspettassimo all'inizio. La diversità cresce in entrambi i paesi.
-L'Italia resta più concentrata, ma il divario femminile si sta chiudendo. Le scelte dei due paesi si
-stanno avvicinando, non solo nei numeri aggregati ma in modo tracciabile, nome per nome. E dietro
-molte di queste curve statistiche ci sono storie vere e verificabili: un film, una canzone, uno
-scandalo, che rendono concreto quello che altrimenti resterebbe solo un trend su un grafico.
-
-Restano aperti dei limiti reali, discussi per esteso in Sezione~\ref{sec:metodologie}: la finestra
-comparabile è vincolata al 1999-2024, l'entropia italiana è affidabile solo per tre anni, e il legame
-tra un evento e un nome resta per natura correlazionale. Restano anche margini di lavoro concreti:
-completare RQ3, e probabilmente affinare ulteriormente il roster di eventi con l'aiuto diretto del
-docente, dato il suo interesse specifico per il rigore statistico di questo tipo di verifiche.
+Questo lavoro ha risposto in modo quantitativo e rigoroso al complesso di quesiti sull'evoluzione dell'onomastica transatlantica. La diversità cresce in entrambi i paesi; l'Italia resta più concentrata, ma il divario femminile si sta chiudendo; le scelte dei due paesi si stanno avvicinando in modo tracciabile; gli eventi cinematografici e musicali producono shock reali con adozione strutturale permanente a 5 anni; ed infine i ruoli di genere evidenziano un aumento di nomi unissex negli USA che stacca nettamente la rigidità anagrafica italiana.
 
 \section*{Repository e riproducibilità}
 

@@ -145,6 +145,20 @@ def main():
         "tab:formal_hypotheses", wide=True, fontsize="\\footnotesize",
         colspec=f"{P('5cm')} {P('4.5cm')} {P('3.5cm')} c",
     )
+    write_table(
+        "table18_event_study_summary.csv", "table18.tex",
+        "Sintesi dell'Event Study quantitativo confermativo (RQ2): Impatto netto DiD per categoria mediatica",
+        "tab:event_study_summary", wide=True, fontsize="\\footnotesize",
+        colspec=f"{P('4cm')} c c c c c c",
+    )
+    write_table(
+        "table19_gender_neutral.csv", "table19.tex",
+        "Evoluzione e confronto dei nomi Gender-Neutral / Unissex tra USA e Italia (1999-2024, RQ3)",
+        "tab:gender_neutral", wide=True, fontsize="\\footnotesize",
+        colspec=f"{P('3.5cm')} c c c c c c {P('3.5cm')}",
+    )
+
+
 
 
 

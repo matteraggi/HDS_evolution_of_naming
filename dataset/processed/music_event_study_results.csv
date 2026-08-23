@@ -1,0 +1,47 @@
+year,country,title,character,sex,pre_freq_per_100k,post_freq_per_100k,jump_ratio,delta_pct,control_delta_pct,did_net_effect_pct,notes
+1999,US,Believe,Cher,F,0.38,0.77,2.03,102.85,5.89,96.96,Billboard Hot 100 #1 Year-End Single
+1999,US,Baby One More Time,Britney,F,35.97,111.73,3.11,210.58,-5.12,215.7,Billboard 200 #1 Debut Album
+1999,US,Genie in a Bottle,Christina,F,295.11,223.18,0.76,-24.37,-17.91,-6.46,Billboard Hot 100 #1 Single
+2000,US,Breathe,Faith,F,189.64,304.05,1.6,60.33,-11.55,71.88,Billboard Hot 100 #1 Year-End Single (Faith Hill)
+2001,US,Fallin',Alicia,F,171.63,148.03,0.86,-13.75,-13.28,-0.47,Grammy Song of the Year / #1 Billboard (Alicia Keys)
+2001,US,Whenever Wherever,Shakira,F,14.3,23.47,1.64,64.14,-4.12,68.26,Billboard Pop Breakout Single
+2002,US,Foolish,Ashanti,F,13.55,40.81,3.01,201.2,-3.15,204.35,Billboard Hot 100 #1 Single (10 weeks)
+2002,US,Complicated,Avril,F,0.52,6.93,13.38,1237.83,-3.4,1241.23,Billboard Pop Breakout Single (Avril Lavigne)
+2003,US,Crazy in Love,Beyonce,F,12.99,7.66,0.59,-41.02,-2.44,-38.58,Billboard Hot 100 #1 Single
+2004,US,Goodies,Ciara,F,49.8,105.23,2.11,111.28,-6.96,118.24,Billboard Hot 100 #1 Single
+2005,US,We Belong Together,Mariah,F,159.76,203.57,1.27,27.42,-10.47,37.9,Billboard Hot 100 #1 Year-End Single (Mariah Carey)
+2006,US,Hannah Montana,Miley,F,1.31,102.19,78.22,7721.65,-0.56,7722.21,Billboard 200 #1 Album Debut (Miley Cyrus)
+2006,US,Taylor Swift,Taylor,F,513.55,427.77,0.83,-16.7,-21.72,5.02,Billboard Country Album Debut
+2007,US,Irreplaceable,Beyonce,F,6.97,4.93,0.71,-29.27,-0.68,-28.6,Billboard Hot 100 #1 Year-End Single
+2008,US,I Kissed a Girl,Katy,F,11.52,10.48,0.91,-9.0,-4.13,-4.87,Billboard Hot 100 #1 Single (Katy Perry)
+2009,US,Fearless,Taylor,F,435.37,313.62,0.72,-27.96,-13.53,-14.43,Billboard 200 #1 Year-End Album (Taylor Swift)
+2010,US,Tik Tok,Kesha,F,0.46,0.57,1.24,24.07,1.16,22.9,Billboard Hot 100 #1 Year-End Single
+2011,US,Rolling in the Deep,Adele,F,12.41,28.64,2.31,130.68,-7.37,138.05,Billboard Hot 100 #1 Year-End Single
+2011,US,Super Bass,Nicki,F,0.63,1.19,1.89,88.93,-9.34,98.27,Billboard Pop Breakout Single (Nicki Minaj)
+2012,US,Call Me Maybe,Carly,F,78.54,54.67,0.7,-30.39,-4.89,-25.5,Billboard Hot 100 #1 Pop Hit (Carly Rae Jepsen)
+2014,US,All About That Bass,Meghan,F,17.19,12.48,0.73,-27.42,-3.43,-23.99,Billboard Hot 100 #1 Single (Meghan Trainor)
+2014,US,Problem,Ariana,F,217.4,269.34,1.24,23.89,-7.27,31.16,Billboard Pop Breakout Single (Ariana Grande)
+2015,US,Hello,Adele,F,25.92,22.55,0.87,-13.01,-6.11,-6.9,Billboard Hot 100 #1 Debut Single
+2016,US,Work,Rihanna,F,12.33,9.57,0.78,-22.4,-4.23,-18.17,Billboard Hot 100 #1 Single
+2018,US,New Rules,Dua,F,2.16,5.02,2.33,132.5,-5.76,138.26,Billboard Pop Breakout Single (Dua Lipa)
+2019,US,Bad Guy,Billie,F,7.02,16.3,2.32,132.03,-3.82,135.86,Grammy Album of the Year / #1 Single (Billie Eilish)
+2021,US,Drivers License,Olivia,F,1087.65,985.85,0.91,-9.36,-8.29,-1.07,Billboard Hot 100 #1 Single (Olivia Rodrigo)
+2022,US,As It Was,Harry,M,21.19,18.84,0.89,-11.09,-0.25,-10.83,Billboard Hot 100 #1 Single (Harry Styles)
+2023,US,Flowers,Miley,F,23.9,53.15,2.22,122.34,-6.47,128.81,Billboard Hot 100 #1 Single (Miley Cyrus)
+2024,US,Espresso,Sabrina,F,47.64,59.48,1.25,24.87,-6.22,31.09,Billboard Pop Hit #1 (Sabrina Carpenter)
+2001,IT,Luce (Tramonti a nord est),Elisa,F,1339.25,1409.36,1.05,5.24,-2.53,7.76,Sanremo #1 Vincitrice / FIMI #1 Single
+2003,IT,Gocce di memoria,Giorgia,F,1834.39,1974.64,1.08,7.65,15.34,-7.69,FIMI #1 Single Italia 2003
+2006,IT,Sei nell'anima,Gianna,F,8.62,8.41,0.98,-2.46,-4.29,1.83,FIMI #1 Single Italia (Gianna Nannini)
+2008,IT,Non ti scordar mai di me,Giusy,F,111.94,95.05,0.85,-15.09,4.55,-19.64,FIMI #1 Single per 12 settimane (Giusy Ferreri)
+2009,IT,Stupida,Alessandra,F,747.4,589.8,0.79,-21.09,-2.01,-19.07,FIMI #1 Album Debut (Alessandra Amoroso)
+2010,IT,Oltre,Emma,F,1177.69,1903.5,1.62,61.63,-6.35,67.98,FIMI #1 Album Debut (Emma Marrone)
+2011,IT,Rolling in the Deep,Adele,F,150.31,459.07,3.05,205.41,-0.82,206.23,FIMI #1 Single Italia 2011
+2012,IT,La notte,Arisa,F,2.13,3.94,1.85,85.12,44.74,40.38,Sanremo / FIMI #1 Single Italia 2012
+2013,IT,L'essenziale,Marco,M,1426.84,1209.38,0.85,-15.24,-3.71,-11.53,Sanremo #1 Vincitore / FIMI Multi-Platino (Marco Mengoni)
+2017,IT,Tutta colpa mia,Elodie,F,19.94,60.04,3.01,201.05,12.6,188.45,FIMI Certificato Platino / Sanremo 2017
+2018,IT,Il mondo prima di te,Annalisa,F,81.51,69.84,0.86,-14.32,-7.5,-6.82,FIMI Multi-Platino Sanremo 2018
+2020,IT,Musica e il resto scomparirà,Elettra,F,86.05,99.65,1.16,15.8,-10.17,25.97,FIMI Certificato Platino (Elettra Lamborghini)
+2021,IT,Zitti e buoni,Damiano,M,266.71,455.31,1.71,70.71,-8.66,79.38,Sanremo & Eurovision #1 Vincitore (Måneskin)
+2021,IT,Grande Fratello VIP 6,Soleil,F,50.61,253.05,5.0,400.05,-8.38,408.43,Mediaset Auditel Protagonista Pop Culture
+2023,IT,Sanremo 2023 Performance,Celine,F,43.75,0.56,0.01,-98.72,-8.68,-90.04,FIMI / RAI Esibizione Sanremo 2023
+2024,IT,La noia,Angelina,F,14.48,24.0,1.66,65.74,-2.45,68.19,Sanremo #1 Vincitrice / FIMI Multi-Platino (Angelina Mango)

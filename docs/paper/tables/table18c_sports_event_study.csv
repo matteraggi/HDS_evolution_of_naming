@@ -1,0 +1,36 @@
+Anno,Paese,Evento Sportivo,Atleta / Nome,Sesso,Freq Pre (per 100k),Freq Post (per 100k),Impatto Netto DiD (%)
+1999,US,NBA Finals Champions (Lakers),Kobe,M,26.97,76.4,+187.9%
+2000,US,NBA Finals Champions (Lakers),Shaquille,M,3.53,1.88,-49.2%
+2001,US,MLB World Series (NY Yankees),Derek,M,169.39,141.48,-15.9%
+2002,US,NFL Super Bowl XXXVI,Tom,M,5.34,6.04,+12.7%
+2003,US,NBA Draft #1 Pick,LeBron,M,0.31,4.67,+1405.8%
+2004,US,NFL MVP Season,Peyton,M,96.39,136.52,+45.2%
+2006,US,NBA Finals Champions (Miami Heat),Dwyane,M,0.5,0.39,-19.8%
+2009,US,NBA Finals MVP (Lakers),Kobe,M,28.74,31.42,+16.4%
+2011,US,NBA MVP Season (Bulls),Derrick,M,56.33,53.69,+2.0%
+2012,US,NBA Finals Champion (Heat),LeBron,M,4.37,2.52,-36.8%
+2014,US,NBA MVP Season (Thunder),Kevin,M,329.56,255.29,-14.7%
+2015,US,NBA Finals Champion (Warriors),Stephen,M,78.34,72.37,-3.2%
+2016,US,NBA Finals Champion (Cavs),Kyrie,M,35.26,94.64,+168.7%
+2017,US,NFL Super Bowl LI Champion,Tom,M,3.78,4.24,+12.8%
+2019,US,NFL Super Bowl LIV Champion,Patrick,M,121.93,105.27,-6.9%
+2020,US,NBA Finals Champion (Lakers),Anthony,M,451.09,383.32,-2.5%
+2021,US,NBA Finals Champion (Bucks),Giannis,M,6.23,8.67,+38.4%
+2023,US,NBA Finals Champion (Nuggets),Nikola,M,8.1,6.12,-21.1%
+2000,IT,Euro 2000 Italia Vice-Campione,Francesco,M,3595.72,3782.02,+14.8%
+2001,IT,Scudetto AS Roma,Gabriel,M,146.98,264.42,+93.4%
+2003,IT,Champions League AC Milan,Andriy,M,1.47,4.57,+119.1%
+2006,IT,Mondiali 2006 Campioni del Mondo,Gennaro,M,180.28,157.69,-3.7%
+2006,IT,Mondiali 2006 Campioni del Mondo,Gianluigi,M,29.86,17.11,-42.2%
+2006,IT,Mondiali 2006 Campioni del Mondo,Fabio,M,571.69,503.08,-8.4%
+2006,IT,Mondiali 2006 Campioni del Mondo,Alessandro,M,3348.08,3209.22,+2.3%
+2007,IT,Champions League AC Milan,Filippo,M,1269.8,1198.64,-9.3%
+2010,IT,Triplete Inter Champions League,Diego,M,788.11,1052.11,+41.2%
+2011,IT,Scudetto AC Milan,Thiago,M,6.41,52.08,+715.6%
+2012,IT,Euro 2012 Italia Vice-Campione,Mario,M,388.94,392.63,+1.9%
+2018,IT,Trasferimento Record Serie A,Cristiano,M,118.09,136.99,+14.1%
+2021,IT,Euro 2020 Campioni d'Europa,Nicolò,M,912.75,135.82,-79.9%
+2021,IT,Euro 2020 Campioni d'Europa,Federico,M,1286.0,1225.96,-0.5%
+2021,IT,Euro 2020 Campioni d'Europa,Ciro,M,158.07,170.97,+9.4%
+2023,IT,Scudetto SSC Napoli,Victor,M,31.43,27.46,-9.1%
+2024,IT,Scudetto Inter & Copa America,Lautaro,M,1.01,1.58,+87.0%

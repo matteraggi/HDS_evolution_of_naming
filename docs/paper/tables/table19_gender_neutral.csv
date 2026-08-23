@@ -1,0 +1,3 @@
+Paese,Finestra Temporale,Quota Iniziale 1999 (%),Quota Finale 2024 (%),Trend Mann-Kendall,Tau di Kendall,p-value,Esito Statistico
+Stati Uniti (USA),1999-2024,7.31%,8.81%,increasing,0.526,1.7892e-04,Crescita Significativa (p < 0.001)
+Italia (IT),1999-2024,0.06%,0.22%,no trend,0.031,8.4239e-01,Stabile / Controllato
