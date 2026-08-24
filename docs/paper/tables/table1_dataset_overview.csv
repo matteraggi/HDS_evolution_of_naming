@@ -1,11 +1,12 @@
 dimension,US (SSA),Italy (ISTAT)
-Fonte primaria,"U.S. Social Security Administration, ""Baby Names from Social Security Card Applications""","ISTAT, servizio web JSONP dietro lo strumento interattivo ""contanomi"" (non documentato pubblicamente, individuato analizzando il codice JavaScript del tool)"
+Fonte primaria,"U.S. Social Security Administration, ""Baby Names from Social Security Card Applications""","ISTAT, servizio web JSONP dietro lo strumento ""contanomi"" (non documentato pubblicamente)"
 URL,https://www.ssa.gov/oact/babynames/names.zip,https://www.istat.it/wp-content/themes/EGPbs5-child/contanomi/nati/index2022.php
-Tipo di accesso,"Bulk download (zip, un file per anno)","Bulk via richieste HTTP ripetute (un nome/anno alla volta come inteso dal tool, ma parametrizzabile per ottenere fino a diverse migliaia di nomi per anno in un'unica richiesta)"
+Tipo di accesso,"Bulk download (zip, un file per anno)","Bulk via richieste HTTP parametrizzate (fino a migliaia di nomi/anno per richiesta)"
 Copertura temporale,1880-2025 (146 anni),1999-2024 (26 anni; nessun dato a livello di nome prima del 1999)
 Finestra comparabile US/Italia,1999-2024,1999-2024
 Granularità,"Conteggio completo per ogni nome/anno/sesso (soglia di soppressione: nomi con <5 nascite in un anno/sesso/stato sono esclusi)","Variabile per anno: dalla distribuzione completa (2022-2024, ~25.000 nomi distinti) a un sottoinsieme dei nomi più frequenti (minimo storico: primi 137 per il 2021), copertura 66-100% delle nascite a seconda dell'anno, si veda Tabella 14"
+Controllo della riservatezza,Soglia minima di 5 nascite per cella (soppressione dei nomi rari),"Nessuna soglia dichiarata (2022-2024 include nomi con una sola nascita); il limite degli altri anni è tecnico, non di riservatezza"
 Record totali (dopo elaborazione),"~2,18 milioni (nome x anno x sesso, 1880-2025)","~219.000 (nome x anno x sesso, 1999-2024)"
 Licenza,CC0 / dominio pubblico,"CC-BY 3.0 IT (attribuzione a ISTAT richiesta); nessuna restrizione in robots.txt per il servizio utilizzato"
 Periodicità di rilascio,Annuale (dati dell'anno precedente),Annuale (dati dell'anno precedente)
-Implicazione metodologica,Consente calcolo diretto di entropia di Shannon sulla distribuzione completa,"Consente il calcolo della quota di concentrazione primi-10/50 su tutta la finestra 1999-2024 (proxy dimostrato non distorto da alcuna profondità di copertura, si veda Tabella 14); l'entropia di Shannon completa è invece attendibile solo per il 2022-2024, gli unici anni con distribuzione completa"
+Implicazione metodologica,Consente calcolo diretto di entropia di Shannon sulla distribuzione completa,"Quota di concentrazione primi-10/50 valida su tutta la finestra 1999-2024; entropia di Shannon attendibile solo per il 2022-2024"

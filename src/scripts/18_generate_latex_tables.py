@@ -97,12 +97,6 @@ def main():
         colspec=f"{P('3.2cm')} {P('6.3cm')} {P('6.3cm')}",
     )
     write_table(
-        "table13_istat_vs_ssa_structure.csv", "table13.tex",
-        "Confronto strutturale tra il formato dati SSA e quello ISTAT",
-        "tab:istat_vs_ssa", wide=True, fontsize="\\scriptsize",
-        colspec=f"{P('3.2cm')} {P('6.3cm')} {P('6.3cm')}",
-    )
-    write_table(
         "table14_coverage_bias_check.csv", "table14.tex",
         "Distorsione delle metriche in funzione della profondità di copertura (troncamento artificiale dei dati 2023/2024)",
         "tab:coverage_bias", wide=True, fontsize="\\footnotesize",
@@ -141,6 +135,12 @@ def main():
         colspec=f"l {P('2cm')} c {P('3cm')} {P('6cm')} c",
     )
     write_table(
+        "table20_positive_spikes.csv", "table20.tex",
+        "Roster finale delle tredici storie di salto onomastico verificate",
+        "tab:positive_spikes", wide=True, fontsize="\\footnotesize",
+        colspec=f"l {P('2cm')} c {P('3cm')} {P('6cm')} c",
+    )
+    write_table(
         "table17_formal_hypotheses.csv", "table17.tex",
         "Sintesi delle ipotesi statistiche formali per RQ1 (dettagli di H0/H1 nel testo)",
         "tab:formal_hypotheses", wide=True, fontsize="\\footnotesize",
@@ -154,9 +154,9 @@ def main():
     )
     write_table(
         "table19_gender_neutral.csv", "table19.tex",
-        "Evoluzione e confronto dei nomi Gender-Neutral / Unissex tra USA e Italia (1999-2024, RQ3)",
+        "Nomi Gender-Neutral / Unissex, USA vs Italia, 1999-2024 (RQ3)",
         "tab:gender_neutral", wide=True, fontsize="\\footnotesize",
-        colspec=f"{P('3.5cm')} c c c c c c {P('3.5cm')}",
+        colspec=f"{P('2.3cm')} c c c c c {P('2.2cm')}",
     )
 
 
