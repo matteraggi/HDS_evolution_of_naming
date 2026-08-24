@@ -8,6 +8,23 @@ actually happened. Two panels: US roster on top, Italy roster on bottom.
 
 Roster and spike years are the hand-curated, cause-verified list from
 PROJECT_LOG.md (2026-08-16), not the mechanical candidate list.
+
+2026-08-24: corrected spike_year for Tammy (1958->1957) and Mariah (1991->1990)
+to match the real-world cause date already stated in the paper's prose (the
+film/album release year), not the year the automated candidate-finder scored
+as the biggest ratio*count - checking the raw counts showed the actual jump
+already visible the year of release, one year before the previously-used
+label. Also corrected Devante (1992->1991, Jodeci's debut album) and Jaslene
+(2008->2007, ANTM cycle 9 finale aired Dec 2007) on the same reasoning and the
+same pre-event-rise pattern in the data, though these two aren't cross-checked
+against an explicit prose citation the way Tammy/Mariah are - worth a quick
+source check before treating as final. Left Shirley (1935) and Jaime (1976)
+unchanged - both have real ambiguity about which year counts as "the event"
+(Shirley Temple's breakout spanned several 1934-35 films; Jaime Sommers first
+appeared in a 1975 backdoor pilot before her own 1976 series) rather than a
+clean single date. Nevaeh (2001) needed no change - unlike the others, its
+raw counts show no pre-event rise at all (2000 is flat at baseline), already
+consistent with the labeled year.
 """
 
 import csv
@@ -25,13 +42,13 @@ WINDOW_BEFORE, WINDOW_AFTER = 5, 6
 # (name, sex/gender, spike_year, label with cause)
 US_ROSTER = [
     ("Shirley", "F", 1935, "Shirley (Shirley Temple)"),
-    ("Tammy", "F", 1958, "Tammy (Tammy and the Bachelor)"),
+    ("Tammy", "F", 1957, "Tammy (Tammy and the Bachelor)"),
     ("Nakia", "F", 1974, "Nakia (serie TV Nakia)"),
     ("Jaime", "F", 1976, "Jaime (The Bionic Woman)"),
-    ("Devante", "M", 1992, "Devante (Jodeci)"),
-    ("Mariah", "F", 1991, "Mariah (Mariah Carey)"),
+    ("Devante", "M", 1991, "Devante (Jodeci)"),
+    ("Mariah", "F", 1990, "Mariah (Mariah Carey)"),
     ("Nevaeh", "F", 2001, "Nevaeh (P.O.D./MTV)"),
-    ("Jaslene", "F", 2008, "Jaslene (ANTM)"),
+    ("Jaslene", "F", 2007, "Jaslene (ANTM)"),
 ]
 IT_ROSTER = [
     ("KAROL", "m", 2005, "Karol (morte Giovanni Paolo II)"),
@@ -97,9 +114,9 @@ def main():
     ax1.set_title("USA")
     plot_panel(ax2, IT_ROSTER, it_series, it_colors)
     ax2.set_title("Italia")
-    ax2.set_xlabel("Anni relativi all'evento (0 = anno del picco)")
+    ax2.set_xlabel("Anni relativi all'evento (0 = anno dell'evento causale)")
 
-    fig.suptitle("Traiettorie dei nomi \"evento\", indicizzate (100 = 5 anni prima del picco)")
+    fig.suptitle("Traiettorie dei nomi \"evento\", indicizzate (100 = 5 anni prima dell'evento)")
     fig.tight_layout()
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     fig.savefig(OUT_PATH, dpi=150)

@@ -315,3 +315,15 @@ formal test for "does the US/Italy gap change over time" is the Mann-Kendall on 
 - **2026-08-16** — Metodologie §4 rewritten to explicitly separate formal hypothesis tests (H₀/H₁/α
   stated per test) from robustness/sensitivity checks, per the professor's specific emphasis on
   null-hypothesis/p-value rigor.
+- **2026-08-24** — Primary concentration metric switched from top-10/top-30 to top-10/top-50, per
+  user's request for a wider representation of the naming pool. Top-100 checked only inside the
+  coverage-bias robustness table (table14), not rerun as a full trend/comparison metric (its safety
+  margin against the worst observed ISTAT depth, 137 names in 2021, is thin: 137-100=37 vs.
+  137-50=87). `03_us_italy_comparison.py` now runs the full US-Italy comparison (Wilcoxon, diff-series
+  Mann-Kendall, bootstrap slope CIs) for both top-10 and top-50 rather than a single metric. Real
+  finding from doing this: the female US-Italy gap narrows significantly at *both* thresholds
+  (robust), but the male gap only shows a significant trend at top-50 (widening, p=5.0e-7) and not at
+  top-10 (p=0.078, stable) — reported honestly in Risultati/Validazione as threshold-dependent rather
+  than forcing a single "stable" narrative onto it. All pipeline scripts (01, 01b, 01c, 02, 03, 05, 12,
+  18), figures (fig4, fig5 — fig5 renamed to `fig5_us_italy_top50_comparison.png`), and tables (1, 13,
+  14, 17) regenerated from real data, not hand-edited.

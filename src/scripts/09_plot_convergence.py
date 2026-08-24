@@ -52,8 +52,9 @@ def main():
     ax1.grid(alpha=0.3)
 
     ax2.set_xlabel("Anno")
-    ax2.set_ylabel("Nomi in comune\n(primi 100 per paese)")
-    ax2.set_ylim(0, 100)
+    ax2.set_ylabel("Nomi in comune\n(su un massimo di 100 per paese)")
+    max_overlap = max(v for sex in data for _, v in data[sex].values())
+    ax2.set_ylim(0, max_overlap * 1.15)
     ax2.grid(alpha=0.3)
 
     fig.tight_layout()
