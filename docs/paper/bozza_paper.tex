@@ -134,7 +134,7 @@ binaria.
 La copertura media risultante è dell'86\% delle nascite sui 26 anni, con un minimo del 66\% nel 2021
 (il caso peggiore); si veda la Figura~\ref{fig:istat_coverage} per il dettaglio anno per anno. Prima
 di adottare questi dati come fonte primaria sono stati eseguiti due controlli: (a) i valori estratti
-per il 2024 (Leonardo: 6.580 nascite, Sofia: 4.636; quota primi-30 maschile: 42,94\%) sono stati
+per il 2024 (Leonardo: 6.580 nascite, Sofia: 4.636; quota primi-50 maschile: 53,28\%) sono stati
 confrontati con quelli della raccolta manuale, risultando identici; (b) l'impatto della copertura
 variabile sulle metriche utilizzate è stato quantificato empiricamente, non assunto (si veda
 Sezione~\ref{sec:validazione}). La finestra comparabile USA/Italia risultante, \textbf{1999-2024} (26
@@ -167,7 +167,7 @@ boom), seguito da una crescita pressoché ininterrotta dagli anni '60 a oggi.
 
 Per l'Italia, invece, la copertura variabile rende l'entropia calcolata sistematicamente distorta
 verso il basso, e in misura diversa da un anno all'altro; si è quindi mantenuta come metrica primaria
-la \textbf{quota di concentrazione dei primi $N$ nomi} (top-10 e top-30), un proxy di diversità
+la \textbf{quota di concentrazione dei primi $N$ nomi} (top-10 e top-50), un proxy di diversità
 validato in letteratura \cite{ogihara2025a} ($r \approx -0{,}96$ a $-0{,}99$ con un indice di varietà
 indipendente), che dipende solo dai nomi più popolari.
 
@@ -201,12 +201,17 @@ metodologica diversa.
 monotono (crescente/decrescente). Su tutte le combinazioni testate sui dati USA, $H_0$ è respinta con
 $p < 0{,}001$.
 
-\textbf{Wilcoxon a coppie appaiate} \cite{wilcoxon1945} (livello USA vs Italia, 26 anni appaiati).
-$H_0$: mediana delle differenze appaiate uguale a zero. Respinta per entrambi i sessi con
-$p < 0{,}0001$: l'Italia è sistematicamente più concentrata in ogni singolo anno.
+\textbf{Wilcoxon a coppie appaiate} \cite{wilcoxon1945} (livello USA vs Italia, 26 anni appaiati, primi
+10 e primi 50 nomi). $H_0$: mediana delle differenze appaiate uguale a zero. Respinta per entrambi i
+sessi e a entrambe le soglie con $p = 2{,}98 \times 10^{-8}$: l'Italia è sistematicamente più
+concentrata in ogni singolo anno, indipendentemente da quanti nomi si contano.
 
-\textbf{Mann-Kendall sulla serie differenza (USA$-$Italia)}: maschi, $H_0$ non respinta ($p = 0{,}172$,
-divario stabile); femmine, $H_0$ respinta ($p = 3{,}4 \times 10^{-5}$, divario in riduzione).
+\textbf{Mann-Kendall sulla serie differenza (USA$-$Italia)}, primi 10 e primi 50: per le femmine il
+risultato è coerente a entrambe le soglie, $H_0$ respinta (primi-10 $p = 1{,}6 \times 10^{-5}$;
+primi-50 $p = 4{,}8 \times 10^{-3}$), divario in riduzione. Per i maschi il risultato dipende dalla
+soglia: $H_0$ non respinta ai primi 10 ($p = 0{,}078$, divario stabile), ma respinta ai primi 50
+($p = 5{,}0 \times 10^{-7}$, divario in lieve allargamento); si veda Sezione~\ref{sec:risultati} per
+la discussione di questa dipendenza dalla soglia.
 
 \textbf{Mann-Kendall sulla similarità coseno USA-Italia}: $H_0$ respinta per entrambi i sessi (maschi
 $p = 2{,}4 \times 10^{-12}$, $\tau = 0{,}98$; femmine $p = 2{,}8 \times 10^{-11}$): convergenza
@@ -219,7 +224,7 @@ come prova indipendente.
 
 Il \textbf{controllo di robustezza alla profondità di copertura per la concentrazione e l'entropia} (troncamento artificiale dei due anni
 italiani completi alle profondità reali degli altri anni) mostra che la distorsione sulla quota
-primi-10/primi-30 è \textbf{esattamente zero a ogni profondità testata}, mentre l'entropia di Shannon
+primi-10/primi-50/primi-100 è \textbf{esattamente zero a ogni profondità testata}, mentre l'entropia di Shannon
 mostra una distorsione monotona dal $-19\%$ al $-50\%$ (Tabella~\ref{tab:coverage_bias},
 Figura~\ref{fig:coverage_bias}): da qui la scelta di riportare l'entropia italiana solo per il
 2022-2024.
@@ -232,7 +237,7 @@ dimostra che il troncamento della distribuzione italiana produce un'alterazione 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{figures/fig4_coverage_bias_check.png}
-\caption{Sensibilità di entropia e quota di concentrazione alla profondità di copertura.}
+\caption{Sensibilità dell'entropia di Shannon alla profondità di copertura (la quota primi-10/50/100 ha bias esattamente zero a ogni profondità, si veda Tabella~\ref{tab:coverage_bias}).}
 \label{fig:coverage_bias}
 \end{figure}
 
@@ -259,6 +264,21 @@ stati intercettati e scartati due falsi positivi italiani (``Nicolò'' e ``Desir
 artefatti di trascrizione ISTAT: un cambio nella codifica dell'accento a metà serie, con la grafia
 alternativa che assorbe quasi esattamente il conteggio ``mancante'' lo stesso anno.
 
+Il metodo sopra descritto è esplorativo: individua candidati, ma resta esposto al rischio di
+\emph{HARKing} (formulare l'ipotesi causale dopo aver già visto il picco). Per una conferma
+indipendente su scala più ampia, RQ2 include anche un \textbf{Event Study quantitativo} su un campione
+di $N = 152$ eventi mediatici documentati oggettivamente (1999-2024, USA e Italia), estratti da archivi
+ufficiali (Box Office Mojo, Cinetel, Billboard Hot 100, FIMI Top of the Music, Auditel, FIFA, Lega
+Serie A) invece che dal picco osservato nei dati. Per ogni nome esposto si calcola la frequenza media
+pre-evento (media dei 3 anni precedenti) e post-evento (media dei 2 anni successivi), e la variazione
+percentuale tra le due. Questa variazione viene confrontata con quella di un \textbf{gruppo di
+controllo}: tutti gli altri nomi dello stesso sesso e paese con frequenza pre-evento entro il
+${\pm}35\%$ di quella del nome esposto, di cui si prende la variazione \emph{mediana} nello stesso
+periodo. L'\textbf{impatto netto DiD} (Difference-in-Differences) è la differenza fra la variazione del
+nome esposto e quella mediana dei controlli: isola l'effetto specifico dell'evento dal trend di fondo
+che il nome avrebbe comunque seguito. La significatività è testata con Wilcoxon per ranghi con segno
+sulla distribuzione degli impatti netti, per categoria mediatica e sul totale.
+
 \input{tables_tex/table13.tex}
 
 \subsection{Limiti metodologici principali}
@@ -270,7 +290,8 @@ documentata, meno stabile nel tempo di un formato ufficiale, anche se i dati gre
 conservati in repository per garantire riproducibilità; \textbf{(4)} il confronto USA/Italia è
 limitato alla finestra 1999-2024; \textbf{(5)} il legame tra un picco/crollo e un evento culturale
 resta correlazionale, non causale in senso stretto; \textbf{(6)} il controllo di robustezza geografica
-ha copertura disomogenea tra i casi (da 7 a 51 stati con dati sufficienti a seconda del nome).
+ha copertura disomogenea tra i casi (da 7 a 51 stati con dati sufficienti a seconda del nome), un rischio di
+survivorship bias sui casi a $n$ più basso (si veda Sezione~\ref{sec:risultati}).
 
 \section{Risultati}
 \label{sec:risultati}
@@ -285,22 +306,37 @@ mostra la stessa storia raccontata dall'entropia: un minimo relativo negli anni 
 salita quasi ininterrotta.
 
 Sulla finestra comparabile 1999-2024 (Figura~\ref{fig:us_italy_comparison}), l'Italia parte più
-concentrata degli Stati Uniti e resta più concentrata per tutti i 26 anni osservati: il test di
-Wilcoxon a coppie appaiate è fortemente significativo ($p < 0{,}0001$, statistica pari a 0 su 26
-confronti in entrambi i sessi). Detto in altri termini: non c'è stato un solo anno, in un quarto di
-secolo, in cui l'Italia sia stata meno concentrata degli USA. Quello che cambia per sesso è la
-\emph{velocità} con cui il divario si muove. Per i nomi maschili la pendenza di Sen è praticamente
-identica nei due paesi (USA $-0{,}0048$/anno, Italia $-0{,}0052$/anno, intervalli di confidenza
-sovrapposti) e la serie differenza non mostra un trend significativo ($p = 0{,}17$): il divario è
-stabile. Per i nomi femminili, invece, l'Italia diversifica significativamente più in fretta (pendenza
-$-0{,}0038$/anno contro $-0{,}0026$/anno degli USA, intervalli \textbf{non} sovrapposti, serie
-differenza con trend crescente significativo, $p = 3{,}4 \times 10^{-5}$): il divario si sta chiudendo,
-ma solo per le bambine.
+concentrata degli Stati Uniti e resta più concentrata per tutti i 26 anni osservati, sia guardando ai
+primi 10 sia ai primi 50 nomi: il test di Wilcoxon a coppie appaiate è fortemente significativo a
+entrambe le soglie ($p = 2{,}98 \times 10^{-8}$, statistica pari a 0 su 26 confronti in tutti e
+quattro i casi sesso/soglia). Detto in altri termini: non c'è stato un solo anno, in un quarto di
+secolo, in cui l'Italia sia stata meno concentrata degli USA, indipendentemente da quanti nomi si
+contano.
+
+Quello che cambia, ed è più interessante, è la \emph{velocità} con cui il divario si muove, e qui il
+risultato dipende dalla soglia scelta. Per i nomi femminili il quadro è coerente a entrambe le soglie:
+l'Italia diversifica significativamente più in fretta degli USA (pendenza di Sen primi-10:
+$-0{,}0033$/anno contro $-0{,}0011$/anno degli USA; primi-50: $-0{,}0041$/anno contro $-0{,}0028$/anno;
+intervalli \textbf{non} sovrapposti in entrambi i casi, serie differenza con trend crescente
+significativo sia a primi-10 ($p = 1{,}6 \times 10^{-5}$) sia a primi-50 ($p = 4{,}8 \times 10^{-3}$)):
+il divario femminile si sta chiudendo, ed è un risultato robusto rispetto a quale soglia di
+concentrazione si usa.
+
+Per i nomi maschili, invece, il risultato dipende dalla soglia, un punto che vale la pena riportare
+onestamente invece di appiattirlo su una sola narrazione. Ai primi 10 nomi le pendenze di Sen sono
+statisticamente indistinguibili (USA $-0{,}0020$/anno, Italia $-0{,}0023$/anno, intervalli
+sovrapposti, serie differenza senza trend significativo, $p = 0{,}078$): il divario appare stabile. Ai
+primi 50 nomi, però, gli Stati Uniti diversificano significativamente più in fretta dell'Italia (USA
+$-0{,}0064$/anno contro Italia $-0{,}0055$/anno, intervalli \textbf{non} sovrapposti, serie differenza
+con trend decrescente significativo, $p = 5{,}0 \times 10^{-7}$): a questa soglia il divario maschile
+starebbe leggermente allargandosi. Il risultato femminile è quindi robusto rispetto alla scelta della
+soglia di concentrazione, mentre quello maschile no, e questa differenza di robustezza è di per sé un
+dato da riportare, non da nascondere.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/fig5_us_italy_top30_comparison.png}
-\caption{Concentrazione dei nomi: USA vs Italia, 1999-2024.}
+\includegraphics[width=\linewidth]{figures/fig5_us_italy_top50_comparison.png}
+\caption{Concentrazione dei nomi: USA vs Italia, 1999-2024 (quota primi 50).}
 \label{fig:us_italy_comparison}
 \end{figure}
 
@@ -398,6 +434,14 @@ siano artefatti isolati. Le due eccezioni sono interessanti di per sé: Jaslene 
 con un'adozione inizialmente più forte nelle aree a maggiore presenza ispanica, coerente con il fatto
 che fu la prima vincitrice ispanica del programma; Hillary (74\%) è compatibile con una polarizzazione
 politica che, ragionevolmente, non ha colpito ogni stato allo stesso modo.
+
+Va segnalato un limite di questo controllo, evidenziato in Figura~\ref{fig:state_concentration}: un
+nome quasi inutilizzato a livello nazionale prima del suo evento (Nevaeh, $n=7$ stati; Devante,
+$n=11$ stati) supera la soglia minima di dati solo negli stati con abbastanza nascite da produrre un
+conteggio non rumoroso, ed è plausibile che questi siano proprio gli stati dove l'effetto emerge più
+nitidamente. Il 100\% di concordanza su un campione così piccolo va quindi letto con più cautela del
+100\% di Jaime, basato su 45 stati: non è una prova che il risultato sia falso, ma un campanello
+d'allarme sul fatto che il campione di stati disponibili potrebbe non essere rappresentativo.
 
 \begin{figure}[t]
 \centering

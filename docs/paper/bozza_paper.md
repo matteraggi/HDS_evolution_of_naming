@@ -108,7 +108,7 @@ risultante varia dal 66% delle nascite (2021, il caso peggiore) al 100% (2022-20
 3 per il dettaglio anno per anno.
 
 Prima di adottare questi dati come fonte primaria, sono stati eseguiti due controlli: (a) i valori
-estratti per il 2024 (Leonardo: 6.580 nascite, Sofia: 4.636; quota primi-30 maschile: 42,94%) sono
+estratti per il 2024 (Leonardo: 6.580 nascite, Sofia: 4.636; quota primi-50 maschile: 53,28%) sono
 stati confrontati con quelli della raccolta manuale, risultando identici; (b) l'impatto della
 copertura variabile sulle metriche utilizzate è stato quantificato empiricamente, non assunto (si
 veda sotto). La finestra comparabile USA/Italia risultante è **1999-2024** (26 anni), il limite reale
@@ -133,7 +133,7 @@ relativo attorno agli anni '40-'50 (baby boom) seguito da una crescita pressoch�
 anni '60 a oggi. Per l'Italia, la copertura variabile rende l'entropia calcolata sui dati catturati
 sistematicamente distorta verso il basso, e in misura diversa da un anno all'altro. Si è quindi
 mantenuta come metrica comparativa primaria la **quota di concentrazione dei primi N nomi**
-(top-10 e top-30), un proxy di diversità validato in letteratura (Ogihara 2025, r ≈ −0,96 a −0,99 con
+(top-10 e top-50), un proxy di diversità validato in letteratura (Ogihara 2025, r ≈ −0,96 a −0,99 con
 un indice di varietà indipendente), che dipende solo dai nomi più popolari — catturati ogni anno
 indipendentemente dalla profondità massima raggiunta.
 
@@ -148,12 +148,15 @@ statistica ma quantificano quanto una conclusione dipenderebbe da una scelta met
 **Mann-Kendall** (Mann 1945; Kendall 1975). H₀: nessun trend monotono; H₁: trend monotono
 (crescente/decrescente). Su tutte le combinazioni testate sui dati USA, H₀ è respinta con p < 0,001.
 
-**Wilcoxon a coppie appaiate** (livello USA vs Italia, 26 anni appaiati). H₀: mediana delle differenze
-appaiate uguale a zero. Respinta per entrambi i sessi con p < 0,0001 — l'Italia è sistematicamente più
-concentrata in ogni singolo anno.
+**Wilcoxon a coppie appaiate** (livello USA vs Italia, 26 anni appaiati, primi 10 e primi 50 nomi). H₀:
+mediana delle differenze appaiate uguale a zero. Respinta per entrambi i sessi e a entrambe le soglie
+con p = 2,98 × 10⁻⁸: l'Italia è sistematicamente più concentrata in ogni singolo anno, indipendentemente
+da quanti nomi si contano.
 
-**Mann-Kendall sulla serie differenza (USA−Italia)**: maschi, H₀ non respinta (p = 0,172, divario
-stabile); femmine, H₀ respinta (p = 3,4 × 10⁻⁵, divario in riduzione).
+**Mann-Kendall sulla serie differenza (USA−Italia)**, primi 10 e primi 50: per le femmine il risultato
+è coerente a entrambe le soglie, H₀ respinta (primi-10 p = 1,6 × 10⁻⁵; primi-50 p = 4,8 × 10⁻³), divario
+in riduzione. Per i maschi il risultato dipende dalla soglia: H₀ non respinta ai primi 10 (p = 0,078,
+divario stabile), ma respinta ai primi 50 (p = 5,0 × 10⁻⁷, divario in lieve allargamento).
 
 **Mann-Kendall sulla similarità coseno USA-Italia**: H₀ respinta per entrambi i sessi (maschi
 p = 2,4 × 10⁻¹², τ = 0,98; femmine p = 2,8 × 10⁻¹¹) — convergenza statisticamente robusta.
@@ -165,7 +168,7 @@ come prova indipendente.
 
 Il **controllo di robustezza alla profondità di copertura per la concentrazione e l'entropia** (troncamento artificiale dei due anni
 italiani completi alle profondità reali degli altri anni) mostra che la distorsione sulla quota
-primi-10/primi-30 è **esattamente zero a ogni profondità testata**, mentre l'entropia di Shannon
+primi-10/primi-50/primi-100 è **esattamente zero a ogni profondità testata**, mentre l'entropia di Shannon
 mostra una distorsione monotona dal −19% al −50% (Tabella 14, Figura 4) — da qui la scelta di
 riportare l'entropia italiana solo per il 2022-2024.
 
@@ -219,16 +222,27 @@ raccontata dall'entropia: un minimo relativo negli anni del baby boom, poi una s
 ininterrotta.
 
 Sulla finestra comparabile 1999-2024 (Figura 5), l'Italia parte più concentrata degli Stati Uniti e
-resta più concentrata per tutti i 26 anni osservati — il test di Wilcoxon a coppie appaiate è
-fortemente significativo (p < 0,0001, statistica pari a 0 su 26 confronti in entrambi i sessi). Detto
-in altri termini: non c'è stato un solo anno, in un quarto di secolo, in cui l'Italia sia stata meno
-concentrata degli USA. Quello che cambia per sesso è la *velocità* con cui il divario si muove. Per i
-nomi maschili la pendenza di Sen è praticamente identica nei due paesi (USA −0,0048/anno, Italia
-−0,0052/anno, intervalli di confidenza sovrapposti) e la serie differenza non mostra un trend
-significativo (p = 0,17): il divario è stabile. Per i nomi femminili, invece, l'Italia diversifica
-significativamente più in fretta (pendenza −0,0038/anno contro −0,0026/anno degli USA, intervalli
-**non** sovrapposti, serie differenza con trend crescente significativo, p = 3,4 × 10⁻⁵): il divario si
-sta chiudendo, ma solo per le bambine.
+resta più concentrata per tutti i 26 anni osservati, sia guardando ai primi 10 sia ai primi 50 nomi: il
+test di Wilcoxon a coppie appaiate è fortemente significativo a entrambe le soglie (p = 2,98 × 10⁻⁸,
+statistica pari a 0 su 26 confronti in tutti e quattro i casi sesso/soglia). Detto in altri termini:
+non c'è stato un solo anno, in un quarto di secolo, in cui l'Italia sia stata meno concentrata degli
+USA, indipendentemente da quanti nomi si contano.
+
+Quello che cambia, ed è più interessante, è la *velocità* con cui il divario si muove, e qui il
+risultato dipende dalla soglia scelta. Per i nomi femminili il quadro è coerente a entrambe le soglie:
+l'Italia diversifica significativamente più in fretta degli USA (pendenza di Sen primi-10: −0,0033/anno
+contro −0,0011/anno degli USA; primi-50: −0,0041/anno contro −0,0028/anno; intervalli **non**
+sovrapposti in entrambi i casi, serie differenza con trend crescente significativo sia a primi-10
+(p = 1,6 × 10⁻⁵) sia a primi-50 (p = 4,8 × 10⁻³)): il divario femminile si sta chiudendo, ed è un
+risultato robusto rispetto alla soglia usata.
+
+Per i nomi maschili, invece, il risultato dipende dalla soglia. Ai primi 10 nomi le pendenze di Sen
+sono statisticamente indistinguibili (USA −0,0020/anno, Italia −0,0023/anno, intervalli sovrapposti,
+serie differenza senza trend significativo, p = 0,078): il divario appare stabile. Ai primi 50 nomi,
+però, gli Stati Uniti diversificano significativamente più in fretta dell'Italia (USA −0,0064/anno
+contro Italia −0,0055/anno, intervalli **non** sovrapposti, serie differenza con trend decrescente
+significativo, p = 5,0 × 10⁻⁷): a questa soglia il divario maschile starebbe leggermente allargandosi.
+Il risultato femminile è quindi robusto rispetto alla scelta della soglia, quello maschile no.
 
 ### I due paesi si stanno anche avvicinando tra loro
 

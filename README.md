@@ -71,7 +71,7 @@ Scripts are numbered by pipeline stage, not strict run order; `01b`/`01c`/`08b` 
 - `dataset/processed/us_names_long.csv` — full US name/year/sex/count/rel_freq table, 1880-2025 (gitignored,
   regenerate via script 01).
 - `dataset/processed/us_diversity_metrics.csv` — US per year/sex: total_births, distinct_names,
-  shannon_entropy, top10_share, top30_share.
+  shannon_entropy, top10_share, top50_share.
 - `dataset/istat/istat_contanomi_full.csv` — Italy name/year/gender/count/percent, 1999-2024
   (~219,000 rows).
 - `dataset/processed/it_diversity_metrics.csv` — Italy per year/sex, with `entropy_reliable` flag

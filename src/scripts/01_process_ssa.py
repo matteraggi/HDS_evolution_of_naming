@@ -1,7 +1,12 @@
 """
 Process raw SSA yobYYYY.txt files into:
   - dataset/processed/us_names_long.csv        (year, name, sex, count, total_births_sex, rel_freq)
-  - dataset/processed/us_diversity_metrics.csv (year, sex, shannon_entropy, top10_share, top30_share)
+  - dataset/processed/us_diversity_metrics.csv (year, sex, shannon_entropy, top10_share, top50_share)
+
+2026-08-24: switched the secondary concentration metric from top50 to top50 (decision
+in PROJECT_LOG.md) - top10 and top50 are now the two primary reported concentration
+windows; top100 is computed separately, only inside the coverage-bias robustness check
+(01c_check_coverage_bias.py / table14), not as a per-year trend metric here.
 
 Metrics are computed PER SEX (not combined) to match ISTAT's published breakdown,
 which reports top-N concentration separately for male/female births (see plan §4).
@@ -44,8 +49,8 @@ def metrics_for_group(rows):
     counts_desc = sorted((c for _, c in rows), reverse=True)
     h = shannon_entropy(counts_desc)
     top10 = top_n_share(counts_desc, total, 10)
-    top30 = top_n_share(counts_desc, total, 30)
-    return total, len(rows), h, top10, top30
+    top50 = top_n_share(counts_desc, total, 50)
+    return total, len(rows), h, top10, top50
 
 
 def main():
@@ -71,16 +76,16 @@ def main():
 
         sex_totals = {}
         for sex, rows in sorted(by_sex.items()):
-            total, distinct, h, top10, top30 = metrics_for_group(rows)
+            total, distinct, h, top10, top50 = metrics_for_group(rows)
             sex_totals[sex] = total
-            metric_rows.append((year, sex, total, distinct, h, top10, top30))
+            metric_rows.append((year, sex, total, distinct, h, top10, top50))
             for name, count in rows:
                 long_rows.append((year, name, sex, count, total, count / total))
 
         # pooled M+F reference row
         pooled_rows = [(name, count) for rows in by_sex.values() for name, count in rows]
-        total, distinct, h, top10, top30 = metrics_for_group(pooled_rows)
-        metric_rows.append((year, "both", total, distinct, h, top10, top30))
+        total, distinct, h, top10, top50 = metrics_for_group(pooled_rows)
+        metric_rows.append((year, "both", total, distinct, h, top10, top50))
 
     long_path = os.path.join(OUT_DIR, "us_names_long.csv")
     with open(long_path, "w", encoding="utf-8") as f:
@@ -90,9 +95,9 @@ def main():
 
     metrics_path = os.path.join(OUT_DIR, "us_diversity_metrics.csv")
     with open(metrics_path, "w", encoding="utf-8") as f:
-        f.write("year,sex,total_births,distinct_names,shannon_entropy,top10_share,top30_share\n")
-        for year, sex, total_births, distinct_names, h, top10, top30 in metric_rows:
-            f.write(f"{year},{sex},{total_births},{distinct_names},{h:.6f},{top10:.6f},{top30:.6f}\n")
+        f.write("year,sex,total_births,distinct_names,shannon_entropy,top10_share,top50_share\n")
+        for year, sex, total_births, distinct_names, h, top10, top50 in metric_rows:
+            f.write(f"{year},{sex},{total_births},{distinct_names},{h:.6f},{top10:.6f},{top50:.6f}\n")
 
     years = sorted(set(r[0] for r in metric_rows))
     print(f"Wrote {len(long_rows)} rows -> {long_path}")

@@ -9,18 +9,23 @@ Input:
 Output:
   dataset/processed/it_diversity_metrics.csv
     (year, sex, total_births, distinct_names_captured, shannon_entropy,
-     top10_share, top30_share, coverage_percent, entropy_reliable)
+     top10_share, top50_share, coverage_percent, entropy_reliable)
+
+2026-08-24: switched from top30_share to top50_share (decision in PROJECT_LOG.md) - top10
+and top50 are now the two primary reported concentration windows.
 
 COVERAGE CAVEAT (important): ISTAT's contanomi web service only returns each year's
 top-N names by rank, and N is a real per-year server-side limit (found by binary
 search, not something we chose) that varies from ~137 names (2021, worst) to the
 full distribution (~25,000 names, 2022-2024). See PROJECT_LOG.md and manifest.csv.
 
-top10_share/top30_share are UNAFFECTED by this: `percent` in the raw data is already
+top10_share/top50_share are UNAFFECTED by this: `percent` in the raw data is already
 computed by ISTAT against that year's TRUE total births (confirmed: percentages sum
-to ~100% in fully-covered years), so summing the top 10/30 captured names' percentages
-gives the correct concentration ratio regardless of scrape depth. This is the primary
-cross-year Italy metric, valid for the full 1999-2024 window.
+to ~100% in fully-covered years), so summing the top 10/50 captured names' percentages
+gives the correct concentration ratio regardless of scrape depth (as long as the scrape
+depth reaches at least 50, which it does every year - the worst year, 2021, still
+returned the top 137). This is the primary cross-year Italy metric, valid for the full
+1999-2024 window.
 
 shannon_entropy computed here is NOT reliable for partial-coverage years - it
 systematically UNDERESTIMATES the true value, missing whatever entropy the untracked
@@ -86,7 +91,7 @@ def main():
         total_births = round(sum(counts) / (cov / 100.0)) if cov > 0 else sum(counts)
 
         top10_share = sum(percents[:10]) / 100.0
-        top30_share = sum(percents[:30]) / 100.0
+        top50_share = sum(percents[:50]) / 100.0
         h = shannon_entropy_from_percents(percents)
         entropy_reliable = cov >= ENTROPY_RELIABLE_MIN_COVERAGE
 
@@ -98,7 +103,7 @@ def main():
                 "distinct_names_captured": len(entries),
                 "shannon_entropy": round(h, 6),
                 "top10_share": round(top10_share, 6),
-                "top30_share": round(top30_share, 6),
+                "top50_share": round(top50_share, 6),
                 "coverage_percent": round(cov, 4),
                 "entropy_reliable": entropy_reliable,
             }
@@ -106,7 +111,7 @@ def main():
 
     fieldnames = [
         "year", "sex", "total_births", "distinct_names_captured", "shannon_entropy",
-        "top10_share", "top30_share", "coverage_percent", "entropy_reliable",
+        "top10_share", "top50_share", "coverage_percent", "entropy_reliable",
     ]
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:

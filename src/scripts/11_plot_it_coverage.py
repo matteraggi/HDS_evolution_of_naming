@@ -4,7 +4,7 @@ dataset/istat/contanomi_raw/manifest.csv (male_percent_sum / female_percent_sum:
 what share of that year's TRUE total births are captured by the scraped names).
 
 Companion to 01c_check_coverage_bias.py's numeric proof that this unevenness
-doesn't bias the paper's primary Italy metric (top10/top30 share) - this figure
+doesn't bias the paper's primary Italy metric (top10/top50 share) - this figure
 is the visual "here's what the gap actually looks like, year by year" that
 motivates why that check was necessary in the first place.
 """
