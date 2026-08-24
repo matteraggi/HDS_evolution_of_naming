@@ -110,21 +110,25 @@ per struttura e accessibilità.
 contiene un file per ogni anno dal 1880 al 2025, con record \texttt{nome,sesso,conteggio} per ogni
 combinazione osservata; l'unico limite dichiarato è una soglia di soppressione statistica per nomi con
 meno di 5 nascite. Dopo la pulizia, la tabella risultante conta oltre 2,18 milioni di combinazioni
-nome/anno/sesso.
+\texttt{nome/anno/sesso}.
 \newline
 \textbf{Italia:} Il piano di ricerca iniziale prevedeva, per l'Italia, la stessa acquisizione manuale
 usata per gli Stati Uniti. Questo si è reso necessario perché l'ISTAT non pubblica una tabella
 cumulativa bulk \texttt{nome $\times$ anno $\times$ sesso $\times$ conteggio} attraverso i suoi canali
 ufficiali (dovrebbe essere disponibile tramite il portale ``Open Data / High Value Datasets'', ma quel
-dataset non è presente). La raccolta manuale è stata svolta in una prima fase (2004 e 2006-2024),
+dataset non è presente).
+
+La raccolta manuale è stata svolta in una prima fase (2004 e 2006-2024),
 attingendo a 14 PDF ISTAT con nomix.it come fonte secondaria per gli anni non altrimenti reperibili,
 per poi passare, in una seconda fase, allo strumento ufficiale ISTAT ``contanomi'' disponibile online.
 
 L'interfaccia pubblica di contanomi limita la visualizzazione ai primi 10-50 nomi per anno, ma una
 richiesta diretta al servizio ISTAT permette di accedere all'intera distribuzione. Analizzando il
-codice JavaScript dello strumento interattivo (\url{istat.it/dati/calcolatori/contanomi/}) è stato
-individuato il servizio web reale che lo alimenta: un endpoint JSONP non documentato pubblicamente,
-privo di restrizioni in \texttt{robots.txt}. Il parametro \texttt{limit} della richiesta non è
+codice JavaScript dello strumento (\url{istat.it/dati/calcolatori/contanomi/}) è stato
+individuato il servizio web che lo alimenta: un endpoint JSONP non documentato pubblicamente,
+privo di restrizioni in \texttt{robots.txt}. 
+
+Il parametro \texttt{limit} della richiesta non è
 vincolato all'intervallo 10-50 mostrato dall'interfaccia: per il 2022-2024 restituisce l'intera
 distribuzione ($\sim$25.000 nomi distinti per sesso, percentuali che sommano a $\sim$100\%, nessuna
 soglia di soppressione osservabile), mentre per gli anni precedenti il servizio impone un limite
@@ -132,10 +136,15 @@ massimo per richiesta non costante e non documentato, individuato per ciascun an
 binaria.
 
 La copertura media risultante è dell'86\% delle nascite sui 26 anni, con un minimo del 66\% nel 2021
-(il caso peggiore); si veda la Figura~\ref{fig:istat_coverage} per il dettaglio anno per anno. Prima
-di adottare questi dati come fonte primaria sono stati eseguiti due controlli: (a) i valori estratti
-per il 2024 (Leonardo: 6.580 nascite, Sofia: 4.636; quota primi-50 maschile: 53,28\%) sono stati
-confrontati con quelli della raccolta manuale, risultando identici; (b) l'impatto della copertura
+(il caso peggiore); si veda Fig.~\ref{fig:istat_coverage} per il dettaglio anno per anno. 
+
+Prima di adottare questi dati come fonte primaria sono stati eseguiti due controlli: 
+
+i valori estratti
+per il 2024 sono stati
+confrontati con quelli della raccolta manuale, risultando identici; 
+
+l'impatto della copertura
 variabile sulle metriche utilizzate è stato quantificato empiricamente, non assunto (si veda
 Sezione~\ref{sec:validazione}). La finestra comparabile USA/Italia risultante, \textbf{1999-2024} (26
 anni), coincide con il limite reale oltre il quale l'ISTAT non dispone di dati a livello di singolo
@@ -144,7 +153,6 @@ nome.
 \input{tables_tex/table1.tex}
 
 \subsection{Pulizia e normalizzazione}
-
 Per gli Stati Uniti, ogni file annuale è stato aggregato in una tabella (\texttt{anno, nome, sesso,
 conteggio, nascite totali per sesso, frequenza relativa}), con la frequenza relativa calcolata sul
 totale delle nascite dello stesso sesso in quell'anno. Le metriche sono calcolate separatamente per
@@ -162,7 +170,7 @@ entrambi i paesi:
 H(\text{anno}, \text{sesso}) = -\sum_i p_i \cdot \log_2(p_i)
 \end{equation}
 dove $p_i$ è la frequenza relativa dell'$i$-esimo nome in quell'anno/sesso. Per gli Stati Uniti questo
-calcolo resta diretto (Figura~\ref{fig:us_entropy}): un minimo relativo attorno agli anni '40-'50 (baby
+calcolo resta diretto (Fig.~\ref{fig:us_entropy}): un minimo relativo attorno agli anni '40-'50 (baby
 boom), seguito da una crescita pressoché ininterrotta dagli anni '60 a oggi.
 
 Per l'Italia, invece, la copertura variabile rende l'entropia calcolata sistematicamente distorta
@@ -188,14 +196,10 @@ indipendente), che dipende solo dai nomi più popolari.
 \subsection{Validazione scientifica}
 \label{sec:validazione}
 
-Si sottolinea una distinzione importante: le metriche di concentrazione e diversificazione dei nomi fungono da proxy quantitativo per l'individualizzazione (la frammentazione sociale e la ricerca di unicità nelle scelte di consumo culturale), non come misura psicologica diretta o valutazione morale dell'individualismo.
-
 Questa sezione distingue esplicitamente due categorie di verifica: \textbf{test di ipotesi formali}
 ($H_0$/$H_1$/$\alpha = 0{,}05$ dichiarati, sintetizzati nella Tabella~\ref{tab:formal_hypotheses}) e \textbf{controlli di robustezza/sensibilità}, che non
 testano un'ipotesi statistica ma quantificano quanto una conclusione cambierebbe con una scelta
 metodologica diversa.
-
-\input{tables_tex/table17.tex}
 
 \textbf{Mann-Kendall} \cite{mann1945, kendall1975}. $H_0$: nessun trend monotono; $H_1$: trend
 monotono (crescente/decrescente). Su tutte le combinazioni testate sui dati USA, $H_0$ è respinta con
@@ -217,6 +221,8 @@ la discussione di questa dipendenza dalla soglia.
 $p = 2{,}4 \times 10^{-12}$, $\tau = 0{,}98$; femmine $p = 2{,}8 \times 10^{-11}$): convergenza
 statisticamente robusta.
 
+\input{tables_tex/table17.tex}
+
 Gli \textbf{intervalli di confidenza bootstrap} sulla pendenza di Sen (percentile, 2000 iterazioni) non
 costituiscono un test di ipotesi formale in senso stretto, la non sovrapposizione è un'euristica
 informale, riportata come conferma supplementare del test Mann-Kendall sulla serie differenza, non
@@ -229,9 +235,6 @@ mostra una distorsione monotona dal $-19\%$ al $-50\%$ (Tabella~\ref{tab:coverag
 Figura~\ref{fig:coverage_bias}): da qui la scelta di riportare l'entropia italiana solo per il
 2022-2024.
 
-Il \textbf{controllo di robustezza della similarità coseno rispetto alla copertura}
-dimostra che il troncamento della distribuzione italiana produce un'alterazione trascurabile della similarità coseno rispetto agli USA: la distorsione è inferiore all'1,9\% persino al livello di troncamento peggiore degli anni storici (profondità 377 nel 1999) e scende sotto lo 0,46\% per tutte le profondità superiori a 1.000 nomi. Questo conferma che la misura di convergenza distributiva (coseno) è esente da bias di copertura significativo su tutto il periodo 1999-2024.
-
 \input{tables_tex/table14.tex}
 
 \begin{figure}[t]
@@ -240,6 +243,9 @@ dimostra che il troncamento della distribuzione italiana produce un'alterazione 
 \caption{Sensibilità dell'entropia di Shannon alla profondità di copertura (la quota primi-10/50/100 ha bias esattamente zero a ogni profondità, si veda Tabella~\ref{tab:coverage_bias}).}
 \label{fig:coverage_bias}
 \end{figure}
+
+Il \textbf{controllo di robustezza della similarità coseno rispetto alla copertura}
+dimostra che il troncamento della distribuzione italiana produce un'alterazione trascurabile della similarità coseno rispetto agli USA: la distorsione è inferiore all'1,9\% persino al livello di troncamento peggiore degli anni storici (profondità 377 nel 1999) e scende sotto lo 0,46\% per tutte le profondità superiori a 1.000 nomi. Questo conferma che la misura di convergenza distributiva (coseno) è esente da bias di copertura significativo su tutto il periodo 1999-2024.
 
 Il \textbf{controllo di robustezza geografica} (Sezione~\ref{sec:risultati}) usa i dati SSA per stato
 per verificare se i casi-studio RQ2 più solidi si muovono in modo uniforme su tutti gli stati o in
@@ -251,8 +257,8 @@ Per ogni \texttt{nome/sesso/anno} si calcola il rapporto tra il conteggio dell'a
 precedenti, con una soglia minima di conteggio per escludere rumore statistico su numeri piccoli. Il
 metodo produce solo candidati: nessuno è stato accettato senza (a) verifica della plausibilità della
 causa proposta tramite ricerca web indipendente, e (b) verifica di coerenza temporale (l'evento deve
-precedere il picco/crollo di un intervallo compatibile con concepimento e nascita, 9-18 mesi). Il
-metodo è stato validato recuperando correttamente tre casi noti in letteratura prima ancora di essere
+precedere il picco/crollo di un intervallo compatibile con concepimento e nascita, 9-18 mesi). \\
+Il metodo è stato validato recuperando correttamente tre casi noti in letteratura prima ancora di essere
 confermati via ricerca: Elsa (\emph{Frozen}, 2013), Khaleesi (\emph{Game of Thrones}), Isabella
 (\emph{Twilight}); si veda anche l'ONS britannico \cite{ons2015} per un precedente istituzionale dello
 stesso tipo di analisi.
@@ -271,25 +277,30 @@ di $N = 152$ eventi mediatici documentati oggettivamente (1999-2024, USA e Itali
 ufficiali (Box Office Mojo, Cinetel, Billboard Hot 100, FIMI Top of the Music, Auditel, FIFA, Lega
 Serie A) invece che dal picco osservato nei dati. Per ogni nome esposto si calcola la frequenza media
 pre-evento (media dei 3 anni precedenti) e post-evento (media dei 2 anni successivi), e la variazione
-percentuale tra le due. Questa variazione viene confrontata con quella di un \textbf{gruppo di
+percentuale tra le due. \\
+Questa variazione viene confrontata con quella di un \textbf{gruppo di
 controllo}: tutti gli altri nomi dello stesso sesso e paese con frequenza pre-evento entro il
 ${\pm}35\%$ di quella del nome esposto, di cui si prende la variazione \emph{mediana} nello stesso
-periodo. L'\textbf{impatto netto DiD} (Difference-in-Differences) è la differenza fra la variazione del
+periodo. \\
+L'\textbf{impatto netto DiD} (Difference-in-Differences) è la differenza fra la variazione del
 nome esposto e quella mediana dei controlli: isola l'effetto specifico dell'evento dal trend di fondo
-che il nome avrebbe comunque seguito. La significatività è testata con Wilcoxon per ranghi con segno
+che il nome avrebbe comunque seguito. \\
+La significatività è testata con Wilcoxon per ranghi con segno
 sulla distribuzione degli impatti netti, per categoria mediatica e sul totale.
-
-\input{tables_tex/table13.tex}
 
 \subsection{Limiti metodologici principali}
 
-\textbf{(1)} la soglia di soppressione SSA sottostima leggermente la diversità storica USA;
+\textbf{(1)} la soglia di soppressione SSA sottostima leggermente la diversità storica USA; \\
 \textbf{(2)} la copertura ISTAT variabile per anno non distorce la quota di concentrazione ma limita
-l'entropia italiana al 2022-2024; \textbf{(3)} il servizio ISTAT usato non è un'API pubblicamente
+l'entropia italiana al 2022-2024; \\
+\textbf{(3)} il servizio ISTAT usato non è un'API pubblicamente
 documentata, meno stabile nel tempo di un formato ufficiale, anche se i dati grezzi sono comunque
-conservati in repository per garantire riproducibilità; \textbf{(4)} il confronto USA/Italia è
-limitato alla finestra 1999-2024; \textbf{(5)} il legame tra un picco/crollo e un evento culturale
-resta correlazionale, non causale in senso stretto; \textbf{(6)} il controllo di robustezza geografica
+conservati in repository per garantire riproducibilità; \\
+\textbf{(4)} il confronto USA/Italia è
+limitato alla finestra 1999-2024; \\
+\textbf{(5)} il legame tra un picco/crollo e un evento culturale
+resta correlazionale, non causale in senso stretto; \\
+\textbf{(6)} il controllo di robustezza geografica
 ha copertura disomogenea tra i casi (da 7 a 51 stati con dati sufficienti a seconda del nome), un rischio di
 survivorship bias sui casi a $n$ più basso (si veda Sezione~\ref{sec:risultati}).
 
@@ -389,11 +400,13 @@ Questa tripartizione evidenzia un principio sociologico chiave: i genitori si id
 
 \subsection{Tredici storie di picchi ed il roster esplorativo supplementare}
 
-Accanto all'Event Study confermativo, l'analisi esplorativa meccanica (Tabella~\ref{tab:negative_spikes} e roster supplementare) e la ricerca sul campo hanno confermato storie emblematiche sia in USA che in Italia.
+Accanto all'Event Study confermativo, l'analisi esplorativa meccanica (Tabella~\ref{tab:positive_spikes} e roster supplementare) e la ricerca sul campo hanno confermato storie emblematiche sia in USA che in Italia.
 
 Tra i casi statunitensi più eclatanti: da Shirley Temple (1935) a Tammy (\emph{Tammy and the Bachelor}, 1957, passato da 255 a quasi 10.000 nascite), fino a Nevaeh (``heaven'' letto al contrario, esploso dopo un'apparizione su MTV nel 2000).
 
 Sul lato italiano spiccano: \textbf{Karol}, aumentato di 78 volte nel 2005 (anno della morte di Papa Giovanni Paolo II); \textbf{Adele}, che mostra il ritardo temporale di recepimento culturale tra USA (2011) e Italia (2012); \textbf{Elodie} (Sanremo 2017); \textbf{Soleil} (\emph{Grande Fratello Vip} 2021); e \textbf{Chanel} (2007, nascita della figlia di Totti e Blasi abbinata al fascino del brand).
+
+\input{tables_tex/table20.tex}
 
 \subsection{E quando un nome ``brucia'': i crolli}
 
@@ -505,6 +518,36 @@ Questa marcata differenza riflette sia vincoli di natura normativa (l'art. 35 de
 
 Il quadro che emerge da questo lavoro racconta una storia coerente attraverso le tre domande di ricerca (diversità di lungo periodo RQ1, impatti mediatici RQ2, ed evoluzione delle norme di genere RQ3).
 In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto intima, resta sistematicamente esposta a forze culturali che vanno ben oltre il singolo nucleo familiare, tra cui grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), l'impatto causale della finzione narrativa e della musica pop, ed il superamento progressivo dei ruoli tradizionali di genere negli USA rispetto all'Italia (RQ3).
+
+Prima di proseguire con l'interpretazione, vale la pena chiarire un punto concettuale: le metriche di
+concentrazione e diversificazione usate in questo lavoro fungono da proxy quantitativo per
+l'individualizzazione, intesa come processo sociologico di frammentazione delle scelte di consumo
+culturale, non come misura psicologica diretta o giudizio morale sul livello di individualismo dei
+genitori. Un genitore può scegliere un nome raro per motivi che nulla hanno a che fare con la ricerca
+di unicità (una tradizione familiare, un significato religioso, semplicemente il gusto personale), e
+uno comune senza per questo essere più conformista di chi sceglie un nome raro: la statistica osserva
+solo la forma aggregata della distribuzione, non le motivazioni individuali.
+
+Fatta questa premessa, perché l'Italia resta sistematicamente più concentrata degli Stati Uniti? I
+dati di questo lavoro non permettono una risposta causale, ma alcuni fattori plausibili, discussi in
+letteratura per fenomeni simili, meritano di essere menzionati come possibili concause, senza pretesa
+di esaustività. Il primo è demografico: gli Stati Uniti hanno un tasso di immigrazione storicamente
+molto più alto dell'Italia, e ogni comunità immigrata porta con sé un proprio repertorio di nomi che
+si aggiunge, non sostituisce, quello nativo, allargando meccanicamente il pool di nomi realisticamente
+in uso. Il secondo è una convenzione culturale specifica: in Italia esiste una tradizione,
+storicamente forte e tuttora diffusa soprattutto fuori dai grandi centri urbani, di dare al
+primogenito il nome di un nonno o di una nonna; questa pratica vincola la scelta a un pool già
+ristretto, quello della generazione precedente, un meccanismo strutturale di concentrazione che non ha
+un equivalente altrettanto diffuso negli Stati Uniti. Il terzo è l'istruzione: alcuni studi collegano
+un più alto livello di istruzione dei genitori a una maggiore propensione verso nomi meno comuni, come
+segnale di distinzione culturale; se la composizione per istruzione dei genitori differisce
+sistematicamente tra i due paesi, questo potrebbe contribuire al divario osservato, sebbene i dati
+usati qui non permettano di verificarlo direttamente. Infine, la globalizzazione dei media, già
+discussa come motore della convergenza USA-Italia, agisce nella direzione opposta rispetto ai primi
+due fattori: nel tempo assottiglia il divario, più visibilmente per i nomi femminili che per quelli
+maschili, come mostrato dal test sulla serie differenza (Sezione~\ref{sec:risultati}). Nessuno di
+questi meccanismi è stato testato direttamente in questo lavoro: sono ipotesi di lettura coerenti con
+i risultati osservati, non conclusioni causali.
 
 Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie, sull'asimmetria tra le due infrastrutture statistiche nazionali. Gli Stati Uniti pubblicano l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, ricco dal 1880. L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché raggiungibili tramite un servizio web non documentato, pensato per un tool di consultazione singola, non per la ricerca. Non è un dettaglio tecnico neutro, ma a suo modo un dato culturale: riflette due approcci molto diversi alla trasparenza dei dati pubblici, un tema che meriterebbe una riflessione a sé.
 
