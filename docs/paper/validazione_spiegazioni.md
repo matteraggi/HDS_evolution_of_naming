@@ -191,6 +191,29 @@ da Kendall 1975) e restituisce anche la pendenza di Sen (la mediana di tutte le 
 tra ogni coppia di punti: una stima robusta di "quanto velocemente" cambia la serie, usata al posto di
 una normale regressione lineare perché non risente di outlier).
 
+### Pendenza di Sen (stima robusta della velocità, non un test)
+
+Diversa da entrambi i test sopra: non risponde a "c'è un trend" (quello lo fa Mann-Kendall) né a "chi è
+più alto" (quello lo fa Wilcoxon), ma a "quanto velocemente cambia la serie, in modo affidabile?". Si
+usa insieme a Mann-Kendall proprio perché condivide lo stesso identico procedimento a coppie: per ogni
+coppia di punti $(anno_i, valore_i)$ e $(anno_j, valore_j)$ con $i \neq j$, si calcola la pendenza tra
+i due, cioè $(valore_j - valore_i) / (anno_j - anno_i)$. Con $n$ anni ci sono centinaia di coppie
+possibili, quindi centinaia di pendenze calcolate. La pendenza di Sen è semplicemente la **mediana** di
+tutte queste pendenze pairwise, invece della media: questo la rende robusta a un singolo anno anomalo
+(un picco o un crollo isolato non riesce a trascinare la mediana come trascinerebbe una regressione
+lineare classica). Nel codice, `pymannkendall.original_test()` la calcola automaticamente insieme al
+test di trend (campo `.slope` del risultato), e in `03_us_italy_comparison.py` viene anche
+bootstrappata (2000 iterazioni, ricampionando i residui) per ottenere un intervallo di confidenza al
+95%.
+
+Questa è esattamente la fonte dei numeri "pendenza di Sen" in Risultati: per le femmine, primi-10
+USA -0,0011/anno contro Italia -0,0033/anno (Italia tre volte più ripida, intervalli non sovrapposti);
+per i maschi, primi-10 USA -0,0020/anno contro Italia -0,0023/anno (praticamente identiche, intervalli
+sovrapposti) ma primi-50 USA -0,0064/anno contro Italia -0,0055/anno (ora è l'USA più ripida). Il fatto
+che per i maschi il "chi è più veloce" si inverta a seconda della soglia, mentre per le femmine resta
+coerente a entrambe le soglie, è precisamente il motivo per cui il risultato femminile è definito
+robusto e quello maschile no.
+
 ### Wilcoxon a coppie appaiate (test di livello)
 
 Domanda diversa da Mann-Kendall: non "c'è un trend nel tempo" ma "in un confronto diretto anno per
