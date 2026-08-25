@@ -3,7 +3,8 @@ Quantitative Event Study for the Movie & TV Series category.
 
 Evaluates the impact of top-grossing films and major TV series (1999-2024, US & IT)
 on baby name frequencies by measuring pre-event vs post-event relative frequency changes,
-matching each exposed name with 5 unexposed control names (Difference-in-Differences),
+comparing each exposed name against the median change of all unexposed names of the same
+sex/country within +/-35% of its pre-event frequency (Difference-in-Differences),
 and running an overall Wilcoxon signed-rank test.
 
 Outputs:
