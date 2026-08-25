@@ -53,6 +53,10 @@ di cronaca nera italiano), ognuno controllato singolarmente per plausibilità ca
 temporale, e per i casi più solidi anche per uniformità geografica.
 \end{abstract}
 
+\begin{IEEEkeywords}
+diversità onomastica, individualismo culturale, test di Mann-Kendall, event study, nomi dei neonati, confronto USA-Italia
+\end{IEEEkeywords}
+
 \section{Introduzione}
 
 Scegliere il nome di un figlio è, probabilmente, una delle decisioni più intime che un genitore
@@ -116,8 +120,7 @@ contiene un file per ogni anno dal 1880 al 2025, con record \texttt{nome,sesso,c
 combinazione osservata; l'unico limite dichiarato è una soglia di soppressione statistica per nomi con
 meno di 5 nascite. \\
 Dopo la pulizia, la tabella risultante conta oltre 2,18 milioni di combinazioni
-\texttt{nome/anno/sesso}.
-\newline
+\texttt{nome/anno/sesso}. \\
 \textbf{Italia:} Il piano di ricerca iniziale prevedeva, per l'Italia, la stessa acquisizione manuale
 usata per gli Stati Uniti. Questo si è reso necessario perché l'ISTAT non pubblica una tabella
 cumulativa bulk \texttt{nome $\times$ anno $\times$ sesso $\times$ conteggio} attraverso i suoi canali
@@ -395,21 +398,21 @@ entro il 2024: nomi di chiara origine anglo-americana che attraversano il confin
 
 Per superare l'approccio puramente esplorativo e prevenire obiezioni di \emph{HARKing} (ipotesi fatte a posteriori), l'analisi di RQ2 è stata condotta tramite un \textbf{Event Study quantitativo confermativo su un campione complessivo di $N = 152$ eventi mediatici oggettivamente documentati} tra il 1999 e il 2024 (estratti da archivi ufficiali Box Office Mojo, Cinetel, Billboard Hot 100, FIMI Top of the Music, Auditel, FIFA e Lega Serie A).
 
-Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione media di \textbf{5 nomi di controllo non esposti appaiati} per sesso, paese e livello di popolarità iniziale (metodo \emph{Difference-in-Differences}, DiD).
+Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione \emph{mediana} di tutti i nomi di controllo non esposti dello stesso sesso e paese con frequenza pre-evento entro il ${\pm}35\%$ di quella del nome esposto (metodo \emph{Difference-in-Differences}, DiD).
 
-Come sintetizzato nella Tabella~\ref{tab:event_study_summary} e visibile nella Fig.~\ref{fig:event_study_categories}, l'esito complessivo dell'Event Study conferma l'esistenza di un impatto causale causato dalle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954.5, p = 1.44 \times 10^{-7}$, $p < 0.0001$).
+Come sintetizzato nella Tabella~\ref{tab:event_study_summary} e visibile nella Fig.~\ref{fig:event_study_categories}, l'esito complessivo dell'Event Study conferma un impatto causale delle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954{,}5, p = 1{,}44 \times 10^{-7}$).
 
 \input{tables_tex/table18.tex}
 
 L'analisi comparativa tra categorie mediatiche rivela tuttavia una netta differenza sociologica:
 
 \begin{enumerate}
-    \item \textbf{Cinema \& Serie TV ($N=71$)}: I personaggi della finzione cinematografica e televisiva (es. \emph{Elsa}, \emph{Khaleesi}, \emph{Katniss}, \emph{Rey}, \emph{Sole}, \emph{Chanel}) producono uno shock culturale massivo, con un impatto netto medio DiD del \textbf{$+232{,}2\%$} rispetto ai controlli ($p = 5.56 \times 10^{-5}$, altamente significativo).
-    \item \textbf{Musica \& Pop Culture ($N=46$)}: Le icone della musica pop e i protagonisti dello spettacolo (es. \emph{Aaliyah}, \emph{Kesha}, \emph{Elodie}, \emph{Soleil}, \emph{Blanco}) generano un impatto netto medio DiD del \textbf{$+244{,}9\%$} rispetto ai controlli ($p = 5.44 \times 10^{-4}$, altamente significativo).
-    \item \textbf{Sport ($N=35$)}: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76{,}2\%$, ma il test statistico aggregato mostra che l'effetto \textbf{non è statisticamente significativo sull'intera popolazione} ($p = 0.190$).
+    \item \textbf{Cinema \& Serie TV ($N=71$)}: I personaggi della finzione cinematografica e televisiva (es. \emph{Elsa}, \emph{Khaleesi}, \emph{Katniss}, \emph{Rey}, \emph{Sole}, \emph{Chanel}) producono uno shock culturale massivo, con un impatto netto medio DiD del \textbf{$+232{,}2\%$} rispetto ai controlli ($p = 5{,}56 \times 10^{-5}$, altamente significativo).
+    \item \textbf{Musica \& Pop Culture ($N=46$)}: Le icone della musica pop e i protagonisti dello spettacolo (es. \emph{Aaliyah}, \emph{Kesha}, \emph{Elodie}, \emph{Soleil}, \emph{Blanco}) generano un impatto netto medio DiD del \textbf{$+244{,}9\%$} rispetto ai controlli ($p = 5{,}44 \times 10^{-4}$, altamente significativo).
+    \item \textbf{Sport ($N=35$)}: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76{,}2\%$, ma il test statistico aggregato mostra che l'effetto \textbf{non è statisticamente significativo sull'intera popolazione} ($p = 0{,}190$).
 \end{enumerate}
 
-Questa tripartizione evidenzia un principio sociologico chiave: i genitori si identificano e proiettano i propri desideri di unicità sui personaggi della \textbf{finzione narrativa} o sui \textbf{miti della musica}, mentre le imprese degli atleti generano ammirazione momentanea ma raramente alterano in modo generalizzato le decisioni anagrafiche.
+Questa tripartizione suggerisce una differenza sociologica interessante tra categorie: i personaggi della \textbf{finzione narrativa} e i \textbf{miti della musica} sono associati a un impatto molto più marcato e diffuso rispetto alle imprese degli atleti, che generano ammirazione momentanea ma raramente si traducono in un cambiamento generalizzato delle scelte anagrafiche. Un'ipotesi di lettura plausibile è che i personaggi fittizi offrano ai genitori un veicolo più diretto per esprimere desideri di unicità; restiamo tuttavia nel campo dell'interpretazione, non di una conclusione causale sui meccanismi psicologici individuali.
 
 \begin{figure*}[t]
 \centering
@@ -523,13 +526,13 @@ non un'eccezione ad essa.
 \section{Divergenza nei Ruoli di Genere Anagrafici: Nomi Gender-Neutral (RQ3)}
 \label{sec:rq3}
 
-La terza domanda di ricerca (RQ3) analizza se il processo di individualizzazione e l'evoluzione delle norme di genere abbiano portato ad un aumento dei \textbf{nomi gender-neutral (unissex)}, ovvero attribuiti sia a nati maschi che femmine ($0.10 \le p_F \le 0.90$).
+La terza domanda di ricerca (RQ3) analizza se il processo di individualizzazione e l'evoluzione delle norme di genere abbiano portato ad un aumento dei \textbf{nomi gender-neutral (unissex)}, ovvero attribuiti sia a nati maschi che femmine ($0{,}10 \le p_F \le 0{,}90$).
 
 Come sintetizzato nella Tabella~\ref{tab:gender_neutral} e nella Fig.~\ref{fig:gender_neutral}, si osserva una drastica divergenza strutturale tra i due paesi:
 
 \begin{enumerate}
-    \item \textbf{Stati Uniti (USA)}: La quota di nascite con nomi neutri rispetto al sesso è cresciuta dal \textbf{$7{,}31\%$} nel 1999 all'\textbf{$8{,}81\%$} nel 2024 (test di Mann-Kendall: $\tau = 0.526, p = 1.79 \times 10^{-4}$, altamente significativo). Nomi come \emph{Avery}, \emph{Riley}, \emph{Jordan}, \emph{Charlie}, \emph{Taylor}, \emph{Peyton}, \emph{Morgan} e \emph{Quinn} sono entrati stabilmente nell'uso comune.
-    \item \textbf{Italia (IT)}: La quota di nascite con nomi unissex rimane estremamente limitata, passando da uno \textbf{$0{,}06\%$} nel 1999 allo \textbf{$0{,}22\%$} nel 2024 (test di Mann-Kendall: $\tau = 0.031, p = 0.842$, non significativo).
+    \item \textbf{Stati Uniti (USA)}: La quota di nascite con nomi neutri rispetto al sesso è cresciuta dal \textbf{$7{,}31\%$} nel 1999 all'\textbf{$8{,}81\%$} nel 2024 (test di Mann-Kendall: $\tau = 0{,}526, p = 1{,}79 \times 10^{-4}$, altamente significativo). Nomi come \emph{Avery}, \emph{Riley}, \emph{Jordan}, \emph{Charlie}, \emph{Taylor}, \emph{Peyton}, \emph{Morgan} e \emph{Quinn} sono entrati stabilmente nell'uso comune.
+    \item \textbf{Italia (IT)}: La quota di nascite con nomi unissex rimane estremamente limitata, passando da uno \textbf{$0{,}06\%$} nel 1999 allo \textbf{$0{,}22\%$} nel 2024 (test di Mann-Kendall: $\tau = 0{,}031, p = 0{,}842$, non significativo).
 \end{enumerate}
 
 \input{tables_tex/table19.tex}
@@ -593,7 +596,7 @@ Non è un dettaglio tecnico neutro, ma a suo modo un dato culturale: riflette du
 \section{Conclusioni}
 
 Questo lavoro ha risposto in modo quantitativo e rigoroso al complesso di quesiti sull'evoluzione dell'onomastica transatlantica. \\
-La diversità cresce in entrambi i paesi; l'Italia resta più concentrata, ma il divario femminile si sta chiudendo; le scelte dei due paesi si stanno avvicinando in modo tracciabile; gli eventi cinematografici e musicali producono shock reali con adozione strutturale permanente a 5 anni; ed infine i ruoli di genere evidenziano un aumento di nomi unissex negli USA che stacca nettamente la rigidità anagrafica italiana.
+La diversità cresce in entrambi i paesi; l'Italia resta più concentrata, ma il divario femminile si sta chiudendo; le scelte dei due paesi si stanno avvicinando in modo tracciabile; gli eventi cinematografici e musicali producono shock reali con adozione strutturale duratura nella finestra di 5 anni osservata; ed infine i ruoli di genere evidenziano un aumento di nomi unissex negli USA che stacca nettamente la rigidità anagrafica italiana.
 
 \section*{Repository e riproducibilità}
 

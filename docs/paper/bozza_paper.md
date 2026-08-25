@@ -25,6 +25,8 @@ Sanremo) e 4 casi di crollo legato a un evento negativo (da Hillary Clinton a un
 nera italiano), ognuno controllato singolarmente per plausibilità causale e coerenza temporale, e
 per i casi più solidi anche per uniformità geografica.
 
+**Parole chiave:** diversità onomastica, individualismo culturale, test di Mann-Kendall, event study, nomi dei neonati, confronto USA-Italia
+
 ## Introduzione
 
 Scegliere il nome di un figlio è, probabilmente, una delle decisioni più intime che un genitore
@@ -261,17 +263,17 @@ confine culturale.
 
 Per superare l'approccio puramente esplorativo e prevenire obiezioni di *HARKing* (ipotesi fatte a posteriori), l'analisi di RQ2 è stata condotta tramite un **Event Study quantitativo confermativo su un campione complessivo di $N = 152$ eventi mediatici oggettivamente documentati** tra il 1999 e il 2024 (estratti da archivi ufficiali Box Office Mojo, Cinetel, Billboard Hot 100, FIMI Top of the Music, Auditel, FIFA e Lega Serie A).
 
-Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione media di **5 nomi di controllo non esposti appaiati** per sesso, paese e livello di popolarità iniziale (metodo *Difference-in-Differences*, DiD).
+Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione *mediana* di tutti i nomi di controllo non esposti dello stesso sesso e paese con frequenza pre-evento entro il ±35% di quella del nome esposto (metodo *Difference-in-Differences*, DiD).
 
-Come sintetizzato nella **Tabella 18** e visibile nella **Fig. 7**, l'esito complessivo dell'Event Study conferma l'esistenza di un impatto causale causato dalle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954.5, p = 1.44 \times 10^{-7}$, $p < 0.0001$).
+Come sintetizzato nella **Tabella 18** e visibile nella **Fig. 7**, l'esito complessivo dell'Event Study conferma un impatto causale delle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954,5, p = 1,44 \times 10^{-7}$).
 
 L'analisi comparativa tra categorie mediatiche rivela tuttavia una netta differenza sociologica:
 
-1. **Cinema & Serie TV ($N=71$)**: I personaggi della finzione cinematografica e televisiva (es. *Elsa*, *Khaleesi*, *Katniss*, *Rey*, *Sole*, *Chanel*) producono uno shock culturale massivo, con un impatto netto medio DiD del **$+232,2\%$** rispetto ai controlli ($p = 5.56 \times 10^{-5}$, altamente significativo).
-2. **Musica & Pop Culture ($N=46$)**: Le icone della musica pop e i protagonisti dello spettacolo (es. *Aaliyah*, *Kesha*, *Elodie*, *Soleil*, *Blanco*) generano un impatto netto medio DiD del **$+244,9\%$** rispetto ai controlli ($p = 5.44 \times 10^{-4}$, altamente significativo).
-3. **Sport ($N=35$)**: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76,2\%$, ma il test statistico aggregato mostra che l'effetto **non è statisticamente significativo sull'intera popolazione** ($p = 0.190$).
+1. **Cinema & Serie TV ($N=71$)**: I personaggi della finzione cinematografica e televisiva (es. *Elsa*, *Khaleesi*, *Katniss*, *Rey*, *Sole*, *Chanel*) producono uno shock culturale massivo, con un impatto netto medio DiD del **$+232,2\%$** rispetto ai controlli ($p = 5,56 \times 10^{-5}$, altamente significativo).
+2. **Musica & Pop Culture ($N=46$)**: Le icone della musica pop e i protagonisti dello spettacolo (es. *Aaliyah*, *Kesha*, *Elodie*, *Soleil*, *Blanco*) generano un impatto netto medio DiD del **$+244,9\%$** rispetto ai controlli ($p = 5,44 \times 10^{-4}$, altamente significativo).
+3. **Sport ($N=35$)**: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76,2\%$, ma il test statistico aggregato mostra che l'effetto **non è statisticamente significativo sull'intera popolazione** ($p = 0,190$).
 
-Questa tripartizione evidenzia un principio sociologico chiave: i genitori si identificano e proiettano i propri desideri di unicità sui personaggi della **finzione narrativa** o sui **miti della musica**, mentre le imprese degli atleti generano ammirazione momentanea ma raramente alterano in modo generalizzato le decisioni anagrafiche.
+Questa tripartizione suggerisce una differenza sociologica interessante tra categorie: i personaggi della **finzione narrativa** e i **miti della musica** sono associati a un impatto molto più marcato e diffuso rispetto alle imprese degli atleti, che generano ammirazione momentanea ma raramente si traducono in un cambiamento generalizzato delle scelte anagrafiche. Un'ipotesi di lettura plausibile è che i personaggi fittizi offrano ai genitori un veicolo più diretto per esprimere desideri di unicità; restiamo tuttavia nel campo dell'interpretazione, non di una conclusione causale sui meccanismi psicologici individuali.
 
 ### Tredici storie di picchi ed il roster esplorativo supplementare
 
