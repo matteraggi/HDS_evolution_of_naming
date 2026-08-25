@@ -35,14 +35,14 @@ e per abbandonarli in blocco pochi anni dopo. Questo paper nasce dalla curiosit�
 forze esterne — la cultura di massa, un film, uno scandalo, un'epoca.
 
 **[DA FARE — nota per la stesura finale]**: qui va la contestualizzazione con la letteratura esistente
-(Lieberson 2000, Twenge et al. 2010, Ogihara 2025 — già confermati e citati in Bibliografia) e la
+(Lieberson & Bell 1992, Twenge et al. 2010, Ogihara 2025 — già confermati e citati in Bibliografia) e la
 motivazione della scelta del tema rispetto ad alternative scartate (bias nei sistemi di
 raccomandazione, teoria dell'onnivoro culturale con dati GSS) già discusse nel piano di ricerca
 originale. Di seguito una versione provvisoria.
 
 I dati sui nomi alla nascita sono un terreno relativamente poco battuto nella didattica di questo
 tipo di corsi, il che ci ha dato margine per un'analisi originale piuttosto che una replica. Il primo
-studio sistematico sull'argomento (Lieberson, 2000) inquadra la scelta del nome come un caso "puro" di
+studio sistematico sull'argomento (Lieberson & Bell, 1992) inquadra la scelta del nome come un caso "puro" di
 moda: a differenza dei vestiti o della musica, non c'è un'industria che spinge attivamente un nome
 piuttosto che un altro, il che rende il fenomeno un osservatorio quasi di laboratorio su come le mode
 nascono e muoiono per conto proprio. Twenge et al. (2010) hanno poi collegato il calo di uso dei nomi
@@ -407,8 +407,6 @@ suo interesse specifico per il rigore statistico di questo tipo di verifiche.
   edizioni precedenti; da verificare in biblioteca se serve un riferimento preciso.)
 - Wilcoxon, F. (1945). "Individual Comparisons by Ranking Methods." *Biometrics Bulletin*, 1(6), 80-83.
   DOI: [10.2307/3001968](https://doi.org/10.2307/3001968).
-- Lieberson, S. (2000). *A Matter of Taste: How Names, Fashions, and Culture Change*. New Haven: Yale
-  University Press. ISBN 0-300-08385-8.
 - Lieberson, S. & Bell, E.O. (1992). "Children's First Names: An Empirical Study of Social Taste."
   *American Journal of Sociology*, 98(3), 511-554. DOI:
   [10.1086/230048](https://doi.org/10.1086/230048).

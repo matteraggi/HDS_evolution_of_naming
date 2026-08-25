@@ -19,3 +19,7 @@ docs/paper/*.pdf
 docs/paper/*.run.xml
 docs/paper/*.synctex.gz
 docs/paper/*.toc
+
+# Copyrighted/paywalled source PDFs downloaded for personal review only - never redistribute.
+docs/paper/references/closed_source_references/*
+!docs/paper/references/closed_source_references/README.md

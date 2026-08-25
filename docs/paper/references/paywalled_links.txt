@@ -1,5 +1,6 @@
-Fonti dietro paywall - serve accesso istituzionale (biblioteca universitaria)
-Non scaricate automaticamente per motivi di copyright.
+Citazioni di paternità del metodo statistico - nessun PDF necessario per difenderle
+(si citano solo per dare il nome al test, come Fisher per l'ANOVA). Link lasciati qui
+solo per comodita se un giorno servisse leggerli davvero.
 
 Mann (1945), "Nonparametric Tests Against Trend", Econometrica
 https://www.jstor.org/stable/1907187
@@ -9,33 +10,10 @@ Wilcoxon (1945), "Individual Comparisons by Ranking Methods", Biometrics Bulleti
 https://www.jstor.org/stable/10.2307/3001968
 https://doi.org/10.2307/3001968
 
-Lieberson & Bell (1992), "Children's First Names", American Journal of Sociology
-https://www.journals.uchicago.edu/doi/10.1086/230048
-https://doi.org/10.1086/230048
-
-Twenge, Abebe & Campbell (2010), "Fitting In or Standing Out", Social Psychological and Personality Science
-https://journals.sagepub.com/doi/10.1177/1948550609349515
-https://doi.org/10.1177/1948550609349515
-
-Twenge, Dawson & Campbell (2016), "Still Standing Out", Journal of Applied Social Psychology
-https://onlinelibrary.wiley.com/doi/10.1111/jasp.12409
-https://doi.org/10.1111/jasp.12409
-
----
-
-Libri (nessun PDF gratuito esiste, serve la biblioteca fisica o prestito interbibliotecario):
-
 Kendall (1975), Rank Correlation Methods, 4th ed., Charles Griffin.
-
-Lieberson (2000), A Matter of Taste, Yale University Press.
-ISBN 0-300-08385-8
+(Libro, nessun PDF gratuito esiste; serve la biblioteca fisica o prestito interbibliotecario.)
 
 ---
 
-Open access ma bloccato per download automatico (ScienceDirect blocca i bot anche su contenuti CC):
-
-Fan, Thouzeau, de Dampierre, Chevallier & Baumard (2025), "Name Uniqueness and the Rise of
-Individualism in the Western Hemisphere (1500-2000)", Current Research in Ecological and Social
-Psychology, vol. 9, art. 100235.
-https://doi.org/10.1016/j.cresp.2025.100235
-https://www.sciencedirect.com/science/article/pii/S266662272500022X
+Tutte le altre fonti citate nel paper sono gia scaricate: vedi README.md in questa cartella
+(pubbliche qui, quelle a pagamento in closed_source_references/, gitignored).
