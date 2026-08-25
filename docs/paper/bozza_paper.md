@@ -128,7 +128,7 @@ negli anni a copertura parziale.
 ### La metrica di diversità primaria e il ruolo dell'entropia di Shannon
 
 Il piano di ricerca originario prevedeva l'uso dell'entropia di Shannon come metrica primaria in
-entrambi i paesi. Per gli Stati Uniti questo calcolo resta diretto (Figura 2, 1880-2025): un minimo
+entrambi i paesi. Per gli Stati Uniti questo calcolo resta diretto (Fig. 2, 1880-2025): un minimo
 relativo attorno agli anni '40-'50 (baby boom) seguito da una crescita pressoché ininterrotta dagli
 anni '60 a oggi. Per l'Italia, la copertura variabile rende l'entropia calcolata sui dati catturati
 sistematicamente distorta verso il basso, e in misura diversa da un anno all'altro. Si è quindi
@@ -169,7 +169,7 @@ come prova indipendente.
 Il **controllo di robustezza alla profondità di copertura per la concentrazione e l'entropia** (troncamento artificiale dei due anni
 italiani completi alle profondità reali degli altri anni) mostra che la distorsione sulla quota
 primi-10/primi-50/primi-100 è **esattamente zero a ogni profondità testata**, mentre l'entropia di Shannon
-mostra una distorsione monotona dal −19% al −50% (Tabella 14, Figura 4) — da qui la scelta di
+mostra una distorsione monotona dal −19% al −50% (Tabella 14, Fig. 4) — da qui la scelta di
 riportare l'entropia italiana solo per il 2022-2024.
 
 Il **controllo di robustezza della similarità coseno rispetto alla copertura** (`src/scripts/01d_check_cosine_bias.py`)
@@ -217,11 +217,11 @@ nome).
 Partiamo dal dato più semplice da enunciare. Negli Stati Uniti, la quota di nascite maschili coperta
 dai primi 10 nomi è passata da circa il 44% nel 1880 a circa l'8% nel 2025 — un crollo di oltre cinque
 volte in 145 anni, monotono e statisticamente solidissimo (Mann-Kendall, p < 0,001 su tutte le 18
-combinazioni testate tra metriche, sessi e finestre temporali). La Figura 2 mostra la stessa storia
+combinazioni testate tra metriche, sessi e finestre temporali). La Fig. 2 mostra la stessa storia
 raccontata dall'entropia: un minimo relativo negli anni del baby boom, poi una salita quasi
 ininterrotta.
 
-Sulla finestra comparabile 1999-2024 (Figura 5), l'Italia parte più concentrata degli Stati Uniti e
+Sulla finestra comparabile 1999-2024 (Fig. 5), l'Italia parte più concentrata degli Stati Uniti e
 resta più concentrata per tutti i 26 anni osservati, sia guardando ai primi 10 sia ai primi 50 nomi: il
 test di Wilcoxon a coppie appaiate è fortemente significativo a entrambe le soglie (p = 2,98 × 10⁻⁸,
 statistica pari a 0 su 26 confronti in tutti e quattro i casi sesso/soglia). Detto in altri termini:
@@ -249,7 +249,7 @@ Il risultato femminile è quindi robusto rispetto alla scelta della soglia, quel
 Questa è, probabilmente, la scoperta più interessante di tutta la parte "backbone" del lavoro, e in un
 certo senso risponde a una domanda diversa dalla precedente: non "quanto è concentrato ciascun paese"
 ma "quanto USA e Italia scelgono *gli stessi* nomi." Misurando la similarità coseno tra le distribuzioni
-complete di nomi dei due paesi, anno per anno e per sesso (Figura 6), il trend è netto e
+complete di nomi dei due paesi, anno per anno e per sesso (Fig. 6), il trend è netto e
 statisticamente fortissimo per entrambi i sessi: per i maschi la similarità triplica quasi (da 0,066 a
 0,176 tra il 1999 e il 2024, p = 2,4 × 10⁻¹², τ di Kendall pari a 0,98 — quasi perfettamente
 monotono), per le femmine più che raddoppia (da 0,119 a 0,302, p = 2,8 × 10⁻¹¹). Un esempio concreto
@@ -263,7 +263,7 @@ Per superare l'approccio puramente esplorativo e prevenire obiezioni di *HARKing
 
 Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione media di **5 nomi di controllo non esposti appaiati** per sesso, paese e livello di popolarità iniziale (metodo *Difference-in-Differences*, DiD).
 
-Come sintetizzato nella **Tabella 18** e visibile nella **Figura 7**, l'esito complessivo dell'Event Study conferma l'esistenza di un impatto causale causato dalle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954.5, p = 1.44 \times 10^{-7}$, $p < 0.0001$).
+Come sintetizzato nella **Tabella 18** e visibile nella **Fig. 7**, l'esito complessivo dell'Event Study conferma l'esistenza di un impatto causale causato dalle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954.5, p = 1.44 \times 10^{-7}$, $p < 0.0001$).
 
 L'analisi comparativa tra categorie mediatiche rivela tuttavia una netta differenza sociologica:
 
@@ -313,7 +313,7 @@ puntuale legato al caso di cronaca.
 
 Per i casi-studio più solidi (sei positivi, tre negativi — tutti americani, poiché non esistono dati
 regionali italiani comparabili), abbiamo verificato se il salto o il crollo osservato a livello
-nazionale fosse effettivamente diffuso su tutto il paese, o concentrato in poche zone (Figura 8,
+nazionale fosse effettivamente diffuso su tutto il paese, o concentrato in poche zone (Fig. 8,
 Tabella 15). La logica è semplice: un vero evento mediatico nazionale — un film, un programma TV
 visto ovunque — dovrebbe muovere la maggior parte degli stati nella stessa direzione; un effetto
 concentrato in uno o due stati soli sarebbe un campanello d'allarme per una causa regionale o, peggio,
@@ -423,9 +423,10 @@ suo interesse specifico per il rigore statistico di questo tipo di verifiche.
 - Ogihara, Y. (2025). "Popularity and Diversity: The Negative Relationship in Baby Names in the United
   Kingdom." *F1000Research*, 14, 424. DOI:
   [10.12688/f1000research.162476.1](https://doi.org/10.12688/f1000research.162476.1).
-- Ogihara, Y. (2025). "Name Uniqueness and the Rise of Individualism in the Western Hemisphere
-  (1500-2000)." *Current Research in Ecological and Social Psychology*, vol. 9.
-  [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S266662272500022X).
+- Fan, Z., Thouzeau, V., de Dampierre, C., Chevallier, C., & Baumard, N. (2025). "Name Uniqueness and
+  the Rise of Individualism in the Western Hemisphere (1500-2000)." *Current Research in Ecological
+  and Social Psychology*, vol. 9, art. 100235. DOI:
+  [10.1016/j.cresp.2025.100235](https://doi.org/10.1016/j.cresp.2025.100235).
 - UK Office for National Statistics (2015). "10 Pop Culture Influences on Baby Names: Game of Thrones,
   Marvel, Frozen and more." A cura di Tom Davy e Rachel Lewis, pubblicato il 17 agosto 2015.
   [ons.gov.uk](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/articles/10popcultureinfluencesonbabynamesgameofthronesmarvelfrozenandmore/2015-08-17).
