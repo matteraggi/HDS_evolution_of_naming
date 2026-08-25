@@ -53,33 +53,33 @@ def main():
         median_did = sorted(effects)[len(effects) // 2] if effects else 0.0
         w_stat, p_val = stats.wilcoxon(effects) if len(effects) >= 5 else (0, 1.0)
 
-        sig_str = "p < 0.001 (Significativo)" if p_val < 0.001 else ("p < 0.05 (Significativo)" if p_val < 0.05 else "p = {:.3f} (Non Sig.)".format(p_val))
+        sig_str = "Significativo" if p_val < 0.05 else "Non significativo"
 
         summary_rows.append({
             "Categoria Evento": name,
-            "N. Eventi": len(cat_rows),
-            "Impatto Netto Medio DiD (%)": f"{mean_did:+.1f}%",
-            "Impatto Mediano DiD (%)": f"{median_did:+.1f}%",
+            "N": len(cat_rows),
+            "Media DiD (%)": f"{mean_did:+.1f}%",
+            "Mediana DiD (%)": f"{median_did:+.1f}%",
             "Wilcoxon W": f"{w_stat:.1f}",
-            "p-value": f"{p_val:.4e}",
-            "Esito Statistico": sig_str
+            "p": f"{p_val:.2e}",
+            "Esito": sig_str
         })
 
     # Total overall stats
     w_tot, p_tot = stats.wilcoxon(all_did_effects)
     summary_rows.append({
-        "Categoria Evento": "TOTALE COMPLESSIVO",
-        "N. Eventi": len(all_did_effects),
-        "Impatto Netto Medio DiD (%)": f"{sum(all_did_effects)/len(all_did_effects):+.1f}%",
-        "Impatto Mediano DiD (%)": f"{sorted(all_did_effects)[len(all_did_effects)//2]:+.1f}%",
+        "Categoria Evento": "TOTALE",
+        "N": len(all_did_effects),
+        "Media DiD (%)": f"{sum(all_did_effects)/len(all_did_effects):+.1f}%",
+        "Mediana DiD (%)": f"{sorted(all_did_effects)[len(all_did_effects)//2]:+.1f}%",
         "Wilcoxon W": f"{w_tot:.1f}",
-        "p-value": f"{p_tot:.4e}",
-        "Esito Statistico": "p < 0.0001 (Significativo)"
+        "p": f"{p_tot:.2e}",
+        "Esito": "Significativo" if p_tot < 0.05 else "Non significativo"
     })
 
     # Save summary table CSV
     os.makedirs(os.path.dirname(OUT_TABLE_PATH), exist_ok=True)
-    fieldnames = ["Categoria Evento", "N. Eventi", "Impatto Netto Medio DiD (%)", "Impatto Mediano DiD (%)", "Wilcoxon W", "p-value", "Esito Statistico"]
+    fieldnames = ["Categoria Evento", "N", "Media DiD (%)", "Mediana DiD (%)", "Wilcoxon W", "p", "Esito"]
     with open(OUT_TABLE_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
