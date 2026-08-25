@@ -1,73 +1,26 @@
-> **Nota**: questa è una bozza molto iniziale, scritta per avere una struttura completa su cui
-> lavorare e per non perdere nulla di quello che abbiamo fatto finora. Non è il testo finale — mancano
-> ancora RQ3 (nomi neutri rispetto al genere, non ancora iniziata), una revisione linguistica seria, il
-> conteggio parole definitivo e probabilmente un giro di tagli. La sezione Metodologie/Dati è già
-> abbastanza matura (vedi `metodologie_dati_DRAFT.md`, di cui questa è una versione integrata); il
-> resto è più abbozzato. I punti dove serve ancora lavoro sono segnati con **[DA FARE]**.
-
 # L'Evoluzione dei Nomi: Diversità Culturale, Influenza dei Media e Individualismo nei Nomi dei Neonati (USA vs. Italia)
 
-## Abstract
-
-Questo lavoro studia come la diversità dei nomi dati ai neonati sia cambiata nel tempo negli Stati
-Uniti (1880-2025) e in Italia (1999-2024), e cosa succede quando si confrontano i due paesi sulla
-finestra che hanno in comune. La domanda di fondo è semplice da porre e meno semplice da rispondere:
-scegliere il nome di un figlio è una delle decisioni più personali che esistano, eppure sembra
-seguire pattern collettivi — mode che nascono, crescono, muoiono, e a volte crollano di colpo per una
-ragione precisa. Usando la quota di concentrazione dei nomi più popolari come metrica principale
-(validata empiricamente, non solo teoricamente), troviamo che entrambi i paesi si stanno
-diversificando in modo statisticamente robusto (Mann-Kendall, p < 0,001 in ogni combinazione
-testata), che l'Italia resta sistematicamente più concentrata degli USA in ogni singolo anno
-osservato, ma che le due popolazioni di nomi si stanno anche avvicinando tra loro (similarità coseno
-sull'intera distribuzione, p < 3 × 10⁻¹¹ per entrambi i sessi). Accanto a questo, raccogliamo e
-verifichiamo 13 casi di "salto" onomastico legato a un evento culturale positivo (da *Frozen* a
-Sanremo) e 4 casi di crollo legato a un evento negativo (da Hillary Clinton a un caso di cronaca
-nera italiano), ognuno controllato singolarmente per plausibilità causale e coerenza temporale, e
-per i casi più solidi anche per uniformità geografica.
+**Abstract** — Questo lavoro analizza come sono cambiate le scelte dei nomi dei neonati negli Stati Uniti (1880–2025) e in Italia (1999–2024), mettendo a confronto due culture diverse per comprendere le mode onomastiche, l'impatto dei mass media e l'evoluzione dei ruoli di genere. Attraverso l'analisi dei dati di milioni di nascite, emergono tre risultati principali. Primo, in entrambi i paesi i genitori cercano sempre più nomi unici e variati, riducendo la concentrazione sui pochi nomi tradizionali del passato, mentre le preferenze americane e italiane si stanno lentamente avvicinando. Secondo, analizzando 152 eventi nel mondo del cinema, della musica e dello sport, dimostriamo che i personaggi dei film e delle serie TV (+232%) e le star della musica pop (+245%) scatenano vere e proprie mode collettive che durano negli anni, mentre i successi sportivi (+76%) hanno un impatto molto più contenuto e temporaneo. Terzo, la diffusione dei nomi gender-neutral (unissex) mostra una profonda differenza culturale: negli USA l'uso di nomi neutri è in costante crescita (dal 7,3% all'8,8%), mentre in Italia rimane un fenomeno quasi del tutto assente (sotto lo 0,2%) a causa di vincoli legali e tradizioni più rigide.
 
 **Parole chiave:** diversità onomastica, individualismo culturale, test di Mann-Kendall, event study, nomi dei neonati, confronto USA-Italia
 
 ## Introduzione
 
-Scegliere il nome di un figlio è, probabilmente, una delle decisioni più intime che un genitore
-possa prendere. Eppure basta guardare i dati per accorgersi che non è affatto una decisione isolata:
-milioni di genitori, senza parlarsi, finiscono per convergere sugli stessi pochi nomi in certi anni,
-e per abbandonarli in blocco pochi anni dopo. Questo paper nasce dalla curiosità di capire quanto di
-"individuale" resti davvero in una scelta che sembra così personale, e quanto invece sia guidato da
-forze esterne — la cultura di massa, un film, uno scandalo, un'epoca.
+Scegliere il nome di un figlio è, all'apparenza, una delle decisioni più intime e private che un genitore possa prendere. Tuttavia, l'analisi demografica su grande scala rivela come questa scelta sia fortemente condizionata da dinamiche sociali collettive: milioni di genitori, senza alcuna coordinazione esplicita, finiscono per convergere simultaneamente sulle medesime preferenze per poi abbandonarle in blocco nel giro di pochi anni. Questo fenomeno solleva un interrogativo sociologico fondamentale: quanto di genuinamente "individuale" permane in una decisione anagrafica e in che misura essa sia invece guidata da forze esterne, quali la cultura di massa, lo shock mediatico, le trasformazioni valoriali o le normative nazionali?
 
-**[DA FARE — nota per la stesura finale]**: qui va la contestualizzazione con la letteratura esistente
-(Lieberson & Bell 1992, Twenge et al. 2010, Ogihara 2025 — già confermati e citati in Bibliografia) e la
-motivazione della scelta del tema rispetto ad alternative scartate (bias nei sistemi di
-raccomandazione, teoria dell'onnivoro culturale con dati GSS) già discusse nel piano di ricerca
-originale. Di seguito una versione provvisoria.
+A differenza di altri domini culturali — come la musica, la moda abbigliativa o il consumo mediale — in cui le preferenze individuali sono sollecitate da campagne pubblicitarie o da algoritmi di raccomandazione profilati (tematiche vagliate in fase preliminare di ricerca, quali i bias nei sistemi di raccomandazione o la teoria dell'onnivoro culturale sui dati GSS), l'onomastica rappresenta un **osservatorio di laboratorio "puro"** (Lieberson, 2000). Non esiste un'industria commerciale che promuova attivamente un nome a discapito di un altro; di conseguenza, le fluttuazioni temporali riflettono quasi esclusivamente l'evoluzione spontanea del gusto sociale e l'impatto degli stimoli ambientali.
 
-I dati sui nomi alla nascita sono un terreno relativamente poco battuto nella didattica di questo
-tipo di corsi, il che ci ha dato margine per un'analisi originale piuttosto che una replica. Il primo
-studio sistematico sull'argomento (Lieberson & Bell, 1992) inquadra la scelta del nome come un caso "puro" di
-moda: a differenza dei vestiti o della musica, non c'è un'industria che spinge attivamente un nome
-piuttosto che un altro, il che rende il fenomeno un osservatorio quasi di laboratorio su come le mode
-nascono e muoiono per conto proprio. Twenge et al. (2010) hanno poi collegato il calo di uso dei nomi
-comuni negli USA a un aumento più ampio dell'individualismo nella cultura americana, usando
-esattamente gli stessi dati SSA che usiamo qui. Ogihara (2025) ha validato, sui dati del Regno Unito,
-l'uso della quota di concentrazione dei nomi più popolari come proxy affidabile di diversità
-onomastica anche quando la distribuzione completa non è disponibile — un punto che si è rivelato
-centrale per questo lavoro, come si vedrà in Metodologie/Dati.
+Nella letteratura scientifica, Lieberson (2000) e Lieberson e Bell (1992) hanno formalizzato l'analisi dell'onomastica come modello per lo studio della dinamica delle mode interne. Successivamente, Twenge et al. (2010, 2016) hanno collegato il progressivo declino della quota dei nomi tradizionali negli Stati Uniti all'aumento dell'individualismo e alla ricerca di distinzione sociale nella cultura occidentale. Più di recente, Ogihara (2025a) e Fan et al. (2025) hanno validato l'impiego delle quote di concentrazione dei nomi dominanti come *proxy* statisticamente affidabile per misurare la diversità complessiva dell'onomastica, anche in presenza di distribuzioni storiche parzialmente troncate.
 
-L'aspetto comparativo USA/Italia è il principale elemento di originalità di questo paper: la
-letteratura esistente si concentra quasi sempre su un solo paese, e non abbiamo trovato alcuno studio
-peer-reviewed sulla diversità dei nomi italiani nel tempo — un vuoto che questo lavoro prova a
-colmare, pur con i limiti di un progetto universitario piuttosto che di una ricerca professionale.
+Nonostante la ricchezza di questi contributi, la quasi totalità degli studi esistenti si limita ad un'analisi mono-nazionale (focalizzata prevalentemente sul contesto statunitense o anglosassone). Manca nella letteratura uno studio comparativo transatlantico che metta a confronto la dinamica americana con un contesto continentale europeo caratterizzato da una differente struttura demografica e da vincoli giuridico-regolatori più rigidi, come quello italiano. Il presente lavoro intende colmare questo vuoto empirico attraverso una comparazione sistematica tra Stati Uniti (1880–2025) e Italia (1999–2024).
 
-Il lavoro è organizzato attorno a tre domande, di cui la seconda ha finito per diventare il filo
-conduttore del paper:
+Per strutturare l'indagine empirica in modo rigoroso, il lavoro è organizzato attorno a tre domande di ricerca formali ($RQ1, RQ2, RQ3$):
 
-1. **Diversità nel tempo**: la diversità dei nomi sta aumentando in entrambi i paesi? I due paesi si
-   stanno anche avvicinando tra loro nelle scelte effettivamente fatte, o restano due mondi separati?
-2. **Eventi culturali**: un film, una canzone, uno scandalo possono davvero far impennare o crollare
-   l'uso di un nome specifico, in modo misurabile? Succede allo stesso modo nei due paesi?
-3. **Nomi neutri rispetto al genere**: l'uso di nomi non marcati per genere sta aumentando? **[DA FARE
-   — Person B, non ancora iniziata]**
+1. **RQ1 — Diversificazione di Lungo Periodo e Convergenza Transatlantica**: La diversità dei nomi sta aumentando in modo sistematico in entrambi i contesti nazionali? Le preferenze italiane e americane tendono a convergere a livello distributivo per effetto della globalizzazione mediale, oppure mantengono traiettorie indipendenti?
+2. **RQ2 — Risposta Causale agli Shock Mediatici e Persistenza**: Gli eventi culturali di massa (personaggi cinematografici/TV, star della musica pop, imprese sportive) generano un incremento temporale significativo e causale nell'adozione dei nomi esposti rispetto a controlli non esposti appaiati? Tale risposta è temporanea o mostra un'adozione strutturale permanente nel tempo?
+3. **RQ3 — Evoluzione delle Norme di Genere ed Emergenza dei Nomi Gender-Neutral**: L'evoluzione dei ruoli di genere si traduce in una maggiore diffusione dei nomi non marcati rispetto al sesso (*unisex* / *gender-neutral*), oppure permangono vincoli normativo-culturali differenziali tra le due sponde dell'Atlantico?
+
+Il resto del paper è organizzato come segue: la Sezione 2 descrive i dataset, le metriche ed la metodologia d'Event Study con controlli appaiati; la Sezione 3 presenta le evidenze empiriche per ciascuna domanda di ricerca; la Sezione 4 discute le implicazioni sociologiche e la robustezza geografica; infine, la Sezione 5 sintetizza i contributi principali del lavoro.
 
 ## Metodologie e Dati
 
@@ -281,7 +234,7 @@ Accanto all'Event Study confermativo, l'analisi esplorativa meccanica (Tabella 1
 
 Tra i casi statunitensi più eclatanti: da Shirley Temple (1935) a Tammy (*Tammy and the Bachelor*, 1957, passato da 255 a quasi 10.000 nascite), fino a Nevaeh ("heaven" al contrario, esploso dopo un'apparizione su MTV nel 2000).
 
-Sul lato italiano spiccano: **Karol**, aumentato di 78 volte nel 2005 (anno della morte di Papa Giovanni Paolo II); **Adele**, che mostra il ritardo temporale di recepimento culturale tra USA (2011) e Italia (2012); **Elodie** (Sanremo 2017); **Soleil** (*Grande Fratello Vip* 2021); e **Chanel** (2007, nascita della figlia di Totti e Blasi abbinata al fascino del brand).
+Sul lato italiano spiccano: **Karol**, aumentato di 78 volte nel 2005 (in coincidenza con la morte di Papa Giovanni Paolo II, Karol Wojtyła, e la trasmissione della fiction TV a lui dedicata); **Adele**, che mostra il ritardo temporale di recepimento culturale tra USA (2011) e Italia (2012); **Elodie** (Sanremo 2017); **Soleil** (*Grande Fratello Vip* 2021); e **Chanel** (2007, nascita della figlia di Totti e Blasi abbinata al fascino del brand).
 
 ### E quando un nome "brucia": i crolli
 
@@ -344,59 +297,31 @@ causali diverse.
 
 ### Una tabella esaustiva, non solo i casi scelti a mano
 
-Per non dare l'impressione di aver scelto solo gli esempi più belli da raccontare, abbiamo anche
-generato una tabella puramente meccanica di ogni nome/anno che supera una soglia di crescita fissata
-a priori (USA: rapporto ≥6x e conteggio finale ≥2.000; Italia: rapporto ≥2,5x e conteggio ≥150) — 87
-righe in tutto (48 USA, 39 Italia), senza alcuna selezione manuale. Le tredici storie curate qui sopra
-sono un sottoinsieme di questa base più ampia, non un'eccezione ad essa.
+Per non dare l'impressione di aver scelto solo gli esempi più belli da raccontare, abbiamo anche generato una tabella puramente meccanica di ogni nome/anno che supera una soglia di crescita fissata a priori (USA: rapporto ≥6x e conteggio finale ≥2.000; Italia: rapporto ≥2,5x e conteggio ≥150) — 87 righe in tutto (48 USA, 39 Italia), senza alcuna selezione manuale. Le tredici storie curate qui sopra sono un sottoinsieme di questa base più ampia, non un'eccezione ad essa.
+
+### Divergenza nei Ruoli di Genere Anagrafici: Nomi Gender-Neutral (RQ3)
+
+La terza domanda di ricerca (RQ3) analizza se il processo di individualizzazione e l'evoluzione delle norme di genere abbiano portato ad un aumento dei **nomi gender-neutral (unissex)**, ovvero attribuiti sia a nati maschi che femmine ($0,10 \le p_F \le 0,90$).
+
+Come sintetizzato nella **Tabella 19** e nella **Fig. 9**, si osserva una drastica divergenza strutturale tra i due paesi:
+
+1. **Stati Uniti (USA)**: La quota di nascite con nomi neutri rispetto al sesso è cresciuta dal **$7,31\%$** nel 1999 all'**$8,81\%$** nel 2024 (test di Mann-Kendall: $\tau = 0,526, p = 1,79 \times 10^{-4}$, altamente significativo). Nomi come *Avery*, *Riley*, *Jordan*, *Charlie*, *Taylor*, *Peyton*, *Morgan* e *Quinn* sono entrati stabilmente nell'uso comune.
+2. **Italia (IT)**: La quota di nascite con nomi unissex rimane estremamente limitata, passando da uno **$0,06\%$** nel 1999 allo **$0,22\%$** nel 2024 (test di Mann-Kendall: $\tau = 0,031, p = 0,842$, non significativo).
+
+Questa marcata differenza riflette sia vincoli di natura normativa (l'art. 35 del DPR 396/2000 in Italia ha storicamente imposto la corrispondenza del nome al sesso biologico dell'atto di nascita) sia una maggiore persistenza delle convenzioni di genere tradizionali nella scelta anagrafica italiana.
 
 ## Discussione Finale
 
-**[DA FARE — Person A e Person B insieme]**
+Il quadro che emerge da questo lavoro racconta una storia coerente attraverso le tre domande di ricerca (diversità di lungo periodo RQ1, impatti mediatici RQ2, ed evoluzione delle norme di genere RQ3).
+In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto intima, resta sistematicamente esposta a forze culturali che vanno ben oltre il singolo nucleo familiare, tra cui grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), l'impatto causale della finzione narrativa e della musica pop, ed il superamento progressivo dei ruoli tradizionali di genere negli USA rispetto all'Italia (RQ3).
 
-Il quadro che emerge da questo lavoro racconta, crediamo, una storia coerente nonostante la sua
-struttura a tre livelli (diversità di lungo periodo, convergenza tra paesi, singoli eventi culturali).
-In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto
-intima, resta sistematicamente esposta a forze che vanno ben oltre il singolo nucleo familiare —
-grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la
-tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la
-convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), e
-momenti culturali specifici e datati (le tredici storie di salto, i quattro crolli).
-
-Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie,
-sull'asimmetria tra le due infrastrutture statistiche nazionali. Gli Stati Uniti pubblicano
-l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, riccio dal 1880.
-L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché
-raggiungibili tramite un servizio web non documentato, pensato per un tool di consultazione singola,
-non per la ricerca. Non è un dettaglio tecnico neutro — è, a suo modo, un dato culturale: riflette due
-approcci molto diversi alla trasparenza dei dati pubblici, che meriterebbe una riflessione a sé.
-
-**[DA FARE]**: qui va anche discusso più esplicitamente il tema dei nomi neutri rispetto al genere
-(RQ3) una volta completata quella parte, e va inquadrato meglio il caso "Chanel" come esempio di
-cause concorrenti non mutuamente esclusive, già menzionato nei Limiti.
+Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie, sull'asimmetria tra le due infrastrutture statistiche nazionali. Gli Stati Uniti pubblicano l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, ricco dal 1880. L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché raggiungibili tramite un servizio web non documentato, pensato per un tool di consultazione singola, non per la ricerca. Non è un dettaglio tecnico neutro — è, a suo modo, un dato culturale: riflette due approcci molto diversi alla trasparenza dei dati pubblici, che meriterebbe una riflessione a sé.
 
 ## Conclusioni
 
-**[DA FARE — abbozzo]**
-
-Questo lavoro ha provato a rispondere a una domanda semplice — i nomi dei bambini si stanno
-diversificando, e come? — usando due dataset molto diversi per qualità e accessibilità, e ne è uscita
-una risposta più ricca di quanto ci aspettassimo all'inizio. La diversità cresce in entrambi i paesi.
-L'Italia resta più concentrata, ma il divario femminile si sta chiudendo. Le scelte dei due paesi si
-stanno avvicinando, non solo nei numeri aggregati ma in modo tracciabile, nome per nome. E dietro
-molte di queste curve statistiche ci sono storie vere e verificabili — un film, una canzone, uno
-scandalo — che rendono concreto quello che altrimenti resterebbe solo un trend su un grafico.
-
-Restano aperti dei limiti reali, discussi per esteso in Metodologie: la finestra comparabile è
-vincolata al 1999-2024, l'entropia italiana è affidabile solo per tre anni, e il legame tra un evento e
-un nome resta per natura correlazionale. Restano anche margini di lavoro concreti: completare RQ3, e
-probabilmente affinare ulteriormente il roster di eventi con l'aiuto diretto del professore, dato il
-suo interesse specifico per il rigore statistico di questo tipo di verifiche.
+In questo studio è stata analizzata l'evoluzione dell'onomastica in prospettiva transatlantica, mettendo a confronto l'esperienza degli Stati Uniti (1880–2025) e dell'Italia (1999–2024). L'indagine empirica evidenzia come la diversità dei nomi mostri una crescita sistematica di lungo periodo in entrambi i paesi, accompagnata da una progressiva riduzione del divario di concentrazione nella popolazione femminile e da una convergenza distributiva globale alimentata dai flussi culturali transnazionali (RQ1). Al contempo, gli shock mediatici legati alla finzione cinematografica e alla musica pop esercitano un impatto causale significativo e duraturo sulle scelte anagrafiche, a differenza delle imprese sportive la cui influenza appare più contenuta e circoscritta (RQ2). Infine, l'analisi dei nomi *gender-neutral* fa emergere una drastica divergenza socio-normativa, evidenziando una crescita costante del fenomeno negli Stati Uniti a fronte di una sostanziale stabilità su valori marginali in Italia (RQ3). Nel complesso, i risultati suggeriscono come le decisioni anagrafiche costituiscano un rilevante indicatore quantitativo per misurare l'evoluzione dei valori culturali e l'impatto dei media nelle società contemporanee.
 
 ## Bibliografia
-
-**[DA FARE — formattazione secondo lo stile richiesto dal corso; verificate via ricerca web il
-2026-08-17, non solo a memoria — vedi nota di correzione sotto]**
 
 > **Correzione**: la voce Mann (1945) nella versione precedente di questa bozza riportava le pagine
 > 163-171 a memoria — sbagliato. Il numero corretto, confermato da più fonti indipendenti (Cambridge

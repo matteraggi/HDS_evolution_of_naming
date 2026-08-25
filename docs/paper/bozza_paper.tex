@@ -1,10 +1,6 @@
 % !TEX encoding = UTF-8
-% Bozza iniziale del paper, non compilata localmente (nessuna distribuzione LaTeX
-% disponibile in questo ambiente) - pensata per essere aperta direttamente su
-% Overleaf, che include IEEEtran e tutti i pacchetti usati qui di default.
-% Mancano ancora: RQ3 (nomi neutri rispetto al genere), una revisione linguistica
-% seria, e probabilmente un giro di tagli per il conteggio parole. I punti dove
-% serve ancora lavoro sono segnati con "DA FARE" nel testo.
+% Paper: L'Evoluzione dei Nomi: Diversità Culturale, Influenza dei Media e Individualismo nei Nomi dei Neonati (USA vs. Italia)
+% Formato: IEEEtran (Conference Paper)
 
 \documentclass[conference]{IEEEtran}
 
@@ -34,23 +30,18 @@
 \maketitle
 
 \begin{abstract}
-Questo lavoro studia come la diversità dei nomi dati ai neonati sia cambiata nel tempo negli Stati
-Uniti (1880-2025) e in Italia (1999-2024), e cosa succede quando si confrontano i due paesi sulla
-finestra che hanno in comune. La domanda di fondo è semplice da porre e meno semplice da rispondere:
-scegliere il nome di un figlio è una delle decisioni più personali che esistano, eppure sembra
-seguire pattern collettivi: mode che nascono, crescono, muoiono, e a volte crollano di colpo per una
-ragione precisa. \\
-Usando la quota di concentrazione dei nomi più popolari come metrica principale
-(validata empiricamente, non solo teoricamente), troviamo che entrambi i paesi si stanno
-diversificando in modo statisticamente robusto (Mann-Kendall, $p < 0{,}001$ in ogni combinazione
-testata), che l'Italia resta sistematicamente più concentrata degli USA in ogni singolo anno
-osservato, ma che le due popolazioni di nomi si stanno anche avvicinando tra loro (similarità coseno
-sull'intera distribuzione, $p < 3 \times 10^{-11}$ per entrambi i sessi). \\
-Accanto a questo,
-raccogliamo e verifichiamo 13 casi di ``salto'' onomastico legato a un evento culturale positivo (da
-\emph{Frozen} a Sanremo) e 4 casi di crollo legato a un evento negativo (da Hillary Clinton a un caso
-di cronaca nera italiano), ognuno controllato singolarmente per plausibilità causale e coerenza
-temporale, e per i casi più solidi anche per uniformità geografica.
+Questo lavoro analizza come sono cambiate le scelte dei nomi dei neonati negli Stati Uniti (1880--2025)
+ e in Italia (1999--2024), mettendo a confronto due culture diverse per comprendere le mode onomastiche,
+ l'impatto dei mass media e l'evoluzione dei ruoli di genere. Attraverso l'analisi dei dati di milioni
+ di nascite, emergono tre risultati principali. Primo, in entrambi i paesi i genitori cercano sempre più 
+ nomi unici e variati, riducendo la concentrazione sui pochi nomi tradizionali del passato, mentre le 
+ preferenze americane e italiane si stanno lentamente avvicinando. Secondo, analizzando 152 eventi nel 
+ mondo del cinema, della musica e dello sport, dimostriamo che i personaggi dei film e delle serie TV 
+ (+232\%) e le star della musica pop (+245\%) scatenano vere e proprie mode collettive che durano negli 
+ anni. 
+ Terzo, la diffusione dei nomi gender-neutral (unissex) mostra una profonda differenza culturale: 
+ negli USA l'uso di nomi neutri è in costante crescita (dal 7,3\% all'8,8\%), mentre in Italia rimane 
+ un fenomeno quasi del tutto assente (sotto lo 0,2\%).
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -59,58 +50,73 @@ diversità onomastica, individualismo culturale, test di Mann-Kendall, event stu
 
 \section{Introduzione}
 
-Scegliere il nome di un figlio è, probabilmente, una delle decisioni più intime che un genitore
-possa prendere. Eppure basta guardare i dati per accorgersi che non è affatto una decisione isolata:
-milioni di genitori, senza parlarsi, finiscono per convergere sugli stessi pochi nomi in certi anni,
-e per abbandonarli in blocco pochi anni dopo. \\
-Questo paper nasce dalla curiosità di capire quanto di
-``individuale'' resti davvero in una scelta che sembra così personale, e quanto invece sia guidato da
-forze esterne: la cultura di massa, un film, uno scandalo, un'epoca.
+Scegliere il nome di un figlio è, all'apparenza, una delle decisioni più intime e private che un genitore 
+possa prendere. Tuttavia, l'analisi demografica su grande scala rivela come questa scelta sia fortemente 
+condizionata da dinamiche sociali collettive: milioni di genitori, senza alcuna coordinazione esplicita, 
+finiscono per convergere simultaneamente sulle medesime preferenze per poi abbandonarle in blocco nel 
+giro di pochi anni. 
+Questo fenomeno solleva un interrogativo sociologico fondamentale: quanto di genuinamente ``individuale'' 
+permane in una decisione anagrafica e in che misura essa sia invece guidata da forze esterne, 
+quali la cultura di massa, lo shock mediatico, le trasformazioni valoriali o le normative nazionali?
 
-\textbf{[DA FARE (nota per la stesura finale)]}: qui va la contestualizzazione più estesa con la
-letteratura esistente e la motivazione della scelta del tema rispetto alle alternative scartate
-(bias nei sistemi di raccomandazione, teoria dell'onnivoro culturale su dati GSS), già discusse nel
-piano di ricerca originale. Di seguito una versione provvisoria.
+A differenza di altri domini culturali --- come la musica, la moda di abbigliamento o i prodotti mediatici --- 
+in cui le preferenze individuali sono sollecitate da campagne pubblicitarie o da algoritmi di raccomandazione
+ (tematiche vagliate in fase preliminare di ricerca, quali i bias nei sistemi di raccomandazione 
+o la teoria dell'onnivoro culturale sui dati GSS), l'onomastica rappresenta un cosiddetto
+ \textbf{osservatorio di laboratorio "puro"} \cite{lieberson2000}. 
+ In pratica non esiste un'industria commerciale che promuova attivamente un nome a discapito di un altro,
+ di conseguenza, le fluttuazioni temporali riflettono quasi esclusivamente l'evoluzione spontanea 
+ del gusto sociale e l'impatto degli stimoli ambientali.
 
-I dati sui nomi alla nascita sono un terreno relativamente poco battuto nella didattica di questo
-tipo di corsi, il che ci ha dato margine per un'analisi originale piuttosto che una replica. Il primo
-studio sistematico sull'argomento \cite{lieberson1992} inquadra la scelta del nome come un caso
-``puro'' di moda: a differenza dei vestiti o della musica, non c'è un'industria che spinge
-attivamente un nome piuttosto che un altro, il che rende il fenomeno un osservatorio quasi di
-laboratorio su come le mode nascono e muoiono per conto proprio. \\
-Twenge et al.
-\cite{twenge2010} hanno poi collegato il calo di uso dei nomi comuni negli USA a un aumento
-più ampio dell'individualismo nella cultura americana, usando esattamente gli stessi dati SSA che
-usiamo qui. \\
-Ogihara \cite{ogihara2025a} ha validato, sui dati del Regno Unito, l'uso della quota di
-concentrazione dei nomi più popolari come proxy affidabile di diversità onomastica anche quando la
-distribuzione completa non è disponibile: un punto che si è rivelato centrale per questo lavoro,
-come si vedrà in Sezione~\ref{sec:metodologie}.
+Nella letteratura scientifica, Lieberson \cite{lieberson2000} e Lieberson e Bell 
+\cite{lieberson1992} hanno formalizzato l'analisi dell'onomastica come modello per lo studio della 
+dinamica delle mode interne. Successivamente, Twenge et al. \cite{twenge2010, twenge2016} hanno collegato 
+il progressivo declino della quota dei nomi tradizionali negli Stati Uniti all'aumento dell'individualismo 
+e alla ricerca di distinzione sociale nella cultura occidentale. 
+Più di recente, Ogihara \cite{ogihara2025a} e Fan et al. \cite{ogihara2025b} hanno validato l'impiego 
+delle quote di concentrazione dei nomi dominanti come \emph{proxy} statisticamente affidabile per misurare 
+la diversità complessiva dell'onomastica, anche in presenza di distribuzioni storiche parzialmente troncate.
 
-L'aspetto comparativo USA/Italia è il principale elemento di originalità di questo paper: la
-letteratura esistente si concentra quasi sempre su un solo paese, e non abbiamo trovato alcuno studio
-peer-reviewed sulla diversità dei nomi italiani nel tempo: un vuoto che questo lavoro prova a
-colmare, pur con i limiti di un progetto universitario piuttosto che di una ricerca professionale.
+Nonostante la ricchezza di questi contributi, la quasi totalità degli studi esistenti si limita ad 
+un'analisi mono-nazionale (focalizzata prevalentemente sul contesto statunitense o anglosassone). 
+Manca nella letteratura uno studio comparativo che metta a confronto la dinamica americana 
+con un contesto continentale europeo caratterizzato da una differente struttura demografica e da vincoli 
+giuridico-regolatori più rigidi, come quello italiano. 
+Il presente lavoro intende colmare questo vuoto empirico attraverso una comparazione sistematica tra 
+Stati Uniti (1880--2025) e Italia (1999--2024).
 
-Il lavoro è organizzato attorno a tre domande, di cui la prima ha finito per diventare il filo
-conduttore del paper:
+Per strutturare l'indagine empirica in modo rigoroso, il lavoro è organizzato attorno a tre domande 
+di ricerca formali ($RQ1, RQ2, RQ3$):
 
 \begin{enumerate}
-  \item \textbf{Diversità nel tempo}: la diversità dei nomi sta aumentando in entrambi i paesi? I due
-    paesi si stanno anche avvicinando tra loro nelle scelte effettivamente fatte, o restano due mondi
-    separati?
-  \item \textbf{Eventi culturali}: un film, una canzone, uno scandalo possono davvero far impennare o
-    crollare l'uso di un nome specifico, in modo misurabile? Succede allo stesso modo nei due paesi?
-  \item \textbf{Nomi neutri rispetto al genere}: l'uso di nomi non marcati per genere sta aumentando?
-    \textbf{[DA FARE: non ancora iniziata]}
+  \item \textbf{RQ1 --- Diversificazione di Lungo Periodo e Convergenza USA-Italia}: 
+  La diversità dei nomi sta aumentando in modo sistematico in entrambi i contesti nazionali? 
+  Le preferenze italiane e americane tendono a convergere a livello distributivo per effetto della 
+  globalizzazione mediale, oppure mantengono traiettorie indipendenti?
+  \item \textbf{RQ2 --- Risposta Causale agli Shock Mediatici e Persistenza}: 
+  Gli eventi culturali di massa (personaggi cinematografici/TV, star della musica pop, imprese sportive) 
+  generano un incremento temporale significativo e causale nell'adozione dei nomi esposti rispetto a 
+  controlli non esposti appaiati? Tale risposta è temporanea o mostra un'adozione strutturale 
+  permanente nel tempo?
+  \item \textbf{RQ3 --- Evoluzione delle Norme di Genere ed Emergenza dei Nomi Gender-Neutral}: 
+  L'evoluzione dei ruoli di genere si traduce in una maggiore diffusione dei nomi non marcati rispetto 
+  al sesso (\emph{unisex} / \emph{gender-neutral}), oppure permangono vincoli normativo-culturali 
+  differenziali tra America e Italia?
 \end{enumerate}
+
+Il resto del paper è organizzato come segue: la Sezione~\ref{sec:metodologie} descrive i dataset, 
+le metriche ed la metodologia d'Event Study con controlli appaiati, la Sezione~\ref{sec:risultati} 
+presenta le evidenze empiriche per ciascuna domanda di ricerca, la Sezione~\ref{sec:discussione} 
+discute le implicazioni sociologiche e la robustezza geografica, e infine, le Conclusioni sintetizzano 
+i contributi principali del lavoro.
 
 \section{Metodologie e Dati}
 \label{sec:metodologie}
 
 \subsection{Fonti dei dati}
 
-Per rispondere alle domande di ricerca è stato necessario basarsi su due record storici di nomi dati alla nascita, uno per gli Stati Uniti e uno per l'Italia, che si sono rivelati molto asimmetrici
+Per rispondere alle domande di ricerca è stato necessario basarsi su due record storici di nomi dati 
+alla nascita, uno per gli Stati Uniti e uno per l'Italia, che si sono rivelati molto asimmetrici
 per struttura e accessibilità.
 
 \textbf{Stati Uniti:} La fonte primaria usata è stata la \emph{Social Security Administration} (SSA), che dal
@@ -208,7 +214,8 @@ indipendente), che dipende solo dai nomi più popolari.
 \label{sec:validazione}
 
 Questa sezione distingue esplicitamente due categorie di verifica: \textbf{test di ipotesi formali}
-($H_0$/$H_1$/$\alpha = 0{,}05$ dichiarati, sintetizzati nella Tabella~\ref{tab:formal_hypotheses}) e \textbf{controlli di robustezza/sensibilità}, che non
+($H_0$/$H_1$/$\alpha = 0{,}05$ dichiarati, sintetizzati nella Tabella~\ref{tab:formal_hypotheses}) 
+e \textbf{controlli di robustezza/sensibilità}, che non
 testano un'ipotesi statistica ma quantificano quanto una conclusione cambierebbe con una scelta
 metodologica diversa.
 
@@ -251,7 +258,8 @@ Fig.~\ref{fig:coverage_bias}): da qui la scelta di riportare l'entropia italiana
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{figures/fig4_coverage_bias_check.png}
-\caption{Sensibilità dell'entropia di Shannon alla profondità di copertura (la quota primi-10/50/100 ha bias esattamente zero a ogni profondità, si veda Tabella~\ref{tab:coverage_bias}).}
+\caption{Sensibilità dell'entropia di Shannon alla profondità di copertura 
+(la quota primi-10/50/100 ha bias esattamente zero a ogni profondità, si veda Tabella~\ref{tab:coverage_bias}).}
 \label{fig:coverage_bias}
 \end{figure}
 
@@ -352,8 +360,7 @@ significativo sia a primi-10 ($p = 1{,}6 \times 10^{-5}$) sia a primi-50 ($p = 4
 il divario femminile si sta chiudendo, ed è un risultato robusto rispetto a quale soglia di
 concentrazione si usa.
 
-Per i nomi maschili, invece, il risultato dipende dalla soglia, un punto che vale la pena riportare
-onestamente invece di appiattirlo su una sola narrazione. \\
+Per i nomi maschili, invece, il risultato dipende dalla soglia. \\
 Ai primi 10 nomi le pendenze di Sen sono
 statisticamente indistinguibili (USA $-0{,}0020$/anno, Italia $-0{,}0023$/anno, intervalli
 sovrapposti, serie differenza senza trend significativo, $p = 0{,}078$): il divario appare stabile. \\
@@ -364,7 +371,7 @@ con trend decrescente significativo, $p = 5{,}0 \times 10^{-7}$): a questa sogli
 starebbe leggermente allargandosi. \\
 Il risultato femminile è quindi robusto rispetto alla scelta della
 soglia di concentrazione, mentre quello maschile no, e questa differenza di robustezza è di per sé un
-dato da riportare, non da nascondere.
+dato da riportare.
 
 \begin{figure}[t]
 \centering
@@ -383,9 +390,8 @@ le distribuzioni complete di nomi dei due paesi, anno per anno e per sesso
 per i maschi la similarità triplica quasi (da 0,066 a 0,176 tra il 1999 e il 2024, $p = 2{,}4 \times
 10^{-12}$, $\tau$ di Kendall pari a 0,98, quasi perfettamente monotono), per le femmine più che
 raddoppia (da 0,119 a 0,302, $p = 2{,}8 \times 10^{-11}$). \\
-Un esempio concreto vale più di una
-statistica: Liam e Noah, entrambi assenti dalla top-30 italiana nel 1999, ci sono entrati stabilmente
-entro il 2024: nomi di chiara origine anglo-americana che attraversano il confine culturale.
+Un esempio conreto è il seguente: Liam e Noah, entrambi assenti dalla top-30 italiana nel 1999, ci sono entrati stabilmente
+entro il 2024. Nomi di chiara origine anglo-americana che attraversano il confine culturale.
 
 \begin{figure}[t]
 \centering
@@ -396,10 +402,22 @@ entro il 2024: nomi di chiara origine anglo-americana che attraversano il confin
 
 \subsection{Event Study Confermativo sugli Impatti Mediatici (RQ2)}
 
-Per superare l'approccio puramente esplorativo e prevenire obiezioni di \emph{HARKing} (ipotesi fatte a posteriori), l'analisi di RQ2 è stata condotta tramite un \textbf{Event Study quantitativo confermativo su un campione complessivo di $N = 152$ eventi mediatici oggettivamente documentati} tra il 1999 e il 2024 (estratti da archivi ufficiali Box Office Mojo, Cinetel, Billboard Hot 100, FIMI Top of the Music, Auditel, FIFA e Lega Serie A).
+Per superare l'approccio puramente esplorativo e prevenire obiezioni di \emph{HARKing} (
+  ipotesi fatte a posteriori), l'analisi di RQ2 è stata condotta tramite un 
+  \textbf{Event Study quantitativo confermativo su un campione complessivo di $N = 152$ eventi mediatici oggettivamente documentati} 
+  tra il 1999 e il 2024 (estratti da archivi ufficiali Box Office Mojo, Cinetel, Billboard Hot 100, 
+  FIMI Top of the Music, Auditel, FIFA e Lega Serie A).
 
+Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post 
+evento e la ha confrontata con la variazione media di \textbf{5 nomi di controllo non esposti appaiati} 
+per sesso, paese e livello di popolarità iniziale (metodo \emph{Difference-in-Differences}, DiD).
 Per ciascun nome esposto, l'algoritmo ha calcolato la variazione relativa della frequenza pre-post evento e la ha confrontata con la variazione \emph{mediana} di tutti i nomi di controllo non esposti dello stesso sesso e paese con frequenza pre-evento entro il ${\pm}35\%$ di quella del nome esposto (metodo \emph{Difference-in-Differences}, DiD).
 
+Come sintetizzato nella Tabella~\ref{tab:event_study_summary} e visibile nella 
+Fig.~\ref{fig:event_study_categories}, l'esito complessivo dell'Event Study conferma 
+l'esistenza di un impatto causale causato dalle esposizioni mediatiche di massa su scala 
+globale (test di Wilcoxon per ranghi con segno complessivo: 
+$W = 2954.5, p = 1.44 \times 10^{-7}$, $p < 0.0001$).
 Come sintetizzato nella Tabella~\ref{tab:event_study_summary} e visibile nella Fig.~\ref{fig:event_study_categories}, l'esito complessivo dell'Event Study conferma un impatto causale delle esposizioni mediatiche di massa su scala globale (test di Wilcoxon per ranghi con segno complessivo: $W = 2954{,}5, p = 1{,}44 \times 10^{-7}$).
 
 \input{tables_tex/table18.tex}
@@ -407,31 +425,55 @@ Come sintetizzato nella Tabella~\ref{tab:event_study_summary} e visibile nella F
 L'analisi comparativa tra categorie mediatiche rivela tuttavia una netta differenza sociologica:
 
 \begin{enumerate}
-    \item \textbf{Cinema \& Serie TV ($N=71$)}: I personaggi della finzione cinematografica e televisiva (es. \emph{Elsa}, \emph{Khaleesi}, \emph{Katniss}, \emph{Rey}, \emph{Sole}, \emph{Chanel}) producono uno shock culturale massivo, con un impatto netto medio DiD del \textbf{$+232{,}2\%$} rispetto ai controlli ($p = 5{,}56 \times 10^{-5}$, altamente significativo).
-    \item \textbf{Musica \& Pop Culture ($N=46$)}: Le icone della musica pop e i protagonisti dello spettacolo (es. \emph{Aaliyah}, \emph{Kesha}, \emph{Elodie}, \emph{Soleil}, \emph{Blanco}) generano un impatto netto medio DiD del \textbf{$+244{,}9\%$} rispetto ai controlli ($p = 5{,}44 \times 10^{-4}$, altamente significativo).
-    \item \textbf{Sport ($N=35$)}: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76{,}2\%$, ma il test statistico aggregato mostra che l'effetto \textbf{non è statisticamente significativo sull'intera popolazione} ($p = 0{,}190$).
+    \item \textbf{Cinema \& Serie TV ($N=71$)}: I personaggi della finzione cinematografica e televisiva 
+    (es. \emph{Elsa}, \emph{Khaleesi}, \emph{Katniss}, \emph{Rey}, \emph{Sole}, \emph{Chanel}) 
+    producono uno shock culturale massivo, con un impatto netto medio DiD del \textbf{$+232{,}2\%$}
+     rispetto ai controlli ($p = 5{,}56 \times 10^{-5}$, altamente significativo).
+    \item \textbf{Musica \& Pop Culture ($N=46$)}: Le icone della musica pop e i protagonisti dello 
+    spettacolo (es. \emph{Aaliyah}, \emph{Kesha}, \emph{Elodie}, \emph{Soleil}, \emph{Blanco}) 
+    generano un impatto netto medio DiD del \textbf{$+244{,}9\%$} rispetto ai controlli 
+    ($p = 5{,}44 \times 10^{-4}$, altamente significativo).
+    \item \textbf{Sport ($N=35$)}: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) 
+    registrano un impatto netto medio DiD del $+76{,}2\%$, ma il test statistico aggregato mostra 
+    che l'effetto \textbf{non è statisticamente significativo sull'intera popolazione} ($p = 0{,}190$).
 \end{enumerate}
 
-Questa tripartizione suggerisce una differenza sociologica interessante tra categorie: i personaggi della \textbf{finzione narrativa} e i \textbf{miti della musica} sono associati a un impatto molto più marcato e diffuso rispetto alle imprese degli atleti, che generano ammirazione momentanea ma raramente si traducono in un cambiamento generalizzato delle scelte anagrafiche. Un'ipotesi di lettura plausibile è che i personaggi fittizi offrano ai genitori un veicolo più diretto per esprimere desideri di unicità; restiamo tuttavia nel campo dell'interpretazione, non di una conclusione causale sui meccanismi psicologici individuali.
+Questa tripartizione suggerisce una differenza sociologica interessante tra categorie: 
+i personaggi della \textbf{finzione narrativa} e i \textbf{miti della musica} sono associati a un 
+impatto molto più marcato e diffuso rispetto alle imprese degli atleti, che generano ammirazione 
+momentanea ma raramente si traducono in un cambiamento generalizzato delle scelte anagrafiche. 
+Un'ipotesi di lettura plausibile è che i personaggi fittizi offrano ai genitori un veicolo 
+più diretto per esprimere desideri di unicità. 
+Restiamo tuttavia nel campo dell'interpretazione, non di una conclusione causale sui meccanismi 
+psicologici individuali.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.9\linewidth]{figures/fig7_event_study_categories.png}
-\caption{Confronto quantitativo dell'Event Study per categoria mediatica: distribuzione dell'impatto netto DiD (sinistra) e impatto medio (destra).}
+\caption{Confronto quantitativo dell'Event Study per categoria mediatica: 
+distribuzione dell'impatto netto DiD (sinistra) e impatto medio (destra).}
 \label{fig:event_study_categories}
 \end{figure*}
 
 \subsection{Tredici storie di picchi ed il roster esplorativo supplementare}
 
-Accanto all'Event Study confermativo, l'analisi esplorativa meccanica (Tabella~\ref{tab:positive_spikes} e roster supplementare) e la ricerca sul campo hanno confermato storie emblematiche sia in USA che in Italia.
+Accanto all'Event Study confermativo, l'analisi esplorativa meccanica 
+(Tabella~\ref{tab:positive_spikes} e roster supplementare) e la ricerca sul campo hanno confermato 
+storie emblematiche sia in USA che in Italia.
 
-Tra i casi statunitensi più eclatanti: da Shirley Temple (1935) a Tammy (\emph{Tammy and the Bachelor}, 1957, passato da 255 a quasi 10.000 nascite), fino a Nevaeh (``heaven'' letto al contrario, esploso dopo un'apparizione su MTV nel 2000).
+Tra i casi statunitensi più eclatanti: da Shirley Temple (1935) a Tammy 
+(\emph{Tammy and the Bachelor}, 1957, passato da 255 a quasi 10.000 nascite), fino a Nevaeh 
+(``heaven'' letto al contrario, esploso dopo un'apparizione su MTV nel 2000).
 
-Sul lato italiano spiccano: \textbf{Karol}, aumentato di 78 volte nel 2005 (anno della morte di Papa Giovanni Paolo II); \textbf{Adele}, che mostra il ritardo temporale di recepimento culturale tra USA (2011) e Italia (2012); \textbf{Elodie} (Sanremo 2017); \textbf{Soleil} (\emph{Grande Fratello Vip} 2021); e \textbf{Chanel} (2007, nascita della figlia di Totti e Blasi abbinata al fascino del brand).
+Sul lato italiano spiccano: \textbf{Karol}, aumentato di 78 volte nel 2005 
+(in coincidenza con la morte di Papa Giovanni Paolo II, Karol Wojtyła, e la trasmissione della fiction TV 
+a lui dedicata); \textbf{Adele}, che mostra il ritardo temporale di recepimento culturale tra USA (2011) e 
+Italia (2012); \textbf{Elodie} (Sanremo 2017); \textbf{Soleil} (\emph{Grande Fratello Vip} 2021); e 
+ \textbf{Chanel} (2007, nascita della figlia di Totti e Blasi abbinata al fascino del brand).
 
 \input{tables_tex/table20.tex}
 
-\subsection{E quando un nome ``brucia'': i crolli}
+\subsection{L'effetto opposto: i crolli a seguito di eventi negativi}
 
 Meno raccontata in letteratura, ma altrettanto interessante, è la domanda opposta: un evento
 \emph{negativo} può far crollare l'uso di un nome? La risposta, sui quattro casi che abbiamo
@@ -523,16 +565,25 @@ alcuna selezione manuale. \\
 Le tredici storie curate qui sopra sono un sottoinsieme di questa base più ampia,
 non un'eccezione ad essa.
 
-\section{Divergenza nei Ruoli di Genere Anagrafici: Nomi Gender-Neutral (RQ3)}
+\subsection{Divergenza nei Ruoli di Genere Anagrafici: Nomi Gender-Neutral (RQ3)}
 \label{sec:rq3}
 
-La terza domanda di ricerca (RQ3) analizza se il processo di individualizzazione e l'evoluzione delle norme di genere abbiano portato ad un aumento dei \textbf{nomi gender-neutral (unissex)}, ovvero attribuiti sia a nati maschi che femmine ($0{,}10 \le p_F \le 0{,}90$).
+La terza domanda di ricerca (RQ3) analizza se il processo di individualizzazione e l'evoluzione 
+delle norme di genere abbiano portato ad un aumento dei \textbf{nomi gender-neutral (unissex)}, 
+ovvero attribuiti sia a nati maschi che femmine ($0{,}10 \le p_F \le 0{,}90$).
 
-Come sintetizzato nella Tabella~\ref{tab:gender_neutral} e nella Fig.~\ref{fig:gender_neutral}, si osserva una drastica divergenza strutturale tra i due paesi:
+Come sintetizzato nella Tabella~\ref{tab:gender_neutral} e nella Fig.~\ref{fig:gender_neutral}, 
+si osserva una drastica divergenza strutturale tra i due paesi:
 
 \begin{enumerate}
-    \item \textbf{Stati Uniti (USA)}: La quota di nascite con nomi neutri rispetto al sesso è cresciuta dal \textbf{$7{,}31\%$} nel 1999 all'\textbf{$8{,}81\%$} nel 2024 (test di Mann-Kendall: $\tau = 0{,}526, p = 1{,}79 \times 10^{-4}$, altamente significativo). Nomi come \emph{Avery}, \emph{Riley}, \emph{Jordan}, \emph{Charlie}, \emph{Taylor}, \emph{Peyton}, \emph{Morgan} e \emph{Quinn} sono entrati stabilmente nell'uso comune.
-    \item \textbf{Italia (IT)}: La quota di nascite con nomi unissex rimane estremamente limitata, passando da uno \textbf{$0{,}06\%$} nel 1999 allo \textbf{$0{,}22\%$} nel 2024 (test di Mann-Kendall: $\tau = 0{,}031, p = 0{,}842$, non significativo).
+    \item \textbf{Stati Uniti (USA)}: La quota di nascite con nomi neutri rispetto al sesso è 
+    cresciuta dal \textbf{$7{,}31\%$} nel 1999 all'\textbf{$8{,}81\%$} nel 2024 
+    (test di Mann-Kendall: $\tau = 0{,}526, p = 1{,}79 \times 10^{-4}$, altamente significativo). 
+    Nomi come \emph{Avery}, \emph{Riley}, \emph{Jordan}, \emph{Charlie}, \emph{Taylor}, \emph{Peyton}, 
+    \emph{Morgan} e \emph{Quinn} sono entrati stabilmente nell'uso comune.
+    \item \textbf{Italia (IT)}: La quota di nascite con nomi unissex rimane estremamente limitata, 
+    passando da uno \textbf{$0{,}06\%$} nel 1999 allo \textbf{$0{,}22\%$} nel 2024 (test di 
+    Mann-Kendall: $\tau = 0{,}031, p = 0{,}842$, non significativo).
 \end{enumerate}
 
 \input{tables_tex/table19.tex}
@@ -544,13 +595,23 @@ Come sintetizzato nella Tabella~\ref{tab:gender_neutral} e nella Fig.~\ref{fig:g
 \label{fig:gender_neutral}
 \end{figure*}
 
-Questa marcata differenza riflette sia vincoli di natura normativa (l'art. 35 del DPR 396/2000 in Italia ha storicamente imposto la corrispondenza del nome al sesso biologico dell'atto di nascita) sia una maggiore persistenza delle convenzioni di genere tradizionali nella scelta anagrafica italiana.
+Questa marcata differenza riflette sia vincoli di natura normativa 
+(l'art. 35 del DPR 396/2000 in Italia ha storicamente imposto la corrispondenza del nome 
+al sesso biologico dell'atto di nascita) sia una maggiore persistenza delle convenzioni di genere 
+tradizionali nella scelta anagrafica italiana.
 
 \section{Discussione Finale}
 \label{sec:discussione}
 
-Il quadro che emerge da questo lavoro racconta una storia coerente attraverso le tre domande di ricerca (diversità di lungo periodo RQ1, impatti mediatici RQ2, ed evoluzione delle norme di genere RQ3). \\
-In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto intima, resta sistematicamente esposta a forze culturali che vanno ben oltre il singolo nucleo familiare, tra cui grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media (la convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), l'impatto causale della finzione narrativa e della musica pop, ed il superamento progressivo dei ruoli tradizionali di genere negli USA rispetto all'Italia (RQ3).
+Il quadro che emerge da questo lavoro racconta una storia coerente attraverso le tre domande 
+di ricerca (diversità di lungo periodo RQ1, impatti mediatici RQ2, ed evoluzione delle norme di genere RQ3). \\
+In tutti e tre i casi, il filo conduttore è lo stesso: la scelta del nome di un figlio, per quanto intima, 
+resta sistematicamente esposta a forze culturali che vanno ben oltre il singolo nucleo familiare, 
+tra cui grandi cambiamenti generazionali di valori (la diversificazione di lungo periodo, coerente con la 
+tesi di Twenge et al. sull'aumento dell'individualismo), la globalizzazione dei media 
+(la convergenza USA-Italia, con nomi anglo-americani come Liam e Noah che attraversano l'Atlantico), 
+l'impatto causale della finzione narrativa e della musica pop, ed il superamento progressivo dei ruoli 
+tradizionali di genere negli USA rispetto all'Italia (RQ3).
 
 Prima di proseguire con l'interpretazione, vale la pena chiarire un punto concettuale: le metriche di
 concentrazione e diversificazione usate in questo lavoro fungono da proxy quantitativo per
@@ -588,15 +649,31 @@ Nessuno di
 questi meccanismi è stato testato direttamente in questo lavoro: sono ipotesi di lettura coerenti con
 i risultati osservati, non conclusioni causali.
 
-Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie, sull'asimmetria tra le due infrastrutture statistiche nazionali. \\
-Gli Stati Uniti pubblicano l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, ricco dal 1880. \\
-L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché raggiungibili tramite un servizio web non documentato, pensato per un tool di consultazione singola, non per la ricerca. \\
-Non è un dettaglio tecnico neutro, ma a suo modo un dato culturale: riflette due approcci molto diversi alla trasparenza dei dati pubblici, un tema che meriterebbe una riflessione a sé.
+Un punto che vale la pena riprendere esplicitamente qui è quello, già accennato in Metodologie, 
+sull'asimmetria tra le due infrastrutture statistiche nazionali. \\
+Gli Stati Uniti pubblicano l'intera distribuzione dei nomi in un archivio aperto, aggiornato annualmente, 
+ricco dal 1880. \\
+L'Italia non pubblica nulla del genere: i dati usati in questo lavoro esistono solo perché raggiungibili 
+tramite un servizio web non documentato, pensato per un tool di consultazione singola, non per la ricerca. \\
+Non è un dettaglio tecnico neutro, ma a suo modo un dato culturale: 
+riflette due approcci molto diversi alla trasparenza dei dati pubblici, un tema che meriterebbe una 
+riflessione a sé.
 
 \section{Conclusioni}
 
-Questo lavoro ha risposto in modo quantitativo e rigoroso al complesso di quesiti sull'evoluzione dell'onomastica transatlantica. \\
-La diversità cresce in entrambi i paesi; l'Italia resta più concentrata, ma il divario femminile si sta chiudendo; le scelte dei due paesi si stanno avvicinando in modo tracciabile; gli eventi cinematografici e musicali producono shock reali con adozione strutturale duratura nella finestra di 5 anni osservata; ed infine i ruoli di genere evidenziano un aumento di nomi unissex negli USA che stacca nettamente la rigidità anagrafica italiana.
+In questo studio è stata analizzata l'evoluzione dell'onomastica in prospettiva comparata, 
+mettendo a confronto l'esperienza degli Stati Uniti (1880--2025) e dell'Italia (1999--2024). 
+L'indagine empirica evidenzia come la diversità dei nomi mostri una crescita sistematica di 
+lungo periodo in entrambi i paesi, accompagnata da una progressiva riduzione del divario di 
+concentrazione nella popolazione femminile e da una convergenza distributiva globale alimentata 
+dai flussi culturali transnazionali (RQ1). Al contempo, gli shock mediatici legati alla finzione 
+cinematografica e alla musica pop esercitano un impatto causale significativo e duraturo sulle 
+scelte anagrafiche, a differenza delle imprese sportive la cui influenza appare più contenuta e 
+circoscritta (RQ2). Infine, l'analisi dei nomi \emph{gender-neutral} fa emergere una drastica 
+divergenza socio-normativa, evidenziando una crescita costante del fenomeno negli Stati Uniti a 
+fronte di una sostanziale stabilità su valori marginali in Italia (RQ3). Nel complesso, i risultati 
+suggeriscono come le decisioni anagrafiche costituiscano un rilevante indicatore quantitativo per 
+misurare l'evoluzione dei valori culturali e l'impatto dei media nelle società contemporanee.
 
 \section*{Repository e riproducibilità}
 
@@ -617,6 +694,8 @@ Griffin, 1975.
 
 \bibitem{wilcoxon1945} F.~Wilcoxon, ``Individual Comparisons by Ranking Methods,'' \emph{Biometrics
 Bulletin}, vol.~1, no.~6, pp.~80--83, 1945. doi: 10.2307/3001968.
+
+\bibitem{lieberson2000} S.~Lieberson, \emph{A Matter of Taste: How Names, Fashions, and Culture Change}. New Haven: Yale University Press, 2000. ISBN 0-300-08385-8.
 
 \bibitem{lieberson1992} S.~Lieberson and E.~O. Bell, ``Children's First Names: An Empirical Study of
 Social Taste,'' \emph{American Journal of Sociology}, vol.~98, no.~3, pp.~511--554, 1992.
