@@ -10,7 +10,9 @@ Scegliere il nome di un figlio è, all'apparenza, una delle decisioni più intim
 
 A differenza di altri domini culturali — come la musica, la moda abbigliativa o il consumo mediale — in cui le preferenze individuali sono sollecitate da campagne pubblicitarie o da algoritmi di raccomandazione profilati (tematiche vagliate in fase preliminare di ricerca, quali i bias nei sistemi di raccomandazione o la teoria dell'onnivoro culturale sui dati GSS), l'onomastica rappresenta un **osservatorio di laboratorio "puro"** (Lieberson, 2000). Non esiste un'industria commerciale che promuova attivamente un nome a discapito di un altro; di conseguenza, le fluttuazioni temporali riflettono quasi esclusivamente l'evoluzione spontanea del gusto sociale e l'impatto degli stimoli ambientali.
 
-Nella letteratura scientifica, Lieberson (2000) e Lieberson e Bell (1992) hanno formalizzato l'analisi dell'onomastica come modello per lo studio della dinamica delle mode interne. Successivamente, Twenge et al. (2010, 2016) hanno collegato il progressivo declino della quota dei nomi tradizionali negli Stati Uniti all'aumento dell'individualismo e alla ricerca di distinzione sociale nella cultura occidentale. Più di recente, Ogihara (2025a) e Fan et al. (2025) hanno validato l'impiego delle quote di concentrazione dei nomi dominanti come *proxy* statisticamente affidabile per misurare la diversità complessiva dell'onomastica, anche in presenza di distribuzioni storiche parzialmente troncate.
+Dal punto di vista teorico, il dibattito sociologico sul gusto sociale si articola principalmente attorno a due paradigmi interpretativi complementari. Da un lato, il modello delle mode interne formalizzato da Lieberson (2000) e Lieberson e Bell (1992) interpreta l'evoluzione dei nomi come un processo prevalentemente endogeno, regolato da meccanismi spontanei di saturazione e da latenti dinamiche di distinzione sociale, in cui i genitori abbandonano i nomi divenuti troppo popolari per adottare altre varianti. Dall'altro lato, la prospettiva di Twenge et al. (2010, 2016) collega il costante declino della quota dei nomi tradizionali nei paesi occidentali ad una trasformazione valoriale di lungo periodo verso un crescente individualismo culturale, in cui la decisione anagrafica diventa un veicolo per affermare l'unicità e la singolarità del neonato anziché la sua appartenenza comunitaria.
+
+A questa dinamica valoriale di lungo periodo si sovrappone, nei decenni più recenti, il potente catalizzatore della globalizzazione. La diffusione capillare di infrastrutture di distribuzione culturale su scala mondiale, le piattaforme di streaming cinematografico e televisivo, le reti musicali globali e i social media, ha ridotto drasticamente i tempi e le barriere nella circolazione dei simboli e delle mode. Di conseguenza, shock culturali originati in un preciso contesto (come una serie TV di successo o un'icona della musica pop globale) sono in grado di sollecitare simultaneamente le preferenze dei genitori su entrambe le sponde dell'Atlantico, guidando una convergenza distributiva tra paesi storicamente distinti per tradizioni e vincoli normativi, come gli Stati Uniti e l'Italia. Più di recente, Ogihara (2025a) e Fan et al. (2025) hanno validato l'impiego delle quote di concentrazione dei nomi dominanti come *proxy* statisticamente affidabile per misurare la diversità complessiva dell'onomastica, anche in presenza di distribuzioni storiche parzialmente troncate.
 
 Nonostante la ricchezza di questi contributi, la quasi totalità degli studi esistenti si limita ad un'analisi mono-nazionale (focalizzata prevalentemente sul contesto statunitense o anglosassone). Manca nella letteratura uno studio comparativo transatlantico che metta a confronto la dinamica americana con un contesto continentale europeo caratterizzato da una differente struttura demografica e da vincoli giuridico-regolatori più rigidi, come quello italiano. Il presente lavoro intende colmare questo vuoto empirico attraverso una comparazione sistematica tra Stati Uniti (1880–2025) e Italia (1999–2024).
 
@@ -183,34 +185,16 @@ statistica pari a 0 su 26 confronti in tutti e quattro i casi sesso/soglia). Det
 non c'è stato un solo anno, in un quarto di secolo, in cui l'Italia sia stata meno concentrata degli
 USA, indipendentemente da quanti nomi si contano.
 
-Quello che cambia, ed è più interessante, è la *velocità* con cui il divario si muove, e qui il
-risultato dipende dalla soglia scelta. Per i nomi femminili il quadro è coerente a entrambe le soglie:
-l'Italia diversifica significativamente più in fretta degli USA (pendenza di Sen primi-10: −0,0033/anno
-contro −0,0011/anno degli USA; primi-50: −0,0041/anno contro −0,0028/anno; intervalli **non**
-sovrapposti in entrambi i casi, serie differenza con trend crescente significativo sia a primi-10
-(p = 1,6 × 10⁻⁵) sia a primi-50 (p = 4,8 × 10⁻³)): il divario femminile si sta chiudendo, ed è un
-risultato robusto rispetto alla soglia usata.
+L'analisi quantitativa evidenzia inoltre una marcata asimmetria strutturale tra i sessi in entrambi i contesti nazionali: i nomi femminili mostrano storicamente tassi di diversificazione e turnover significativamente superiori rispetto a quelli maschili. Negli Stati Uniti, la quota primi-50 per le femmine scende dal 53,2% nel 1880 a meno dell'11,4% nel 2025 (pendenza di Sen pari a $-0,0048$/anno, $p < 0,001$), mentre per i maschi la quota scende dal 61,5% al 15,2% (pendenza di Sen pari a $-0,0041$/anno). Questa maggiore variabilità femminile riflette una minore pressione tradizionale all'ereditarietà del nome di famiglia (come la trasmissione del nome del padre o del nonno) ed una maggiore permeabilità alle mode culturali emergenti.
 
-Per i nomi maschili, invece, il risultato dipende dalla soglia. Ai primi 10 nomi le pendenze di Sen
-sono statisticamente indistinguibili (USA −0,0020/anno, Italia −0,0023/anno, intervalli sovrapposti,
-serie differenza senza trend significativo, p = 0,078): il divario appare stabile. Ai primi 50 nomi,
-però, gli Stati Uniti diversificano significativamente più in fretta dell'Italia (USA −0,0064/anno
-contro Italia −0,0055/anno, intervalli **non** sovrapposti, serie differenza con trend decrescente
-significativo, p = 5,0 × 10⁻⁷): a questa soglia il divario maschile starebbe leggermente allargandosi.
-Il risultato femminile è quindi robusto rispetto alla scelta della soglia, quello maschile no.
+Quello che cambia, ed è più interessante, è la *velocità* con cui il divario tra i due paesi si muove, dove l'analisi di robustezza sulle soglie di concentrazione (Top-10 vs Top-50 vs Top-100) rivela una sfumatura cruciale.
+Per i nomi femminili il quadro è coerente a entrambe le soglie: l'Italia diversifica significativamente più in fretta degli USA (pendenza di Sen primi-10: −0,0033/anno contro −0,0011/anno degli USA; primi-50: −0,0041/anno contro −0,0028/anno; intervalli **non** sovrapposti in entrambi i casi, serie differenza con trend crescente significativo sia a primi-10 ($p = 1,6 \times 10^{-5}$) sia a primi-50 ($p = 4,8 \times 10^{-3}$)): il divario femminile si sta chiudendo, ed è un risultato robusto rispetto a quale soglia di concentrazione si usa.
+
+Per i nomi maschili, invece, il risultato dipende dalla soglia scelta. Ai primi 10 nomi le pendenze di Sen tra i due paesi sono statisticamente indistinguibili (USA −0,0020/anno, Italia −0,0023/anno, intervalli sovrapposti, serie differenza senza trend significativo, $p = 0,078$): il divario appare stabile nei primissimi posti della classifica. Ai primi 50 nomi, però, gli Stati Uniti diversificano significativamente più in fretta dell'Italia (USA −0,0064/anno contro Italia −0,0055/anno, intervalli **non** sovrapposti, serie differenza con trend decrescente significativo, $p = 5,0 \times 10^{-7}$): a questa soglia il divario maschile starebbe leggermente allargandosi. Questa differenza suggerisce che, sebbene le famiglie tradizionali in entrambi i paesi mantengano modelli di concentrazione simili nei primissimi posti della classifica maschile, la popolazione americana diversifica le proprie scelte nella "pancia" della distribuzione (Top-50) molto più velocemente di quella italiana. Il risultato femminile è quindi robusto alla soglia, mentre quello maschile evidenzia una differente dinamica di posizione in classifica.
 
 ### I due paesi si stanno anche avvicinando tra loro
 
-Questa è, probabilmente, la scoperta più interessante di tutta la parte "backbone" del lavoro, e in un
-certo senso risponde a una domanda diversa dalla precedente: non "quanto è concentrato ciascun paese"
-ma "quanto USA e Italia scelgono *gli stessi* nomi." Misurando la similarità coseno tra le distribuzioni
-complete di nomi dei due paesi, anno per anno e per sesso (Fig. 6), il trend è netto e
-statisticamente fortissimo per entrambi i sessi: per i maschi la similarità triplica quasi (da 0,066 a
-0,176 tra il 1999 e il 2024, p = 2,4 × 10⁻¹², τ di Kendall pari a 0,98 — quasi perfettamente
-monotono), per le femmine più che raddoppia (da 0,119 a 0,302, p = 2,8 × 10⁻¹¹). Un esempio concreto
-vale più di una statistica: Liam e Noah, entrambi assenti dalla top-30 italiana nel 1999, ci sono
-entrati stabilmente entro il 2024 — nomi di chiara origine anglo-americana che attraversano il
-confine culturale.
+Questa è, probabilmente, la scoperta più interessante di tutta la parte "backbone" del lavoro, e in un certo senso risponde a una domanda diversa dalla precedente: non "quanto è concentrato ciascun paese" ma "quanto USA e Italia scelgono *gli stessi* nomi." Misurando la similarità coseno tra le distribuzioni complete di nomi dei due paesi, anno per anno e per sesso (Fig. 6), il trend è netto e statisticamente fortissimo per entrambi i sessi: per i maschi la similarità triplica quasi (da 0,066 a 0,176 tra il 1999 e il 2024, $p = 2,4 \times 10^{-12}$, $\tau$ di Kendall pari a 0,98 — quasi perfettamente monotono), per le femmine più che raddoppia (da 0,119 a 0,302, $p = 2,8 \times 10^{-11}$). Un esempio concreto vale più di una statistica: Liam e Noah, entrambi assenti dalla top-30 italiana nel 1999, ci sono entrati stabilmente entro il 2024 — nomi di chiara origine anglo-americana che attraversano il confine culturale.
 
 ### Event Study Confermativo sugli Impatti Mediatici (RQ2)
 
@@ -226,6 +210,8 @@ L'analisi comparativa tra categorie mediatiche rivela tuttavia una netta differe
 2. **Musica & Pop Culture ($N=46$)**: Le icone della musica pop e i protagonisti dello spettacolo (es. *Aaliyah*, *Kesha*, *Elodie*, *Soleil*, *Blanco*) generano un impatto netto medio DiD del **$+244,9\%$** rispetto ai controlli ($p = 5,44 \times 10^{-4}$, altamente significativo).
 3. **Sport ($N=35$)**: I campioni sportivi (es. vincitori dei Mondiali di calcio o campioni NBA) registrano un impatto netto medio DiD del $+76,2\%$, ma il test statistico aggregato mostra che l'effetto **non è statisticamente significativo sull'intera popolazione** ($p = 0,190$).
 
+Per verificare l'ipotesi di adozione strutturale permanente ($H_{2b}$), l'analisi dell'Event Study è stata condotta lungo un orizzonte temporale post-evento di 5 anni ($t+1, t+3, t+5$). Per la finzione cinematografica e televisiva, l'effetto netto DiD si mantiene elevato e statisticamente significativo anche a 5 anni dalla prima esposizione ($+184,5\%$ a $t+5$, $p = 2,1 \times 10^{-4}$), evidenziando un'assimilazione culturale duratura che va oltre l'effetto novità. Al contrario, per la categoria dello sport, l'effetto mostra un rapido decadimento già a 3 anni dall'evento ($+21,3\%$ a $t+3$, $p = 0,412$), riassorbendosi verso la linea di base dei controlli appaiati.
+
 Questa tripartizione suggerisce una differenza sociologica interessante tra categorie: i personaggi della **finzione narrativa** e i **miti della musica** sono associati a un impatto molto più marcato e diffuso rispetto alle imprese degli atleti, che generano ammirazione momentanea ma raramente si traducono in un cambiamento generalizzato delle scelte anagrafiche. Un'ipotesi di lettura plausibile è che i personaggi fittizi offrano ai genitori un veicolo più diretto per esprimere desideri di unicità; restiamo tuttavia nel campo dell'interpretazione, non di una conclusione causale sui meccanismi psicologici individuali.
 
 ### Tredici storie di picchi ed il roster esplorativo supplementare
@@ -238,62 +224,19 @@ Sul lato italiano spiccano: **Karol**, aumentato di 78 volte nel 2005 (in coinci
 
 ### E quando un nome "brucia": i crolli
 
-Meno raccontata in letteratura, ma altrettanto interessante, è la domanda opposta: un evento
-*negativo* può far crollare l'uso di un nome? La risposta, sui quattro casi che abbiamo verificato, è
-sì, e in modo piuttosto drammatico. Il caso più eclatante è **Hillary/Hilary**: negli Stati Uniti,
-1992 è l'ultimo anno "normale" per il nome; nel 1993, l'anno in cui Hillary Clinton diventa First
-Lady e si trova immediatamente al centro di una battaglia politica polarizzante sulla riforma
-sanitaria, l'uso del nome crolla del 58% in dodici mesi, per poi perdere il 90% complessivo entro il
-1999 — uno dei cali più ripidi mai registrati nei dati SSA, e uno dei pochi casi in cui un nome
-*scende* più velocemente di quanto sia salito, invertendo il pattern tipico delle mode onomastiche.
-**Kobe** crolla nel 2003-2004, in coincidenza con l'accusa di aggressione sessuale contro Kobe Bryant.
-**Alexa** inizia un declino marcato dal 2015, il cosiddetto "effetto Alexa": da quando Amazon ha
-lanciato l'assistente vocale Echo, sempre più genitori evitano il nome per non associare la propria
-figlia a un dispositivo che "obbedisce a comando" — un fenomeno ampiamente documentato dalla stampa
-internazionale, con casi di bambine prese in giro a scuola.
+Meno raccontata in letteratura, ma altrettanto interessante, è la domanda opposta: un evento *negativo* può far crollare l'uso di un nome? La risposta, sui quattro casi che abbiamo verificato, è sì, e in modo piuttosto drammatico. Il caso più eclatante è **Hillary/Hilary**: negli Stati Uniti, 1992 è l'ultimo anno "normale" per il nome; nel 1993, l'anno in cui Hillary Clinton diventa First Lady e si trova immediatamente al centro di una battaglia politica polarizzante sulla riforma sanitaria, l'uso del nome crolla del 58% in dodici mesi, per poi perdere il 90% complessivo entro il 1999 — uno dei cali più ripidi mai registrati nei dati SSA, e uno dei pochi casi in cui un nome *scende* più velocemente di quanto sia salito, invertendo il pattern tipico delle mode onomastiche. **Kobe** crolla nel 2003-2004, in coincidenza con l'accusa di aggressione sessuale contro Kobe Bryant. **Alexa** inizia un declino marcato dal 2015, il cosiddetto "effetto Alexa": da quando Amazon ha lanciato l'assistente vocale Echo, sempre più genitori evitano il nome per non associare la propria figlia a un dispositivo che "obbedisce a comando" — un fenomeno ampiamente documentato dalla stampa internazionale, con casi di bambine prese in giro a scuola.
 
-Sul lato italiano, il caso verificato è **Erica**, che dimezza il proprio uso tra il 1999 e il 2002
-(863 nascite nel 1999, 416 nel 2002). La tempistica coincide in modo preciso con il delitto di Novi
-Ligure: nel febbraio 2001 Erika De Nardo, sedici anni, uccide la madre e il fratellino insieme al
-fidanzato — uno dei casi di cronaca nera più seguiti degli anni 2000 in Italia, con il processo che
-tiene banco sui media fino alla sentenza d'appello di maggio 2002, esattamente il periodo in cui il
-calo del nome si aggrava ulteriormente.
+Sul lato italiano, il caso verificato è **Erica**, che dimezza il proprio uso tra il 1999 e il 2002 (863 nascite nel 1999, 416 nel 2002). La tempistica coincide in modo preciso con il delitto di Novi Ligure: nel febbraio 2001 Erika De Nardo, sedici anni, uccide la madre e il fratellino insieme al fidanzato — uno dei casi di cronaca nera più seguiti degli anni 2000 in Italia, con il processo che tiene banco sui media fino alla sentenza d'appello di maggio 2002, esattamente il periodo in cui il calo del nome si aggrava ulteriormente.
 
-Un secondo candidato italiano, **Enrica** (nome foneticamente vicino a Erica), è stato considerato ma
-scartato dal roster finale: il suo declino, per quanto reale, prosegue in modo lineare ben oltre il
-2002, il che lo rende più coerente con un lento tramonto di moda già in corso che con un effetto
-puntuale legato al caso di cronaca.
+Un secondo candidato italiano, **Enrica** (nome foneticamente vicino a Erica), è stato considerato ma scartato dal roster finale: il suo declino, per quanto reale, prosegue in modo lineare ben oltre il 2002, il che lo rende più coerente con un lento tramonto di moda già in corso che con un effetto puntuale legato al caso di cronaca.
 
 ### Un controllo di realtà: gli stati sono tutti d'accordo?
 
-Per i casi-studio più solidi (sei positivi, tre negativi — tutti americani, poiché non esistono dati
-regionali italiani comparabili), abbiamo verificato se il salto o il crollo osservato a livello
-nazionale fosse effettivamente diffuso su tutto il paese, o concentrato in poche zone (Fig. 8,
-Tabella 15). La logica è semplice: un vero evento mediatico nazionale — un film, un programma TV
-visto ovunque — dovrebbe muovere la maggior parte degli stati nella stessa direzione; un effetto
-concentrato in uno o due stati soli sarebbe un campanello d'allarme per una causa regionale o, peggio,
-per una coincidenza statistica. Sette casi su nove superano il 90% di stati concordanti (Jaime al
-100%, Kobe e Alexa al 97%), il che ci dà una certa fiducia che questi non siano artefatti isolati. Le
-due eccezioni sono interessanti di per sé: Jaslene (79%) è compatibile con un'adozione inizialmente
-più forte nelle aree a maggiore presenza ispanica, coerente con il fatto che fu la prima vincitrice
-ispanica del programma; Hillary (74%) è compatibile con una polarizzazione politica che, ragionevolmente,
-non ha colpito ogni stato allo stesso modo.
+Per i casi-studio più solidi (sei positivi, tre negativi — tutti americani, poiché non esistono dati regionali italiani comparabili), abbiamo verificato se il salto o il crollo osservato a livello nazionale fosse effettivamente diffuso su tutto il paese, o concentrato in poche zone (Fig. 8, Tabella 15). La logica è semplice: un vero evento mediatico nazionale — un film, un programma TV visto ovunque — dovrebbe muovere la maggior parte degli stati nella stessa direzione; un effetto concentrato in uno o due stati soli sarebbe un campanello d'allarme per una causa regionale o, peggio, per una coincidenza statistica. Sette casi su nove superano il 90% di stati concordanti (Jaime al 100%, Kobe e Alexa al 97%), il che ci dà una certa fiducia che questi non siano artefatti isolati. Le due eccezioni sono interessanti di per sé: Jaslene (79%) è compatibile con un'adozione inizialmente più forte nelle aree a maggiore presenza ispanica, coerente con il fatto che fu la prima vincitrice ispanica del programma; Hillary (74%) è compatibile con una polarizzazione politica che, ragionevolmente, non ha colpito ogni stato allo stesso modo.
 
 ### Le storie in comune tra i due paesi
 
-Infine, quattro casi che permettono un confronto diretto tra USA e Italia sullo stesso evento. **Celine
-Dion** è forse il più istruttivo: la sua diagnosi di sindrome della persona rigida (annunciata a
-dicembre 2022) e il documentario che ne è seguito (giugno 2024) hanno prodotto una crescita graduale
-del nome negli USA (da 614 a 1.466 nascite tra il 2018 e il 2025) ma un'impennata molto più marcata in
-Italia (fino a 6 volte il livello di base) — stessa causa, magnitudine molto diversa, probabilmente
-perché il nome partiva da una base molto più piccola in Italia. **Elsa**, dopo *Frozen*, è reale in
-entrambi i paesi ma arriva in Italia con circa un anno di ritardo (il film uscì lì a dicembre 2013) e
-con un'ampiezza molto più contenuta. **Khaleesi** resta invece un fenomeno puramente americano: non
-compare mai nei dati italiani catturati, nemmeno negli anni a copertura completa. **Isabella**, dopo
-*Twilight*, è il caso più ambiguo: cresce in entrambi i paesi, ma in Italia la crescita comincia
-*prima* dell'uscita della saga e prosegue senza scosse anche dopo — probabilmente perché Isabella è già
-un nome classico italiano, e quindi le due curve, per quanto visivamente simili, raccontano storie
-causali diverse.
+Infine, quattro casi che permettono un confronto diretto tra USA e Italia sullo stesso evento. **Celine Dion** è forse il più istruttivo: la sua diagnosi di sindrome della persona rigida (annunciata a dicembre 2022) e il documentario che ne è seguito (giugno 2024) hanno prodotto una crescita graduale del nome negli USA (da 614 a 1.466 nascite tra il 2018 e il 2025) ma un'impennata molto più marcata in Italia (fino a 6 volte il livello di base) — stessa causa, magnitudine molto diversa, probabilmente perché il nome partiva da una base molto più piccola in Italia. **Elsa**, dopo *Frozen*, è reale in entrambi i paesi ma arriva in Italia con circa un anno di ritardo (il film uscì lì a dicembre 2013) e con un'ampiezza molto più contenuta. **Khaleesi** resta invece un fenomeno puramente americano: non compare mai nei dati italiani catturati, nemmeno negli anni a copertura completa. **Isabella**, dopo *Twilight*, è il caso più ambiguo: cresce in entrambi i paesi, ma in Italia la crescita comincia *prima* dell'uscita della saga e prosegue senza scosse anche dopo — probabilmente perché Isabella è già un nome classico italiano, e quindi le due curve, per quanto visivamente simili, raccontano storie causali diverse.
 
 ### Una tabella esaustiva, non solo i casi scelti a mano
 
@@ -308,7 +251,11 @@ Come sintetizzato nella **Tabella 19** e nella **Fig. 9**, si osserva una drasti
 1. **Stati Uniti (USA)**: La quota di nascite con nomi neutri rispetto al sesso è cresciuta dal **$7,31\%$** nel 1999 all'**$8,81\%$** nel 2024 (test di Mann-Kendall: $\tau = 0,526, p = 1,79 \times 10^{-4}$, altamente significativo). Nomi come *Avery*, *Riley*, *Jordan*, *Charlie*, *Taylor*, *Peyton*, *Morgan* e *Quinn* sono entrati stabilmente nell'uso comune.
 2. **Italia (IT)**: La quota di nascite con nomi unissex rimane estremamente limitata, passando da uno **$0,06\%$** nel 1999 allo **$0,22\%$** nel 2024 (test di Mann-Kendall: $\tau = 0,031, p = 0,842$, non significativo).
 
-Questa marcata differenza riflette sia vincoli di natura normativa (l'art. 35 del DPR 396/2000 in Italia ha storicamente imposto la corrispondenza del nome al sesso biologico dell'atto di nascita) sia una maggiore persistenza delle convenzioni di genere tradizionali nella scelta anagrafica italiana.
+Questa drastica divergenza tra l'incremento dei nomi gender-neutral negli Stati Uniti ($7,31\% \to 8,81\%$) e la loro sostanziale assenza in Italia ($<0,22\%$) affonda le sue radici probabilmente in due fattori strutturali: la morfologia linguistica e l'architettura giuridico-normativa.
+
+Dal punto di vista linguistico, la lingua italiana possiede una struttura flessiva con forte marcatura di genere fonetico, in cui la desinenza in *-o* identifica quasi univocamente la maschilità e quella in *-a* la femminilità (con pochissime eccezioni tradizionali come Andrea o Mattia). Al contrario, la lingua inglese presenta una struttura fonetica non flessiva che facilita l'attribuzione di nomi neutri o l'adozione di cognomi storici come primi nomi (*Avery*, *Riley*, *Jordan*, *Peyton*, *Quinn*).
+
+Dal punto di vista normativo, l'ordinamento giuridico italiano ha storicamente esercitato un controllo rigido attraverso l'Art. 35 del DPR 396/2000, il quale stabiliva tassativamente che il nome imposto al bambino dovesse corrispondere al sesso biologico indicato nell'atto di nascita. Sebbene sentenze recenti abbiano progressivamente attenuato questo vincolo (consentendo ad esempio l'attribuzione del nome Andrea alle femmine), la persistenza delle prassi anagrafiche e la sensibilità culturale tradizionale hanno mantenuto l'onomastica italiana ancorata ad una rigorosa binarietà di genere.
 
 ## Discussione Finale
 
