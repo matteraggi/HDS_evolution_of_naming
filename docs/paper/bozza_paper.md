@@ -130,7 +130,7 @@ mostra una distorsione monotona dal −19% al −50% (Tabella 14, Fig. 4) — da
 riportare l'entropia italiana solo per il 2022-2024.
 
 Il **controllo di robustezza della similarità coseno rispetto alla copertura** (`src/scripts/01d_check_cosine_bias.py`)
-dimostra che il troncamento della distribuzione italiana produce un'alterazione trascurabile della similarità coseno rispetto agli USA: la distorsione è inferiore all'1,9% persino al livello di troncamento peggiore degli anni storici (profondità 377 nel 1999) e scende sotto lo 0,46% per tutte le profondità superiori a 1.000 nomi. Questo conferma che la misura di convergenza distributiva (coseno) è empiricamente esente da bias di copertura significativo su tutto il periodo 1999-2024.
+dimostra che il troncamento della distribuzione italiana produce un'alterazione contenuta della similarità coseno rispetto agli USA: la distorsione resta sotto l'1,9% per la maggior parte delle profondità storiche osservate, sale fino al 7,2% al livello di troncamento più severo in assoluto (profondità 137, il 2021, l'anno con la copertura peggiore) e scende sotto lo 0,46% per tutte le profondità superiori a 1.000 nomi. Questo conferma che la misura di convergenza distributiva (coseno) è esente da bias di copertura significativo su tutto il periodo 1999-2024.
 
 Il **controllo di robustezza geografica** (nuovo, si veda Risultati) usa i dati SSA per stato per
 verificare se i casi-studio RQ2 più solidi si muovono in modo uniforme su tutti gli stati o in modo

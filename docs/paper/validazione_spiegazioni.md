@@ -140,14 +140,17 @@ fondamento di una scelta metodologica che altrimenti sembrerebbe non giustificat
 **9. Controllo di robustezza della similarità coseno rispetto alla copertura.**
 Stessa logica del punto 8, ma applicata alla metrica di convergenza (coseno) invece che a
 concentrazione/entropia: si tronca la distribuzione italiana e si guarda quanto si sposta la
-similarità coseno rispetto al valore vero. Risultato: la distorsione resta sotto l'1,9% anche nel
-troncamento peggiore in assoluto (377 nomi, il 2021... 1999 secondo il testo), e scende sotto lo 0,46%
-per qualunque profondità sopra i 1.000 nomi. Conclusione: anche la misura di convergenza è
-sostanzialmente immune al problema di copertura variabile. **Utile da avere pronto se qualcuno chiede
-"ma la convergenza non potrebbe essere un artefatto della copertura incompleta?", ma può essere
+similarità coseno rispetto al valore vero. Attenzione a non confondere le due profondità: 377 è la
+profondità reale del 1999, non il caso peggiore — il caso peggiore in assoluto è 137 (il 2021, lo
+stesso anno con la copertura minima del punto 8). Risultato corretto (da `it_cosine_bias_check.csv`):
+a profondità 377 (1999) la distorsione è 1,94%; al vero troncamento peggiore, 137 nomi (2021), sale al
+7,21%; e scende sotto lo 0,46% per qualunque profondità sopra i 1.000 nomi. Conclusione: la misura di
+convergenza resta relativamente robusta, ma il caso peggiore reale è circa 4 volte più alto di quanto
+diceva una versione precedente del paper (corretto il 2026-08-27). **Utile da avere pronto se qualcuno
+chiede "ma la convergenza non potrebbe essere un artefatto della copertura incompleta?", ma può essere
 riassunto in una frase sola in presentazione** ("abbiamo verificato che anche la convergenza non è un
-artefatto della copertura, con distorsioni sotto il 2% nel caso peggiore") senza bisogno di citare i
-numeri esatti a memoria.
+artefatto della copertura: la distorsione resta sotto l'8% anche nell'anno di copertura peggiore, e
+sotto l'1% con più di mille nomi catturati") senza bisogno di citare i numeri esatti a memoria.
 
 ## Il controllo di plausibilità geografico (diverso in natura da tutti gli altri)
 
