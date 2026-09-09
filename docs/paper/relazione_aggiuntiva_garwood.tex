@@ -1,0 +1,217 @@
+% !TEX encoding = UTF-8
+% Relazione aggiuntiva: Applicazione dell'inference stress test di Roccetti (2026) a RQ2 e all'Event Study
+% Formato: IEEEtran (Conference Paper), coerente con bozza_paper.tex
+
+\documentclass[conference]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{document}
+
+\title{Relazione aggiuntiva: applicazione dell'inference stress test di Roccetti (2026)\\a RQ2 e all'Event Study}
+
+\author{
+\IEEEauthorblockN{Elia Friberg}
+\IEEEauthorblockA{Alma Mater Studiorum, Università di Bologna}
+\and
+\IEEEauthorblockN{Matteo Raggi}
+\IEEEauthorblockA{Alma Mater Studiorum, Università di Bologna}
+}
+
+\maketitle
+
+\section{Metodologia adottata}
+
+Roccetti \cite{roccetti2026} propone un test diagnostico per conteggi rari di eventi Poisson
+osservati su denominatori enormi: nei nostri dati, le nascite di un nome in un dato anno
+(conteggio raro, $n$) rispetto al totale delle nascite di quell'anno/sesso/paese (denominatore
+$N$, dell'ordine di 1--2 milioni per gli USA). In presenza di $N$ così grandi, l'errore standard
+di Wald si restringe quasi a zero indipendentemente dalla reale solidità del segnale, producendo
+$p$-value ``ultra-significativi'' che riflettono la scala del database più che l'evidenza
+biologica/comportamentale sottostante.
+
+Il rimedio proposto sostituisce l'errore standard di Wald con l'errore standard esatto di
+Poisson, che dipende solo dal conteggio osservato $n$, e confronta la stima osservata con il
+limite inferiore esatto dell'intervallo di confidenza di Garwood \cite{garwood1936} costruito
+sullo stesso $n$. L'indice risultante è
+
+\begin{equation}
+Z_R(n) = \frac{n - \tfrac{1}{2}\chi^2(2n,\, \alpha/2)}{\sqrt{n}}
+\label{eq:zr}
+\end{equation}
+
+dove $\chi^2(2n, \alpha/2)$ è il quantile $\alpha/2$ della distribuzione chi-quadrato con $2n$
+gradi di libertà ($\alpha = 0{,}05$). Una proprietà algebrica notevole della formula
+\eqref{eq:zr} è che il denominatore $N$ si cancella completamente: $Z_R$ dipende solo dal
+conteggio grezzo $n$, non dalla popolazione totale. È proprio questa cancellazione a rendere
+l'indice immune all'inflazione di significatività causata da un denominatore enorme.
+
+\textbf{Come interpretiamo l'indice in questa relazione.} Per costruzione, $Z_R(n)$ cresce in
+modo monotono e converge asintoticamente al valore normale standard $1{,}96$ (quantile normale
+al $97{,}5\%$). Lo utilizziamo coerentemente con la descrizione datane dallo stesso autore
+(``a standardized descriptive index of structural distance''), come \emph{indice continuo della
+distanza strutturale} di ciascuna stima dal proprio riferimento asintotico $1{,}96$. Valori di
+$Z_R$ più vicini a $1{,}96$ indicano conteggi la cui stima è strutturalmente più solida (meno
+esposta all'illusione di precisione della scala del database); valori più lontani segnalano
+conteggi la cui apparente robustezza statistica poggia su una base numerica più esigua.
+
+\section{Applicazione a RQ2: le 17 storie di picco/crollo}
+
+Per ciascuno dei 13 salti positivi e delle 4 flessioni verificate, abbiamo calcolato $Z_R$ sul
+conteggio grezzo pre-evento e post-evento (baseline e picco), usando i conteggi reali
+incrociati con \texttt{us\_names\_long.csv} / \texttt{istat\_contanomi\_full.csv} (Tabella
+\ref{tab:rq2}).
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Distanza strutturale $Z_R$ pre/post-evento per le 17 storie di picco/crollo (RQ2)}
+\label{tab:rq2}
+\begin{tabular}{l l r r c c}
+\toprule
+\textbf{nome} & \textbf{paese} & \textbf{$n_{pre}$} & \textbf{$n_{post}$} & \textbf{$Z_R$ pre} & \textbf{$Z_R$ post} \\
+\midrule
+Shirley  & USA     & 14.476 & 42.366 & 1,952 & 1,955 \\
+Tammy    & USA     & 193    & 4.365  & 1,891 & 1,946 \\
+Nakia    & USA     & 7      & 1.135  & 1,582 & 1,932 \\
+Jaime    & USA     & 259    & 7.838  & 1,900 & 1,949 \\
+Devante  & USA     & 10     & 131    & 1,646 & 1,876 \\
+Mariah   & USA     & 423    & 1.103  & 1,914 & 1,931 \\
+Nevaeh   & USA     & 8      & 1.199  & 1,607 & 1,932 \\
+Jaslene  & USA     & 6      & 501    & 1,551 & 1,917 \\
+Karol    & Italia  & 2      & 156    & 1,243 & 1,883 \\
+Chanel   & Italia  & 8      & 63     & 1,607 & 1,838 \\
+Adele    & Italia  & 449    & 1.075  & 1,915 & 1,931 \\
+Elodie   & Italia  & 13     & 135    & 1,686 & 1,877 \\
+Soleil   & Italia  & 98     & 474    & 1,863 & 1,916 \\
+Hillary  & USA     & 2.520  & 1.064  & 1,941 & 1,931 \\
+Kobe     & USA     & 1.392  & 625    & 1,934 & 1,922 \\
+Alexa    & USA     & 2.002  & 708    & 1,939 & 1,924 \\
+Erica    & Italia  & 863    & 416    & 1,928 & 1,913 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{Lettura.} I casi con baseline pre-evento più esiguo (Karol $n=2$, Nakia $n=7$, Jaslene
+$n=6$, Chanel $n=8$, Nevaeh $n=8$, Devante $n=10$) mostrano i valori di $Z_R$ più distanti dal
+riferimento asintotico sul lato ``baseline'' ($1{,}24$--$1{,}65$): sono cioè i conteggi la
+cui stima di partenza è strutturalmente meno solida, coerentemente col fatto che i loro
+rapporti di crescita più spettacolari (es. Nevaeh $150\times$, Jaslene $100\times$, Karol
+$78\times$) nascono da un conteggio iniziale a singola/doppia cifra, in linea con l'avvertenza
+già presente in tesi sul rischio di survivorship bias per i casi a bassa numerosità. I conteggi
+post-evento
+sono quasi tutti molto più vicini al riferimento ($1{,}84$--$1{,}96$), incluso quando il
+valore assoluto resta piccolo (Chanel $n=63 \to 1{,}838$): l'evento, una volta avvenuto, tende
+a essere misurato con una base numerica più solida anche quando è partito da un baseline
+fragile. I quattro casi di flessione (Hillary, Kobe, Alexa, Erica) mostrano valori pre e post
+entrambi ravvicinati al riferimento ($1{,}91$--$1{,}94$), partendo da conteggi già
+nell'ordine delle centinaia/migliaia.
+
+\section{Applicazione all'Event Study confermativo ($N=152$)}
+
+Per ciascuno dei 152 eventi mediatici, $Z_R$ è stato calcolato sulla somma dei conteggi
+grezzi nella finestra post-evento (fino a 2 anni), la stessa finestra usata per il calcolo
+della frequenza post-evento già riportato nella tesi (Tabella \ref{tab:eventstudy}).
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Distanza strutturale $Z_R$ (post-evento) per categoria, Event Study $N=152$}
+\label{tab:eventstudy}
+\begin{tabular}{l r r r r r}
+\toprule
+\textbf{categoria} & \textbf{$N$} & \textbf{$Z_R$ min} & \textbf{mediana} & \textbf{$Z_R$ max} & \textbf{med. $n_{post}$} \\
+\midrule
+Cinema \& Serie TV      & 71  & 1,455 & 1,935 & 1,956 & 1.483 \\
+Musica \& Pop Culture   & 46  & 0,975 & 1,929 & 1,955 & 956   \\
+Sport                   & 35  & 1,375 & 1,932 & 1,953 & 1.200 \\
+\midrule
+\textbf{Totale}         & \textbf{152} & \textbf{0,975} & \textbf{1,932} & \textbf{1,956} & \textbf{1.200} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Le otto storie strutturalmente più distanti dal riferimento asintotico ($Z_R$ più basso,
+quelle il cui impatto netto DiD in Tabella 18 poggia sul conteggio grezzo post-evento più
+esiguo) sono riportate in Tabella \ref{tab:eventstudy_fragili}.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Le otto storie con $Z_R$ (post-evento) più distante dal riferimento asintotico}
+\label{tab:eventstudy_fragili}
+\begin{tabular}{l l l r r r}
+\toprule
+\textbf{nome} & \textbf{categoria} & \textbf{paese} & \textbf{$n_{pre}$} & \textbf{$n_{post}$} & \textbf{$Z_R$} \\
+\midrule
+Celine  & Musica \& Pop Culture & IT & 168 & 1  & 0,975 \\
+Lautaro & Sport                 & IT & 4   & 3  & 1,375 \\
+Harry   & Cinema \& Serie TV    & IT & 3   & 4  & 1,455 \\
+Nemo    & Cinema \& Serie TV    & US & 6   & 5  & 1,510 \\
+Dwyane  & Sport                 & US & 10  & 8  & 1,607 \\
+Andriy  & Sport                 & IT & 4   & 13 & 1,686 \\
+Cher    & Musica \& Pop Culture & US & 20  & 14 & 1,696 \\
+Woody   & Cinema \& Serie TV    & US & 17  & 18 & 1,728 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{Lettura.} La stragrande maggioranza dei 152 eventi (mediana $Z_R = 1{,}93$ in tutte e
+tre le categorie) poggia su conteggi post-evento vicini al riferimento asintotico, cioè
+strutturalmente solidi. Una minoranza di code (meno di 10 eventi su 152) mostra conteggi
+post-evento a una cifra o poco più, dove la distanza dal riferimento è maggiore: un'informazione
+complementare, non contraddittoria, rispetto al test di Wilcoxon già riportato nella tesi:
+quest'ultimo valuta se l'effetto (variazione percentuale rispetto ai controlli) è sistematico
+sull'insieme dei 152 eventi, mentre $Z_R$ valuta quanto il conteggio grezzo di ciascun singolo
+evento sia strutturalmente solido come base per quella stima. Il caso ``Celine, IT, 2023''
+($n_{post}=1$) è quello più esposto in assoluto.
+
+\section{Sintesi}
+
+Su entrambi i sottoinsiemi (RQ2 e Event Study), l'indice di distanza strutturale conferma un
+quadro coerente con quanto già discusso nella tesi in termini di limiti dei casi a bassa
+numerosità: i conteggi con base numerica più esigua (singola/doppia cifra) sono
+sistematicamente quelli strutturalmente più distanti dal riferimento asintotico, mentre la
+stragrande maggioranza dei casi (inclusi quelli con rapporti di crescita percentualmente
+più eclatanti) poggia su una base numerica sufficientemente solida da collocarsi vicino al
+riferimento. Questo rafforza, con una misura indipendente dal denominatore del database, un
+limite già dichiarato nella tesi (il rischio di survivorship bias sui casi a bassa
+numerosità), individuando puntualmente i candidati più esposti a quel rischio.
+
+\section*{Contributi}
+
+\begin{itemize}
+  \item \textbf{Matteo Raggi:} la direzione ``da evento a nome'' dell'individuazione dei
+  picchi/crolli per RQ2 (partendo dagli eventi mediatici noti per verificarne l'impatto sui
+  nomi) e la relativa organizzazione per settore (Cinema \& Serie TV, Musica \& Pop Culture,
+  Sport) dell'Event Study, l'intera RQ3, e la maggior parte della stesura del testo della tesi.
+  \item \textbf{Elia Friberg:} RQ1, la direzione ``da nome a evento'' dell'individuazione dei
+  picchi/crolli per RQ2 (partendo dalle anomalie nei dati dei nomi per risalire alla causa
+  mediatica), l'applicazione dell'inference stress test di Roccetti \cite{roccetti2026}
+  descritta in questa relazione (Sezioni I--IV) con relativa validazione numerica indipendente,
+  e la parte restante della stesura del testo della tesi.
+\end{itemize}
+
+\begin{thebibliography}{1}
+
+\bibitem{roccetti2026}
+M.~Roccetti, ``An AI for diseases or a sick AI? The epistemological pathology of big data
+overload and the loss of statistical significance,'' \emph{Frontiers in Artificial
+Intelligence}, vol.~9, p.~1961525, 2026, doi: 10.3389/frai.2026.1961525 (Author's Proof).
+
+\bibitem{garwood1936}
+F.~Garwood, ``Fiducial limits for the Poisson distribution,'' \emph{Biometrika}, vol.~28,
+pp.~437--442, 1936, doi: 10.1093/biomet/28.3-4.437.
+
+\end{thebibliography}
+
+\end{document}

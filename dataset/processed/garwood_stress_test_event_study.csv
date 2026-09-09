@@ -1,0 +1,153 @@
+categoria,anno,paese,titolo,nome,sesso,n_pre_somma,n_post_somma,Z_post,supera_post
+Cinema & Serie TV,1999,US,The Sixth Sense,Cole,M,14044,11665,1.951,False
+Cinema & Serie TV,1999,US,Toy Story 2,Jessie,F,2571,1330,1.934,False
+Cinema & Serie TV,2000,US,How the Grinch Stole Christmas,Cindy,F,4046,2453,1.941,False
+Cinema & Serie TV,2000,US,Cast Away,Chuck,M,48,29,1.779,False
+Cinema & Serie TV,2000,US,Gladiator,Maximus,M,34,1804,1.938,False
+Cinema & Serie TV,2001,US,Harry Potter and the Sorcerer's Stone,Harry,M,1384,885,1.928,False
+Cinema & Serie TV,2001,US,The Lord of the Rings: The Fellowship of the Ring,Arwen,F,16,158,1.884,False
+Cinema & Serie TV,2001,US,Shrek,Fiona,F,1640,1743,1.937,False
+Cinema & Serie TV,2002,US,Spider-Man,Peter,M,9537,5594,1.947,False
+Cinema & Serie TV,2002,US,The Lord of the Rings: The Two Towers,Eowyn,F,27,86,1.856,False
+Cinema & Serie TV,2003,US,The Lord of the Rings: The Return of the King,Arwen,F,62,316,1.906,False
+Cinema & Serie TV,2003,US,Finding Nemo,Nemo,M,6,5,1.51,False
+Cinema & Serie TV,2003,US,Pirates of the Caribbean: The Curse of the Black Pearl,Jack,M,25274,20486,1.953,False
+Cinema & Serie TV,2004,US,Shrek 2,Fiona,F,2437,1835,1.938,False
+Cinema & Serie TV,2004,US,Spider-Man 2,Peter,M,8627,5036,1.947,False
+Cinema & Serie TV,2005,US,"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",Lucy,F,4329,4829,1.946,False
+Cinema & Serie TV,2006,US,Pirates of the Caribbean: Dead Man's Chest,Jack,M,29804,20568,1.953,False
+Cinema & Serie TV,2006,US,Night at the Museum,Larry,M,2676,1787,1.937,False
+Cinema & Serie TV,2007,US,Spider-Man 3,Peter,M,7826,4195,1.945,False
+Cinema & Serie TV,2007,US,Transformers,Sam,M,1738,1190,1.932,False
+Cinema & Serie TV,2008,US,The Dark Knight,Bruce,M,1676,1071,1.931,False
+Cinema & Serie TV,2008,US,Iron Man,Tony,M,3017,1556,1.936,False
+Cinema & Serie TV,2008,US,Twilight,Isabella,F,52571,45257,1.956,False
+Cinema & Serie TV,2008,US,Twilight,Bella,F,5883,9676,1.95,False
+Cinema & Serie TV,2009,US,Transformers: Revenge of the Fallen,Sam,M,1809,1096,1.931,False
+Cinema & Serie TV,2010,US,Toy Story 3,Woody,M,17,18,1.728,False
+Cinema & Serie TV,2010,US,Alice in Wonderland,Alice,F,3253,4698,1.946,False
+Cinema & Serie TV,2011,US,Harry Potter and the Deathly Hallows – Part 2,Harry,M,1129,656,1.923,False
+Cinema & Serie TV,2011,US,Transformers: Dark of the Moon,Sam,M,1740,990,1.93,False
+Cinema & Serie TV,2011,US,Game of Thrones,Arya,F,715,1898,1.938,False
+Cinema & Serie TV,2012,US,The Avengers,Natasha,F,2067,938,1.929,False
+Cinema & Serie TV,2012,US,The Dark Knight Rises,Bruce,M,1645,1483,1.935,False
+Cinema & Serie TV,2013,US,The Hunger Games: Catching Fire,Katniss,F,12,68,1.843,False
+Cinema & Serie TV,2013,US,Frozen,Elsa,F,1528,1798,1.938,False
+Cinema & Serie TV,2013,US,Frozen,Anna,F,17641,10856,1.951,False
+Cinema & Serie TV,2014,US,American Sniper,Chris,M,1853,1083,1.931,False
+Cinema & Serie TV,2014,US,The Hunger Games: Mockingjay – Part 1,Katniss,F,29,62,1.837,False
+Cinema & Serie TV,2015,US,Star Wars: The Force Awakens,Kylo,M,15,403,1.912,False
+Cinema & Serie TV,2015,US,Jurassic World,Claire,F,14620,9918,1.95,False
+Cinema & Serie TV,2017,US,Star Wars: The Last Jedi,Rey,F,63,108,1.867,False
+Cinema & Serie TV,2017,US,Beauty and the Beast,Belle,F,795,619,1.922,False
+Cinema & Serie TV,2018,US,Black Panther,Nakia,F,44,47,1.818,False
+Cinema & Serie TV,2018,US,Avengers: Infinity War,Wanda,F,83,31,1.785,False
+Cinema & Serie TV,2019,US,Avengers: Endgame,Tony,M,1558,819,1.927,False
+Cinema & Serie TV,2019,US,The Lion King,Simba,M,29,34,1.793,False
+Cinema & Serie TV,2020,US,Bad Boys for Life,Marcus,M,5660,3095,1.943,False
+Cinema & Serie TV,2021,US,Spider-Man: No Way Home,Peter,M,5409,3523,1.944,False
+Cinema & Serie TV,2022,US,Top Gun: Maverick,Pete,M,153,94,1.861,False
+Cinema & Serie TV,2023,US,Barbie,Margot,F,4326,4802,1.946,False
+Cinema & Serie TV,2023,US,Barbie,Barbie,F,91,84,1.855,False
+Cinema & Serie TV,2023,US,Oppenheimer,Robert,M,12920,7578,1.949,False
+Cinema & Serie TV,2000,IT,Chiedimi se sono felice,Giacomo,M,2469,4896,1.946,False
+Cinema & Serie TV,2001,IT,Harry Potter e la pietra filosofale,Harry,M,3,4,1.455,False
+Cinema & Serie TV,2002,IT,Natale sul Nilo,Christian,M,6333,4402,1.946,False
+Cinema & Serie TV,2003,IT,Il paradiso all'improvviso,Leonardo,M,9688,7396,1.949,False
+Cinema & Serie TV,2004,IT,Shrek 2,Fiona,F,26,61,1.836,False
+Cinema & Serie TV,2005,IT,Manuale d'amore,Tommaso,M,10504,9068,1.95,False
+Cinema & Serie TV,2006,IT,Il codice da Vinci,Robert,M,147,193,1.891,False
+Cinema & Serie TV,2007,IT,Natale in crociera,Fabio,M,4746,2688,1.942,False
+Cinema & Serie TV,2007,IT,Coco Chanel (Miniserie TV),Chanel,F,8,318,1.906,False
+Cinema & Serie TV,2008,IT,Madagascar 2,Alex,M,2804,1937,1.938,False
+Cinema & Serie TV,2008,IT,Twilight,Isabella,F,1463,1195,1.932,False
+Cinema & Serie TV,2009,IT,L'era glaciale 3,Diego,M,6483,5929,1.948,False
+Cinema & Serie TV,2010,IT,Benvenuti al Sud,Mattia,M,18961,13016,1.952,False
+Cinema & Serie TV,2010,IT,Alice in Wonderland,Alice,F,13157,8042,1.949,False
+Cinema & Serie TV,2012,IT,Benvenuti al Nord,Alberto,M,4002,1820,1.938,False
+Cinema & Serie TV,2013,IT,Sole a catinelle,Sole,F,60,183,1.889,False
+Cinema & Serie TV,2013,IT,Frozen - Il regno di ghiaccio,Elsa,F,164,202,1.892,False
+Cinema & Serie TV,2013,IT,Frozen - Il regno di ghiaccio,Anna,F,10346,6589,1.948,False
+Cinema & Serie TV,2023,IT,C'è ancora domani,Delia,F,465,356,1.909,False
+Cinema & Serie TV,2023,IT,Oppenheimer,Robert,M,82,29,1.779,False
+Musica & Pop Culture,1999,US,Believe,Cher,F,20,14,1.696,False
+Musica & Pop Culture,1999,US,Baby One More Time,Britney,F,1892,4044,1.945,False
+Musica & Pop Culture,1999,US,Genie in a Bottle,Christina,F,15519,8074,1.949,False
+Musica & Pop Culture,2000,US,Breathe,Faith,F,10030,10938,1.951,False
+Musica & Pop Culture,2001,US,Fallin',Alicia,F,9184,5362,1.947,False
+Musica & Pop Culture,2001,US,Whenever Wherever,Shakira,F,766,849,1.927,False
+Musica & Pop Culture,2002,US,Foolish,Ashanti,F,730,1494,1.935,False
+Musica & Pop Culture,2002,US,Complicated,Avril,F,28,254,1.9,False
+Musica & Pop Culture,2003,US,Crazy in Love,Beyonce,F,703,282,1.903,False
+Musica & Pop Culture,2004,US,Goodies,Ciara,F,2700,3934,1.945,False
+Musica & Pop Culture,2005,US,We Belong Together,Mariah,F,8727,7782,1.949,False
+Musica & Pop Culture,2006,US,Hannah Montana,Miley,F,72,3885,1.945,False
+Musica & Pop Culture,2006,US,Taylor Swift,Taylor,F,28293,16309,1.953,False
+Musica & Pop Culture,2007,US,Irreplaceable,Beyonce,F,388,184,1.889,False
+Musica & Pop Culture,2008,US,I Kissed a Girl,Katy,F,653,379,1.911,False
+Musica & Pop Culture,2009,US,Fearless,Taylor,F,24875,11095,1.951,False
+Musica & Pop Culture,2010,US,Tik Tok,Kesha,F,26,20,1.74,False
+Musica & Pop Culture,2011,US,Rolling in the Deep,Adele,F,679,1007,1.93,False
+Musica & Pop Culture,2011,US,Super Bass,Nicki,F,35,42,1.81,False
+Musica & Pop Culture,2012,US,Call Me Maybe,Carly,F,4224,1935,1.938,False
+Musica & Pop Culture,2014,US,All About That Bass,Meghan,F,907,444,1.915,False
+Musica & Pop Culture,2014,US,Problem,Ariana,F,11466,9582,1.95,False
+Musica & Pop Culture,2015,US,Hello,Adele,F,1373,790,1.926,False
+Musica & Pop Culture,2016,US,Work,Rihanna,F,656,328,1.907,False
+Musica & Pop Culture,2018,US,New Rules,Dua,F,114,165,1.885,False
+Musica & Pop Culture,2019,US,Bad Guy,Billie,F,364,531,1.919,False
+Musica & Pop Culture,2021,US,Drivers License,Olivia,F,54329,31999,1.955,False
+Musica & Pop Culture,2022,US,As It Was,Harry,M,1118,647,1.922,False
+Musica & Pop Culture,2023,US,Flowers,Miley,F,1171,1715,1.937,False
+Musica & Pop Culture,2024,US,Espresso,Sabrina,F,2327,956,1.929,False
+Musica & Pop Culture,2001,IT,Luce (Tramonti a nord est),Elisa,F,6815,7288,1.949,False
+Musica & Pop Culture,2003,IT,Gocce di memoria,Giorgia,F,14201,10522,1.951,False
+Musica & Pop Culture,2006,IT,Sei nell'anima,Gianna,F,68,46,1.817,False
+Musica & Pop Culture,2008,IT,Non ti scordar mai di me,Giusy,F,896,512,1.918,False
+Musica & Pop Culture,2009,IT,Stupida,Alessandra,F,6084,3097,1.943,False
+Musica & Pop Culture,2010,IT,Oltre,Emma,F,9645,9730,1.95,False
+Musica & Pop Culture,2011,IT,Rolling in the Deep,Adele,F,1225,2272,1.94,False
+Musica & Pop Culture,2012,IT,La notte,Arisa,F,17,19,1.735,False
+Musica & Pop Culture,2013,IT,L'essenziale,Marco,M,11770,6067,1.948,False
+Musica & Pop Culture,2017,IT,Tutta colpa mia,Elodie,F,137,251,1.9,False
+Musica & Pop Culture,2018,IT,Il mondo prima di te,Annalisa,F,556,279,1.903,False
+Musica & Pop Culture,2020,IT,Musica e il resto scomparirà,Elettra,F,547,384,1.911,False
+Musica & Pop Culture,2021,IT,Zitti e buoni,Damiano,M,1721,1812,1.938,False
+Musica & Pop Culture,2021,IT,Grande Fratello VIP 6,Soleil,F,202,947,1.929,False
+Musica & Pop Culture,2023,IT,Sanremo 2023 Performance,Celine,F,168,1,0.975,False
+Musica & Pop Culture,2024,IT,La noia,Angelina,F,54,43,1.812,False
+Sport,1999,US,NBA Finals Champions (Lakers),Kobe,M,1541,2984,1.943,False
+Sport,2000,US,NBA Finals Champions (Lakers),Shaquille,M,201,73,1.847,False
+Sport,2001,US,MLB World Series (NY Yankees),Derek,M,9814,5541,1.947,False
+Sport,2002,US,NFL Super Bowl XXXVI,Tom,M,311,239,1.898,False
+Sport,2003,US,NBA Draft #1 Pick,LeBron,M,12,186,1.89,False
+Sport,2004,US,NFL MVP Season,Peyton,M,5646,5529,1.947,False
+Sport,2006,US,NBA Finals Champions (Miami Heat),Dwyane,M,10,8,1.607,False
+Sport,2009,US,NBA Finals MVP (Lakers),Kobe,M,1772,1200,1.932,False
+Sport,2011,US,NBA MVP Season (Bulls),Derrick,M,3350,2034,1.939,False
+Sport,2012,US,NBA Finals Champion (Heat),LeBron,M,254,96,1.862,False
+Sport,2014,US,NBA MVP Season (Thunder),Kevin,M,18746,9741,1.95,False
+Sport,2015,US,NBA Finals Champion (Warriors),Stephen,M,4472,2713,1.942,False
+Sport,2016,US,NBA Finals Champion (Cavs),Kyrie,M,2023,3471,1.944,False
+Sport,2017,US,NFL Super Bowl LI Champion,Tom,M,217,153,1.882,False
+Sport,2019,US,NFL Super Bowl LIV Champion,Patrick,M,6788,3658,1.944,False
+Sport,2020,US,NBA Finals Champion (Lakers),Anthony,M,24650,13399,1.952,False
+Sport,2021,US,NBA Finals Champion (Bucks),Giannis,M,331,300,1.905,False
+Sport,2023,US,NBA Finals Champion (Nuggets),Nikola,M,423,210,1.894,False
+Sport,2000,IT,Euro 2000 Italia Vice-Campione,Francesco,M,9494,20567,1.953,False
+Sport,2001,IT,Scudetto AS Roma,Gabriel,M,792,1440,1.935,False
+Sport,2003,IT,Champions League AC Milan,Andriy,M,4,13,1.686,False
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Gennaro,M,1511,912,1.928,False
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Gianluigi,M,248,98,1.863,False
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Fabio,M,4787,2910,1.942,False
+Sport,2006,IT,Mondiali 2006 Campioni del Mondo,Alessandro,M,28054,18566,1.953,False
+Sport,2007,IT,Champions League AC Milan,Filippo,M,10785,6965,1.949,False
+Sport,2010,IT,Triplete Inter Champions League,Diego,M,6832,5695,1.947,False
+Sport,2011,IT,Scudetto AC Milan,Thiago,M,55,271,1.902,False
+Sport,2012,IT,Euro 2012 Italia Vice-Campione,Mario,M,3287,2004,1.939,False
+Sport,2018,IT,Trasferimento Record Serie A,Cristiano,M,852,578,1.92,False
+Sport,2021,IT,Euro 2020 Campioni d'Europa,Nicolò,M,6026,539,1.919,False
+Sport,2021,IT,Euro 2020 Campioni d'Europa,Federico,M,8340,4876,1.946,False
+Sport,2021,IT,Euro 2020 Campioni d'Europa,Ciro,M,1024,680,1.923,False
+Sport,2023,IT,Scudetto SSC Napoli,Victor,M,129,52,1.826,False
+Sport,2024,IT,Scudetto Inter & Copa America,Lautaro,M,4,3,1.375,False
